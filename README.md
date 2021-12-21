@@ -1,51 +1,30 @@
-My solutions to exercises in **C++ Primer (5th Edition)** by *Lippman et al*.
+My solutions to exercises in **C++ Primer (5th Edition)** by Lippman, Lajoie, and Moo (2012).
 
----
+- Part O
+  - [Chapter 1 Getting Started](01-getting-started)
 
-**Done**
+- Part I The Basics
+  - [Chapter 2 Variables and Basic Types](02-variables-and-basic-types)
+  - [Chapter 3 Strings, Vectors, and Arrays](03-strings-vectors-and-arrays)
+  - [Chapter 4 Expressions](04-expressions)
+  - [Chapter 5 Statements](05-statements)
+  - [Chapter 6 Functions](06-functions)
+  - [Chapter 7 Classes](07-classes)
 
-- [x] [Chapter 1 Getting Started (25)](01-getting-started)
+- Part II The C++ Library
+  - [Chapter 8 The IO Library](08-the-io-library)
+  - [Chapter 9 Sequential Containers](09-sequential-containers)
+  - [Chapter 10 Generic Algorithms](10-generic-algorithms)
+  - [Chapter 11 Associative Containers](11-associative-containers)
+  - [Chapter 12 Dynamic Memory](12-dynamic-memory)
 
-**Working in Progress**
+- Part III Tools for Class Authors
+  - [Chapter 13 Copy Control](13-copy-control)
+  - [Chapter 14 Overloaded Operations and Conversions](14-overloaded-operations-and-conversions)
+  - [Chapter 15 Object-Oriented Programming](15-object-oriented-programming)
+  - [Chapter 16 Templates and Generic Programming](16-templates-and-generic-programming)
 
-- [ ] [Chapter 2 Variables and Basic Types (42)](02-variables-and-basic-types)
-
-**Solved, But To Be Re-organized**
-
-[**Answers to Chapters 1 to 16**](answers/)
-
-- [x] Part I: The Basics
-- [x] Part II: The C++ Library
-- [x] Part III: Tools for Class Authors
-
-**To Be Solved**
-
-- [ ] Part IV: Advanced Topics
-    - [ ] [Chapter 17 Specialized Library Facilities (39)](17-specialized-library-facilities)
-    - [ ] [Chapter 18 Tools for Large Programs (30)](18-tools-for-large-programs/)
-    - [ ] [Chapter 19 Specialized Tools and Techniques (26)](19-specialized-tools-and-techniques)
-
----
-
-**Roadmap**
-
-1. To finish all the exercises in all the 19 chapters.
-2. To reorganize and optimize, as my understanding to C++ and programming in general improves.
-
----
-
-**Organization**
-
-- One folder for each chapter, *e.g.* [01-getting-started](01-getting-started)
-    - If an exercise has code associated with it, the code is linked in the `README.md` in the folder.
-        - To compile the code, use the `makefile` in the folder. Executables will go to the [binary](binary) folder.
-    - If an exercise has no code associated, its solution is provided directly in the `README.md`.
-- [binary](binary): executable files
-- [data](data): data files that can be used as input using file redirection
-- [include](include): header files
-- [output](output): output files
-- [source](source): standalone source files for large programs, *e.g.* the book store program
-
----
-
-- [answers](answers): solutions to chapters 1 to 16 in old format, to be re-organized
+- Part IV Advanced Topics
+  - [Chapter 17 Specialized Library Facilities](17-specialized-library-facilities)
+  - [Chapter 18 Tools for Large Programs](18-tools-for-large-programs)
+  - [Chapter 19 Specialized Tools and Techniques](19-specialized-tools-and-techniques)

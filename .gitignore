@@ -2,6 +2,8 @@
 binary/*
 !binary/README.md
 .DS_Store
+*.bak
+*.tmp
 
 # Prerequisites
 *.d
