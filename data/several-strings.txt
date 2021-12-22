@@ -1,0 +1,4 @@
+clock watch
+timepiece timekeeper
+chronograph chronometer
+stopwatch sandglass
