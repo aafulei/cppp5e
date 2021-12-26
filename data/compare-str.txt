@@ -1,0 +1,6 @@
+apple apple
+apple banana
+blueberry strawberry
+cranberry blackberry
+grape orange
+grapefruit grape
