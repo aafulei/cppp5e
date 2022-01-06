@@ -24,7 +24,7 @@ a <..\data\two-books.txt && ^
 a <..\data\two-books-no-sales.txt && ^
 a <..\data\two-books-different.txt
 
-=== Input ====
+=== Input ===
 (two-books.txt)
 0-201-88954-4 2 15.00
 0-201-88954-4 5 12.00

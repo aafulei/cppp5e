@@ -24,7 +24,7 @@ clang++ -std=c++11 -pedantic -Wall -Wextra 03-01-sum-several-books.cpp && ^
 a <..\data\several-books.txt && ^
 a <..\data\several-books-no-sales.txt
 
-=== Input ====
+=== Input ===
 (several-books.txt)
 0-201-88954-4 2 15.00
 0-201-88954-4 5 12.00

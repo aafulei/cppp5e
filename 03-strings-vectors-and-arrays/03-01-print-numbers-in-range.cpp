@@ -16,7 +16,7 @@ clang++ -std=c++11 -pedantic -Wall -Wextra 03-01-print-numbers-in-range.cpp && \
 clang++ -std=c++11 -pedantic -Wall -Wextra 03-01-print-numbers-in-range.cpp && ^
 a <..\data\two-numbers.txt && a <..\data\two-numbers-reversed.txt
 
-=== Input ====
+=== Input ===
 (two-numbers.txt)
 3 5
 

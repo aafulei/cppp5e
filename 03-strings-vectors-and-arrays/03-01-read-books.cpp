@@ -22,7 +22,7 @@ clang++ -std=c++11 -pedantic -Wall -Wextra 03-01-read-books.cpp && \
 clang++ -std=c++11 -pedantic -Wall -Wextra 03-01-read-books.cpp && ^
 a <..\data\many-books.txt
 
-=== Input ====
+=== Input ===
 (many-books.txt)
 0-201-70353-X 4 24.99
 0-201-82470-1 4 45.39
