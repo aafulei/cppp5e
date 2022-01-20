@@ -34,13 +34,16 @@
 > What causes the following `while` to terminate?
 >
 > ```c++
-> while (cin >> i)
-> /* ...
+> while (cin >> i) /* ... */
 > ```
 
 **Answer:**
 
-If `cin` evaluates to `false`, or equivalently, `cin.fail()` evaluates to `true`, the `while` loop would terminate. This happens when either the `failbit` or the `badbit` of `cin` has been set. The `failbit` is set after a recoverable error, such as reading a character when numeric data was expected. The `badbit` is set after an unrecoverable read or write error.
+When `cin` has errors, the `while` loop would terminate.
+
+In particular, the `while` loop would terminate when `cin` evaluates to `false`, or equivalently, when `cin.fail()` evaluates to `true`. This happens when either the `failbit` or the `badbit` of `cin` has been set. The `failbit` is set after a recoverable error, such as reading a character when numeric data was expected. The `badbit` is set after an unrecoverable read or write error.
+
+See https://en.cppreference.com/w/cpp/io/basic_ios/operator_bool
 
 ## Section 8.2 File Input and Output
 
