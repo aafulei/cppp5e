@@ -27,6 +27,8 @@
 
 **Answer:**
 
+- see [`08-01.cpp`](08-01.cpp)
+
 ### Exercise 8.3
 
 > What causes the following `while` to terminate?
@@ -37,6 +39,8 @@
 > ```
 
 **Answer:**
+
+If `cin` evaluates to `false`, or equivalently, `cin.fail()` evaluates to `true`, the `while` loop would terminate. This happens when either the `failbit` or the `badbit` of `cin` has been set. The `failbit` is set after a recoverable error, such as reading a character when numeric data was expected. The `badbit` is set after an unrecoverable read or write error.
 
 ## Section 8.2 File Input and Output
 
