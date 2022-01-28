@@ -31,7 +31,13 @@
 
 **Answer:**
 
-A null statement is an empty statement that has only a semicolon. It might be used, for example, a loop's work can be done within its condition.
+A null statement is an empty statement that has only a semicolon. It might be used when, for example, a loop's work can be done within its condition.
+
+
+```c++
+while (cin >> s && s != sought)
+  ;  // null statement
+```
 
 ### Exercise 5.2
 
@@ -63,7 +69,7 @@ while (val <= 10)
   sum += val, ++val;
 ```
 
-The rewrite diminishes the readability of the code, because each line should serve only one purpose.
+The rewrite diminishes the readability, because each line should serve only one purpose.
 
 ## Section 5.2 Statement Scope
 
