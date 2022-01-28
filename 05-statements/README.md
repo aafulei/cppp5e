@@ -31,17 +31,39 @@
 
 **Answer:**
 
+A null statement is an empty statement that has only a semicolon. It might be used, for example, a loop's work can be done within its condition.
+
 ### Exercise 5.2
 
 > What is a block? When might you might use a block?
 
 **Answer:**
 
+A block is a compound statement that surrounds a (possibly empty) sequence of statements and declarations with a pair of curly braces.
+
 ### Exercise 5.3
 
 > Use the comma operator (Section 4.10, p. 157) to rewrite the `while` loop from Section 1.4.1 (p. 11) so that it no longer requires a block. Explain whether this rewrite improves or diminishes the readability of this code.
 
 **Answer:**
+
+- *Original*
+
+```c++
+while (val <= 10) {
+  sum += val;
+  ++val;
+}
+```
+
+- *Rewrite*
+
+```c++
+while (val <= 10)
+  sum += val, ++val;
+```
+
+The rewrite diminishes the readability of the code, because each line should serve only one purpose.
 
 ## Section 5.2 Statement Scope
 
