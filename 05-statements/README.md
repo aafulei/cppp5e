@@ -83,13 +83,9 @@ The rewrite diminishes the readability, because each line should serve only one 
 
 **Answer:**
 
-(a)
+(a) Loop over string `s`, until the iterator `iter` reaches the end of `s`.
 
-Loop over string `s`, until the iterator `iter` reaches the end of `s`.
-
-(b)
-
-Repeat the loop until we find `word`, in which case `status` would be `true`. However, since `status` is defined in the statement scope, it is illegal to access it after the `while` loop finishes. The code should be
+(b) Repeat the loop until we find `word`, in which case `status` would be `true`. However, since `status` is defined in the statement scope, it is illegal to access it after the `while` loop finishes. The code should be
 
 ```c++
 bool status = false;
