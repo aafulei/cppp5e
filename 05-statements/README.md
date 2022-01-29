@@ -498,34 +498,79 @@ If I could use only one loop, I would choose the `while` loop, as it has the mos
 > Explain each of the following loops. Correct any problems you detect.
 >
 > (a)
+>
 > ```c++
 > do
->     int v1, v2;
->     cout << "Please enter two numbers to sum:" ;
->     if (cin >> v1 >> v2)
->         cout << "Sum is: " << v1 + v2 << endl;
+>   int v1, v2;
+>   cout << "Please enter two numbers to sum:" ;
+>   if (cin >> v1 >> v2)
+>     cout << "Sum is: " << v1 + v2 << endl;
 > while (cin);
 > ```
 >
 > (b)
+>
 > ```c++
 > do {
-> // . . .
+>   // . . .
 > } while (int ival = get_response());
 > ```
 >
 > (c)
+>
 > ```c++
 > do {
->     int ival = get_response();
+>   int ival = get_response();
 > } while (ival);
 > ```
 
 **Answer:**
 
+(a) Prompt for input. Read two numbers. Print out the sum. Repeat the above steps.
+
+Problem - missing curly braces for the `do` part.
+
+Fix -
+
+```c++
+do {
+  int v1, v2;
+  cout << "Please enter two numbers to sum:" ;
+  if (cin >> v1 >> v2) {
+    cout << "Sum is: " << v1 + v2 << endl;
+  }
+}
+while (cin);
+```
+
+(b) Do something. If the response is non-zero, repeat the above steps.
+
+Problem - variable definitions are not allowed inside the condition of a `do while` loop.
+
+Fix -
+
+```c++
+do {
+  // ...
+} while (get_response());
+```
+
+(c) Get response. If the response is non-zero, repeat the above steps.
+
+Problem - `ival` defined in the `do` part goes out of scope and is thus inaccessible in the `while` condition.
+
+Fix -
+
+```c++
+int ival;
+do {
+  ival = get_response();
+} while (ival);
+```
+
 ### Exercise 5.19
 
-> Write a program that uses a do while loop to repetitively request two strings from the user and report which string is less than the other.
+> Write a program that uses a `do while` loop to repetitively request two `string`s from the user and report which `string` is less than the other.
 
 **Answer:**
 
