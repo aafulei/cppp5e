@@ -418,7 +418,9 @@ if (ix != sz) {
 }
 ```
 
-(b) Use `ix` to control the loop, increment it until it reaches `sz`. Problem - (1) `ix` is not initialized (2) syntax error - missing the init-statement part in the `for` loop. Fix -
+(b) Use `ix` to control the loop, increment it until it reaches `sz`.
+
+Problem - (1) `ix` is not initialized (2) syntax error - missing the init-statement part in the `for` loop. Fix -
 
 ```c++
 for (int ix = 0; ix != sz; ++ix) {
