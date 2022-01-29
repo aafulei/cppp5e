@@ -406,6 +406,34 @@ case kval:
 
 **Answer:**
 
+(a) Use `ix` to loop over `[0, sz)`. Problem - trying to access `ix` after the `for` loop finishes. Fix -
+
+```c++
+int ix = 0;
+for (/* empty */; ix != sz; ++ix) {
+  // ...
+}
+if (ix != sz) {
+  // ...
+}
+```
+
+(b) Use `ix` to control the loop, increment it until it reaches `sz`. Problem - (1) `ix` is not initialized (2) syntax error - missing the init-statement part in the `for` loop. Fix -
+
+```c++
+for (int ix = 0; ix != sz; ++ix) {
+  // ...
+}
+```
+
+(c) Use `ix` to loop over `[0, sz)`. Problem - loop might never terminate. Fix -
+
+```c++
+for (int ix = 0; ix != sz; ++ix) {
+  // ...
+}
+```
+
 ### Exercise 5.16
 
 > The `while` loop is particularly good at executing while some condition holds; for example, when we need to read values until end-of-file. The for loop is generally thought of as a step loop: An index steps through a range of values in a collection. Write an idiomatic use of each loop and then rewrite each using the other loop construct. If you could use only one loop, which would you choose? Why?
