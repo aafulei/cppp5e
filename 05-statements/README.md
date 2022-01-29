@@ -401,7 +401,7 @@ case kval:
 >
 > (c)
 > ```c++
-> for (int ix = 0; ix != sz; ++ix, ++ sz) { /* . . . */ }
+> for (int ix = 0; ix != sz; ++ix, ++sz) { /* . . . */ }
 > ```
 
 **Answer:**
@@ -418,9 +418,9 @@ if (ix != sz) {
 }
 ```
 
-(b) Use `ix` to control the loop. Increment it until it reaches `sz`.
+(b) Loop until `ix` reaches `sz`.
 
-Problem (1) - `ix` is not initialized
+Problem (1) - `ix` is not initialized; it has indeterminate value.
 
 Problem (2) - syntax error - missing the init-statement part in the `for` loop.
 
