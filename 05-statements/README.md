@@ -106,6 +106,8 @@ if (!status) {
 
 **Answer:**
 
+- [`05-05.cpp`](05-05.cpp)
+
 ### Exercise 5.6
 
 > Rewrite your grading program to use the conditional operator (Section 4.7, p. 151) in place of the if-else statement.
@@ -121,39 +123,74 @@ if (!status) {
 > (a)
 > ```c++
 > if (ival1 != ival2)
->     ival1 = ival2
-> else
->     ival1 = ival2 = 0;
+>   ival1 = ival2
+> else ival1 = ival2 = 0;
 > ```
 >
 > (b)
 > ```c++
 > if (ival < minval)
->     minval = ival;
-> occurs = 1;
+>   minval = ival;
+>   occurs = 1;
 > ```
 >
 > (c)
 > ```c++
 > if (int ival = get_value())
->     cout << "ival = " << ival << endl;
+>   cout << "ival = " << ival << endl;
 > if (!ival)
->     cout << "ival = 0\n";
+>   cout << "ival = 0\n";
 > ```
 >
 > (d)
 > ```c++
 > if (ival = 0)
->     ival = get_value();
+>   ival = get_value();
 > ```
 
 **Answer:**
+
+(a) Missing `;` in the `if` statement.
+
+```c++
+if (ival1 != ival2)
+  ival1 = ival2;
+else
+  ival1 = ival2 = 0;
+```
+
+(b) Code does not express what indentation indicates.
+
+```c++
+if (ival < minval) {
+  minval = ival;
+  occurs = 1;
+}
+```
+
+(c) `ival` goes out of scope after the `if` statement finishes.
+
+```c++
+if (int ival = get_value())
+  cout << "ival = " << ival << endl;
+else
+  cout << "ival = 0\n";
+```
+
+(d) Using `=` for `==` in condition.
+
+```c++
+if (ival == 0)
+  ival = get_value();
+```
 
 ### Exercise 5.8
 
 > What is a "dangling `else`"? How are `else` clauses resolved in C++?
 
 **Answer:**
+
+The dangling `else` describes a problem when there are multiple `if` branches preceding an `else` branch. The `else` branch needs to decide which `if` branch it belongs to. In C++, an `else` branch is matched with the closest unmatched `if` branch before it.
 
 ### Exercise 5.9
 
