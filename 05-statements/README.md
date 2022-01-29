@@ -406,7 +406,7 @@ case kval:
 
 **Answer:**
 
-(a) Use `ix` to loop over `[0, sz)`. Problem - trying to access `ix` after the `for` loop finishes. Fix -
+(a) Loop over range `[0, sz)` with `ix`. Problem - trying to access `ix` after the `for` loop finishes. Fix -
 
 ```c++
 int ix = 0;
@@ -418,9 +418,13 @@ if (ix != sz) {
 }
 ```
 
-(b) Use `ix` to control the loop, increment it until it reaches `sz`.
+(b) Use `ix` to control the loop. Increment it until it reaches `sz`.
 
-Problem - (1) `ix` is not initialized (2) syntax error - missing the init-statement part in the `for` loop. Fix -
+Problem (1) - `ix` is not initialized
+
+Problem (2) - syntax error - missing the init-statement part in the `for` loop.
+
+Fix -
 
 ```c++
 for (int ix = 0; ix != sz; ++ix) {
@@ -428,7 +432,7 @@ for (int ix = 0; ix != sz; ++ix) {
 }
 ```
 
-(c) Use `ix` to loop over `[0, sz)`. Problem - by unnecessarily incrementing `sz`, loop might never terminate. Fix -
+(c) Loop over range `[0, sz)` with `ix`. Problem - by unnecessarily incrementing `sz`, loop might never terminate. Fix -
 
 ```c++
 for (int ix = 0; ix != sz; ++ix) {
