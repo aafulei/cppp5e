@@ -631,7 +631,7 @@ do {
 
 ### Exercise 5.24
 
-> Revise your program to throw an exception if the second number is zero. Test your program with a zero input to see what happens on your system if you don't catch an exception.
+> Revise your program to throw an exception if the second number is zero. Test your program with a zero input to see what happens on your system if you don't `catch` an exception.
 
 **Answer:**
 
@@ -639,7 +639,7 @@ do {
 
 ### Exercise 5.25
 
-> Revise your program from the previous exercise to use a try block to catch the exception. The catch clause should print a message to the user and ask them to supply a new number and repeat the code inside the try.
+> Revise your program from the previous exercise to use a `try` block to `catch` the exception. The `catch` clause should print a message to the user and ask them to supply a new number and repeat the code inside the `try`.
 
 **Answer:**
 
