@@ -1,3 +1,4 @@
+// 22/01/29 = Sat
 // 21/12/25 = Sat
 // 18/02/04 = Sun
 
@@ -8,46 +9,20 @@
 // succession. Print the word if it occurs twice in succession, or else print a
 // message saying that no word was repeated.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 05-20-dedup.cpp && \
-./a.out <../data/words-ending-with-ow.txt && \
-a <..\data\gettysburg.txt
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 05-20-dedup.cpp && ^
-a <..\data\words-ending-with-ow.txt && ^
-a <..\data\gettysburg.txt
-
-=== Input ===
-(words-ending-with-ow.txt)
-how now now now brown cow cow
-
-(gettysburg.txt)
-... We have come to dedicate a portion of that field, as a final resting place
-for those who here gave their lives that that nation might live...
-
-=== Output ===
-(words-ending-with-ow.txt)
-how
-
-(gettysburg.txt)
-that
-*/
-
 #include <iostream>
 #include <string>
 
 int main() {
-  bool repeated = false;
-  for (std::string prev, curr; std::cin >> curr; prev = curr) {
-    if (curr == prev) {
-      std::cout << curr << std::endl;
-      repeated = true;
+  bool has_repeat = false;
+  for (std::string word, last; std::cin >> word; last = word) {
+    if (word == last) {
+      std::cout << word << std::endl;
+      has_repeat = true;
       break;
     }
   }
-  if (!repeated)
+  if (!has_repeat) {
     std::cout << "No word was repeated." << std::endl;
+  }
   return 0;
 }
