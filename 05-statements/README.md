@@ -194,7 +194,7 @@ The dangling `else` describes a problem when there are multiple `if` branches pr
 
 ### Exercise 5.9
 
-> Write a program using a series of if statements to count the number of vowels in text read from `cin`.
+> Write a program using a series of `if` statements to count the number of vowels in text read from `cin`.
 
 **Answer:**
 
