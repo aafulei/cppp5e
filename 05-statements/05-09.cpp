@@ -22,10 +22,10 @@ int main() {
       ++uCnt;
     }
   }
-  std::cout << "Number of vowel a: " << aCnt << '\n'
-            << "Number of vowel e: " << eCnt << '\n'
-            << "Number of vowel i: " << iCnt << '\n'
-            << "Number of vowel o: " << oCnt << '\n'
-            << "Number of vowel u: " << uCnt << std::endl;
+  std::cout << "Number of vowel a: \t" << aCnt << '\n'
+            << "Number of vowel e: \t" << eCnt << '\n'
+            << "Number of vowel i: \t" << iCnt << '\n'
+            << "Number of vowel o: \t" << oCnt << '\n'
+            << "Number of vowel u: \t" << uCnt << std::endl;
   return 0;
 }

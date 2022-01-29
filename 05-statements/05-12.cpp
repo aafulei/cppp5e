@@ -1,7 +1,7 @@
 // 18/02/04 = Sun
 
-// Exercise 5.9: Write a program using a series of if statements to count the
-// number of vowels in text read from cin.
+// Exercise 5.12: Modify our vowel-counting program so that it counts the number of occurrences of the following two-character sequences: ff, fl, and fi.
+
 
 #include <cstring>
 #include <iostream>

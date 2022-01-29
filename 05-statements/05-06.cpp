@@ -15,6 +15,8 @@
 // 67-69  D+    63-66  D    60-62  D-
 // 0-59   F
 
+// Modified from 05-05.cpp
+
 #include <string>
 
 std::string scoreToGrade(int score) {
@@ -26,7 +28,7 @@ std::string scoreToGrade(int score) {
   }
   std::string letters = "DCBA";
   std::string grade = {letters[(score - 60) / 10]};
-  // change from 05-05.cpp
+  // Change
   int r = score % 10;
   grade += (0 <= r && r <= 2) ? "-" : (7 <= r && r <= 9) ? "+" : "";
   return grade;
