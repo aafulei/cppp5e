@@ -1,3 +1,4 @@
+// 22/01/29 = Sat
 // 21/12/25 = Sat
 // 18/02/05 = Mon
 
@@ -8,50 +9,19 @@
 // Exercise 5.23: Write a program that reads two integers from the standard
 // input and prints the result of dividing the first number by the second.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 05-24-zero-except.cpp && \
-./a.out <../data/two-numbers.txt && \
-./a.out <../data/two-numbers-2.txt && \
-./a.out <../data/two-numbers-with-zero.txt
-
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 05-24-zero-except.cpp && ^
-a <..\data\two-numbers.txt && ^
-a <..\data\two-numbers-2.txt && ^
-a <..\data\two-numbers-with-zero.txt
-
-=== Input ===
-5 0
-0 0
-7 0
-24 6
-
-=== Output ===
-(two-numbers.txt)
-0
-
-(two-numbers-2.txt)
-9
-
-(two-numbers-with-zero.txt)
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  Divide by zero
-*/
+// Modified from 05-23.cpp
 
 #include <exception>
 #include <iostream>
 
 int main() {
-  int a = 0, b = 0;
+  int a, b;
   if (std::cin >> a >> b) {
+    // Add
     if (b == 0) {
       throw std::runtime_error("Divide by zero");
     }
     std::cout << a / b << std::endl;
-  } else {
-    std::cerr << "No data?!" << std::endl;
   }
   return 0;
 }

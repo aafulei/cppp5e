@@ -1,3 +1,4 @@
+// 22/01/29 = Sat
 // 21/12/25 = Sat
 // 18/02/05 = Mon
 
@@ -12,49 +13,26 @@
 // Exercise 5.23: Write a program that reads two integers from the standard
 // input and prints the result of dividing the first number by the second.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 05-25-try-catch.cpp && \
-./a.out <../data/divide-by-zero.txt
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 05-25-try-catch.cpp && ^
-a <../data/divide-by-zero.txt
-
-=== Input ===
-5 0
-0 0
-7 0
-24 6
-
-=== Output ===
-Divide by zero
-Divide by zero
-Divide by zero
-4
-*/
+// Modified from 05-24.cpp
 
 #include <exception>
 #include <iostream>
 
 int main() {
-  int a = 0, b = 0;
-  try {
-    std::cin >> a >> b;
-    if (std::cin && b == 0) {
-      throw std::runtime_error("Divide by zero");
-    }
-  } catch (const std::runtime_error &e) {
-    do {
-      std::cerr << e.what() << std::endl;
-      if (std::cin >> a >> b) {
+  int a, b;
+  while (true) {
+    try {
+      std::cin >> a >> b;
+      if (std::cin && b == 0) {
+        throw std::runtime_error("Divide by zero");
       }
-    } while (std::cin && b == 0);
+      break;
+    } catch (const std::runtime_error &e) {
+      std::cout << "Please enter again: ";
+    }
   }
   if (std::cin) {
     std::cout << a / b << std::endl;
-  } else {
-    std::cerr << "Bad input" << std::endl;
   }
   return 0;
 }
