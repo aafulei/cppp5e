@@ -600,7 +600,24 @@ do {
 
 **Answer:**
 
-- [`05-22.cpp`](05-22.cpp)
+- *Original*
+
+```c++
+begin:
+  int sz = get_size();
+  if (sz <= 0) {
+    goto begin;
+  }
+```
+
+- *Rewrite*
+
+```c++
+int sz;
+do {
+  sz = get_size();
+} while (sz <= 0);
+```
 
 ## Section 5.6 try Blocks and Exception Handling
 
