@@ -1,63 +1,45 @@
+// 22/01/29 = Sat
 // 18/02/04 = Sun
 
-// Exercise 5.9: Write a program using a series of if statements to count the number of vowels in text read from cin.
+// Exercise 5.10: There is one problem with our vowel-counting program as we've
+// implemented it: It doesn’t count capital letters as vowels. Write a program
+// that counts both lower- and uppercase letters as the appropriate vowel --
+// that is, your program should count both 'a' and 'A' as part of aCnt, and so
+// forth.
 
 #include <iostream>
-#include <cstring>
-#include <string>
 
-using std::cin;
-using std::cout;
-using std::endl;
-using std::getline;
-using std::string;
-using std::tolower;
-
-int main()
-{
-	unsigned a, e, i, o, u, blank, tab, newline, ff, fl, fi;
-	a = e = i = o = u = blank = tab = newline = ff = fl = fi = 0;
-	for (string line; getline(cin, line); ++newline) {
-		bool prev = false;
-		for (auto c : line) {
-			if (prev) {
-				if (c == 'f')
-					++ff;
-				else if (c == 'l')
-					++fl;
-				else if (c == 'i')
-					++fi;
-				prev = false;
-			}
-			else if (c == 'f')
-				prev = true;
-			c = tolower(c);
-			if (c == 'a')
-				++a;
-			else if (c == 'e')
-				++e;
-			else if (c == 'i')
-				++i;
-			else if (c == 'o')
-				++o;
-			else if (c == 'u')
-				++u;
-			else if (c == ' ')
-				++blank;
-			else if (c == '\t')
-				++tab;
-		}
-	}
-	cout << "a\t" << a << endl;
-	cout << "e\t" << e << endl;
-	cout << "i\t" << i << endl;
-	cout << "o\t" << o << endl;
-	cout << "u\t" << u << endl;
-	cout << "blank\t" << blank << endl;
-	cout << "tab\t" << tab << endl;
-	cout << "newline\t" << newline << endl;
-	cout << "ff\t" << ff << endl;
-	cout << "fi\t" << fi << endl;
-	cout << "fl\t" << fl << endl;
-	return 0;
+int main() {
+  char c;
+  unsigned aCnt = 0, eCnt = 0, iCnt = 0, oCnt = 0, uCnt = 0;
+  while (std::cin >> c) {
+    switch (c) {
+    case 'a':
+    case 'A':
+      ++aCnt;
+      break;
+    case 'e':
+    case 'E':
+      ++eCnt;
+      break;
+    case 'i':
+    case 'I':
+      ++iCnt;
+      break;
+    case 'o':
+    case 'O':
+      ++oCnt;
+      break;
+    case 'u':
+    case 'U':
+      ++uCnt;
+      break;
+    }
+  }
+  std::cout << "Number of vowel a: " << aCnt << '\n'
+            << "Number of vowel e: " << eCnt << '\n'
+            << "Number of vowel i: " << iCnt << '\n'
+            << "Number of vowel o: " << oCnt << '\n'
+            << "Number of vowel u: " << uCnt << std::endl;
+  return 0;
 }
