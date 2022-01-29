@@ -23,10 +23,12 @@
 #include <string>
 
 std::string scoreToGrade(int score) {
-  if (score < 60)
+  if (score < 60) {
     return "F";
-  if (score == 100)
+  }
+  if (score == 100) {
     return "A++";
+  }
   std::string letters = "DCBA";
   std::string grade{letters[(score - 60) / 10]};
   if (int r = score % 10; 0 <= r && r <= 2) { // C++17
