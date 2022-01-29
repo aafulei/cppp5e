@@ -5,7 +5,6 @@
 // number of vowels in text read from cin.
 
 #include <iostream>
-#include <string>
 
 int main() {
   char c;
