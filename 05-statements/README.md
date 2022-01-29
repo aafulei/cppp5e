@@ -150,7 +150,7 @@ if (!status) {
 
 **Answer:**
 
-(a) Problem - missing `;` in the `if` statement.
+(a) Problem - missing `;` in the `if` statement. To fix,
 
 ```c++
 if (ival1 != ival2)
@@ -159,7 +159,7 @@ else
   ival1 = ival2 = 0;
 ```
 
-(b) Problem - code does not express what indentation indicates.
+(b) Problem - code does not express what indentation indicates. To fix,
 
 ```c++
 if (ival < minval) {
@@ -168,7 +168,7 @@ if (ival < minval) {
 }
 ```
 
-(c) Problem - `ival` goes out of scope after the `if` statement finishes.
+(c) Problem - `ival` goes out of scope after the `if` statement finishes. To fix,
 
 ```c++
 if (int ival = get_value())
@@ -177,7 +177,7 @@ else
   cout << "ival = 0\n";
 ```
 
-(d) Problem - using `=` for `==` in condition.
+(d) Problem - using `=` for `==` in condition. To fix,
 
 ```c++
 if (ival == 0)
