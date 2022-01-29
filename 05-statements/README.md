@@ -426,7 +426,7 @@ for (int ix = 0; ix != sz; ++ix) {
 }
 ```
 
-(c) Use `ix` to loop over `[0, sz)`. Problem - loop might never terminate. Fix -
+(c) Use `ix` to loop over `[0, sz)`. Problem - by unnecessarily incrementing `sz`, loop might never terminate. Fix -
 
 ```c++
 for (int ix = 0; ix != sz; ++ix) {
