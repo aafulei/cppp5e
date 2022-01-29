@@ -17,7 +17,6 @@
 int main() {
   int a, b;
   if (std::cin >> a >> b) {
-    // Add
     if (b == 0) {
       throw std::runtime_error("Divide by zero");
     }
