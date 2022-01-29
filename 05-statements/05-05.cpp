@@ -4,7 +4,7 @@
 // Exercise 5.5: Using an if–else statement, write your own version of the
 // program to generate the letter grade from a numeric grade.
 
-// Letter scheme:
+// Grading scheme:
 // 100    A++
 // 97-99  A+
 // 93-96  A
