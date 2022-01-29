@@ -308,7 +308,7 @@ default:
 }
 ```
 
-(b) Problem - Trying to jump over the initialization of `ix`, which would be in scope at the `default` label. Fix -
+(b) Problem - trying to jump over the initialization of `ix`, which would be in scope at the `default` label. Fix -
 
 ```c++
 unsigned index = some_value();
@@ -324,7 +324,7 @@ default:
 }
 ```
 
-(c) Problem: Syntax error in case labels. Fix:
+(c) Problem - syntax error in case labels. Fix -
 
 ```c++
 unsigned evenCnt = 0, oddCnt = 0;
@@ -347,7 +347,7 @@ case 10:
 }
 ```
 
-(d) Problem:  Case labels must be constant expressions. Fix:
+(d) Problem - Case labels must be constant expressions. Fix -
 
 ```c++
 constexpr unsigned ival = 512, jval = 1024, kval = 4096;
