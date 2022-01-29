@@ -30,7 +30,7 @@ std::string scoreToGrade(int score) {
     return "A++";
   }
   std::string letters = "DCBA";
-  std::string grade{letters[(score - 60) / 10]};
+  std::string grade = {letters[(score - 60) / 10]};
   if (int r = score % 10; 0 <= r && r <= 2) { // C++17
     grade += '-';
   } else if (7 <= r && r <= 9) {
