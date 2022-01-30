@@ -121,6 +121,8 @@ In particular, the `while` loop would terminate when `cin` evaluates to `false`,
 
 **Answer:**
 
+Because there is no need. Both `std::string` and `std::vector<std::string>` have default constructors that initialize the objects with empty values.
+
 ### Exercise 8.13
 
 > Rewrite the phone number program from this section to read from a named file rather than from `cin`.
