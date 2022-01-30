@@ -17,7 +17,7 @@
 #include <string>
 
 struct SalesData {
-  std::string isbn;
+  std::string bookNo;
   unsigned quantity = 0;
   double revenue = 0.0;
 };
@@ -25,20 +25,20 @@ struct SalesData {
 // record example: 978-7-121-20038-0 1 105
 std::istream &read(std::istream &is, SalesData &data) {
   double price = 0;
-  is >> data.isbn >> data.quantity >> price;
+  is >> data.bookNo >> data.quantity >> price;
   data.revenue = price * data.quantity;
   return is;
 }
 
 // output example: 978-7-121-20038-0 10 1000 100
 std::ostream &print(std::ostream &os, const SalesData &data) {
-  return os << data.isbn << " " << data.quantity << " " << data.revenue << " "
+  return os << data.bookNo << " " << data.quantity << " " << data.revenue << " "
             << data.revenue / data.quantity << std::endl;
 }
 
 // add data to total, like operator+=
 SalesData &combine(SalesData &total, const SalesData &trans) {
-  if (total.isbn == trans.isbn) {
+  if (total.bookNo == trans.bookNo) {
     total.quantity += trans.quantity;
     total.revenue += trans.revenue;
   } else {
@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
   if (read(ifs, total)) {
     SalesData trans;
     while (read(ifs, trans)) {
-      if (total.isbn == trans.isbn) {
+      if (total.bookNo == trans.bookNo) {
         combine(total, trans);
       } else {
         print(std::cout, total);
