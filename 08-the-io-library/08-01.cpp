@@ -1,3 +1,4 @@
+// 22/01/30 = Sun
 // 22/01/20 = Thu
 // 18/01/30 = Tue
 // 17/10/20 = Fri
@@ -9,7 +10,9 @@
 
 // Exercise 8.2: Test your function by calling it, passing cin as an argument.
 
+#include <cassert>
 #include <iostream>
+#include <string>
 
 std::istream &read(std::istream &is) {
   std::string line;
@@ -21,6 +24,7 @@ std::istream &read(std::istream &is) {
 }
 
 int main() {
-  std::cout << read(std::cin).good() << std::endl;
+  read(std::cin);
+  assert(std::cin.good());
   return 0;
 }
