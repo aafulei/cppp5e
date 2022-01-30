@@ -67,7 +67,7 @@ In particular, the `while` loop would terminate when `cin` evaluates to `false`,
 
 > Rewrite the bookstore program from Section 7.1.1 (p. 256) to read its transactions from a file. Pass the name of the file as an argument to `main` (Section 6.2.5, p. 218).
 >
-> - See also exercise [`7.1`](../07-classes/README.md#exercise-71)*
+> *See also exercise [`7.1`](../07-classes/README.md#exercise-71)*
 
 **Answer:**
 
