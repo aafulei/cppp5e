@@ -26,7 +26,7 @@ std::vector<std::string> readFile(const std::string &filename) {
 
 int main(int argc, char *argv[]) {
   if (argc != 2) {
-    std::cerr << "Usage: " << argv[0] << " filename" << std::endl;
+    std::cerr << "Usage: " << argv[0] << " file" << std::endl;
     return 1;
   }
   std::vector<std::string> res = readFile(argv[1]);
