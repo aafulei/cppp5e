@@ -137,3 +137,4 @@ Because there is no need. Both `std::string` and `std::vector<std::string>` have
 
 **Answer:**
 
+Because we do not modify the data.
