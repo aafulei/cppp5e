@@ -339,13 +339,24 @@ bool is_empty(const string &s) {
 
 > Write declarations for each of the following functions. When you write these declarations, use the name of the function to indicate what the function does.
 >
-> (a) A function named compare that returns a bool and has two parameters that are references to a class named matrix.
-> (b) A function named change_val that returns a vector<int> iterator and
-> takes two parameters: One is an int and the other is an iterator for a vector<int>.
+> (a) A function named `compare` that returns a `bool` and has two parameters that are references to a class named `matrix`.
+>
+> (b) A function named `change_val` that returns a `vector<int>` iterator and
+> takes two parameters: One is an `int` and the other is an iterator for a `vector<int>`.
 
 **Answer:**
 
-- [`06-18.cpp`](06-18.cpp)
+(a)
+
+```c++
+bool compare(const matrix &m1, const matrix &m2);
+```
+
+(b)
+
+```c++
+vector<int>::iterator change_val(int val, vector<int>::iterator it);
+```
 
 ### Exercise 6.19
 
