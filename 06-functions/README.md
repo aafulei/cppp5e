@@ -260,7 +260,7 @@ bool is_upper(char c) {
 }
 ```
 
-It is very cheap and straightforward to copy a `char` (1 byte), so we do not take a reference.
+It is very cheap to copy a `char` (1 byte), so we do not take a reference.
 
 ```c++
 std::size_t len(const char *str) {
@@ -282,23 +282,32 @@ In dealing with C-style strings, we operate on pointers, and there is no need to
 
 > Why is `s` a reference to `const`?
 
-Because we do not modify the `string` in the function, and, for parameters that we do not modify, it is recommended to declare the reference as `const`.
+Because we do not modify the `string` `s` in the function, and, for parameters that we do not modify, it is recommended to declare them the reference as `const`.
 
 > Why is `occurs` a plain reference?
 
-Because we will modify the `string` in the function.
+Because we will modify the `occurs` in the function. It is used as a counter.
 
 > Why is `char` parameter `c` not a reference?
 
-It is very cheap and straightforward to copy a `char` (1 byte), so we just copy it.
+Because it is very cheap to copy a `char` (1 byte).
 
 > What would happen if we made `s` a plain refernce?
 
-The function `find_char` will still work, but it will cause trouble for other functions that call `find_char`. If they have a variable that is a reference to `const string`, they can't pass it when calling `find_char`.
+The function `find_char` would still work, but it will cause trouble for other functions that call `find_char`. If they have a variable that is a reference-to-`const string`, they can't pass it when calling `find_char`.
+
+```c++
+bool is_sentence(const string &s) {
+  string::size_type ctr = 0;
+  return find_char(s, '.', ctr) == s.size() - 1 && ctr == 1;
+}
+```
+
+Had we made `s` a plain reference if `find_char`, the above function `is_sentence` would not compile.
 
 > What would happen if we made `occurs` a refernce to `const`?
 
-The program won't compile as we modify `occurs` in the function.
+The program would not compile as we modifies `occurs` in `find_char`.
 
 ### Exercise 6.16
 
