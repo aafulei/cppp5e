@@ -77,9 +77,9 @@ The rewrite diminishes the readability, because each line should serve only one 
 
 > Explain each of the following examples, and correct any problems you detect.
 >
-> (a) `while (string::iterator iter != s.end()) { /* . . . */ }`
+> (a) `while (string::iterator iter != s.end()) { /* ... */ }`
 >
-> (b) `while (bool status = find(word)) { /* . . . */ } if (!status) { /* . . . */ }`
+> (b) `while (bool status = find(word)) { /* ... */ } if (!status) { /* ... */ }`
 
 **Answer:**
 
@@ -388,20 +388,20 @@ case kval:
 >
 > (a)
 > ```c++
-> for (int ix = 0; ix != sz; ++ix) { /* . . . */ }
+> for (int ix = 0; ix != sz; ++ix) { /* ... */ }
 > if (ix != sz)
->     // . . .
+>     // ...
 > ```
 >
 > (b)
 > ```c++
 > int ix;
-> for (ix != sz; ++ix) { /* . . . */ }
+> for (ix != sz; ++ix) { /* ... */ }
 > ```
 >
 > (c)
 > ```c++
-> for (int ix = 0; ix != sz; ++ix, ++sz) { /* . . . */ }
+> for (int ix = 0; ix != sz; ++ix, ++sz) { /* ... */ }
 > ```
 
 **Answer:**
@@ -512,7 +512,7 @@ If I could use only one loop, I would choose the `while` loop, as it has the mos
 >
 > ```c++
 > do {
->   // . . .
+>   // ...
 > } while (int ival = get_response());
 > ```
 >
