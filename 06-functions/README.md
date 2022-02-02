@@ -433,7 +433,7 @@ Should use `const int *` for the pointer.
 
 ### Exercise 6.24
 
-> Explain the behavior of the following function. If there are problems in the code, explain what they are and how you might fix them. void print(const int ia[10])
+> Explain the behavior of the following function. If there are problems in the code, explain what they are and how you might fix them.
 >
 > ```c++
 > void print(const int ia[10]) {
@@ -443,6 +443,16 @@ Should use `const int *` for the pointer.
 > ```
 
 **Answer:**
+
+The function tries to print out the elements in an array of 10 `int`s. However, array cannot be copied and thus cannot be passed by value. Fix -
+
+```c++
+void print(const int (&ia)[10]) {
+  for (size_t i = 0; i != 10; ++i) {
+    cout << ia[i] << endl;
+  }
+}
+```
 
 ### Exercise 6.25
 
