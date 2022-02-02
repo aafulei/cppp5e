@@ -291,7 +291,7 @@ The dangling `else` describes a problem when there are multiple `if` branches pr
 
 **Answer:**
 
-(a) Problem - Missing `break`. Fix -
+(a) Problem - missing `break`. Fix -
 
 ```c++
 unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
@@ -347,7 +347,7 @@ case 10:
 }
 ```
 
-(d) Problem - Case labels must be constant expressions. Fix -
+(d) Problem - case labels must be constant expressions. Fix -
 
 ```c++
 constexpr unsigned ival = 512, jval = 1024, kval = 4096;
