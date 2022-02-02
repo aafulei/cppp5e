@@ -515,6 +515,13 @@ Yes, if the element type is expensive to copy. `const auto &` is recommended, to
 
 **Answer:**
 
+```
+error: non-void function 'str_subrange' should return a value [-Wreturn-type]
+  return;
+  ^
+1 error generated.
+```
+
 - [`06-30.cpp`](06-30.cpp)
 
 ### Exercise 6.31
@@ -522,6 +529,8 @@ Yes, if the element type is expensive to copy. `const auto &` is recommended, to
 > When is it valid to return a reference? A reference to `const`?
 
 **Answer:**
+
+When the reference refers to an object that exists after the called function ends. For a reference-to-`const`, as an additional requirement, the caller should promise not to change the object via the returned reference.
 
 ### Exercise 6.32
 
@@ -537,6 +546,8 @@ Yes, if the element type is expensive to copy. `const auto &` is recommended, to
 > ```
 
 **Answer:**
+
+Yes, it is legal. It assigns to elements of array `ia[10]` their indices.
 
 ### Exercise 6.33
 

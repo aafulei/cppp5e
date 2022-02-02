@@ -6,27 +6,21 @@
 #include <iostream>
 #include <vector>
 
-using std::cout;
-using std::endl;
-using std::vector;
-
-// Options for parameters:
-// 1.	vector and one iterator;
-// 2.	two iterators.
-// Option 2 is preferred to follow the convetion of an iterator range.
-void recursive_print(vector<int>::iterator b, vector<int>::const_iterator e)
-{
-	if (b == e)
-		cout << endl;
-	else {
-		cout << *b++ << " ";
-		recursive_print(b, e);
-	}
+void print(std::vector<int>::const_iterator b,
+           std::vector<int>::const_iterator e) {
+  if (b == e) {
+    return;
+  }
+  std::cout << *b++ << std::endl;
+  print(b, e);
 }
 
-int main()
-{
-	vector<int> vec {1, 2, 3, 4, 5};
-	recursive_print(vec.begin(), vec.cend());
-	return 0;
+void test() {
+  std::vector<int> vec{1, 2, 3, 4, 5};
+  print(vec.begin(), vec.end());
+}
+
+int main() {
+  test();
+  return 0;
 }
