@@ -7,7 +7,8 @@
 #include <initializer_list>
 #include <iostream>
 
-int sum(const std::initializer_list<int> &il) {
+// initializer_list is often passed by value as it is cheap to do so
+int sum(std::initializer_list<int> il) {
   int res = 0;
   for (int i : il)
     res += i;
