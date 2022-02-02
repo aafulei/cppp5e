@@ -1,42 +1,30 @@
 // 22/02/02 = Wed
 // 18/02/07 = Wed
 
-// Exercise 6.36: Write the declaration for a function that returns a reference to an array of ten strings, without using either a trailing return, decltype, or a type alias.
+// Exercise 6.36: Write the declaration for a function that returns a reference
+// to an array of ten strings, without using either a trailing return, decltype,
+// or a type alias.
 
-#include <iostream>
 #include <string>
 
-using std::cout;
-using std::endl;
-using std::string;
+std::string (&foo(std::string (&a)[10]))[10] { return a; }
 
-string (& foo(string (&)[10]))[10];
+#include <iostream>
+#include <type_traits>
 
-// pass and return a reference to an array of ten strings
-string (&foo(string (& a)[10]))[10]
-{
-	return a;
+void test() {
+  std::string a[10];
+  // warning: comparison between two arrays is deprecated; to compare array
+  // addresses, use unary '+' to decay operands to pointers
+  // [-Wdeprecated-array-compare]
+  std::cout << (+a == foo(a)) << std::endl; // 1
+  // C++17
+  std::cout << std::is_same_v<
+                   decltype(a),
+                   std::remove_reference_t<decltype(foo(a))>> << std::endl; // 1
 }
 
-// To assign to the array and print out:
-// X
-// XX
-// XXX
-// XXXX
-// XXXXX
-// XXXXXX
-// XXXXXXX
-// XXXXXXXX
-// XXXXXXXXX
-// XXXXXXXXXX
-
-int main()
-{
-	string a[10] {};
-	int i = 0;
-	for (auto &s : foo(a))
-		s = string(++i, 'X');
-	for (auto s : a)
-		cout << s << endl;
-	return 0;
+int main() {
+  test();
+  return 0;
 }
