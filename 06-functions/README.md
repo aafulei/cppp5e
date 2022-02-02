@@ -137,6 +137,16 @@ double square(double) { return x * x; }
 
 **Answer:**
 
+- A parameter is a local variable that is defined in a function's parameter list.
+
+- A local variable is an object that is defined in a function.
+
+  - It is local in that it is only visible inside the function.
+
+  - An automatic (not static) local variable exists only when the function is executing.
+
+- A local static variable is a local variable that has static lifetime. That is, it exists across the calls to the function.
+
 ### Exercise 6.7
 
 > Write a function that returns `0` when it is first called and then generates numbers in sequence each time it is called again.
