@@ -385,7 +385,7 @@ vector<int>::iterator change_val(int val, vector<int>::iterator it);
 
 (c) Legal.
 
-(d) Legal, but note that there will be a narrowing conversion from `3.8` to `3`, because the last parameter of `sum()` is an `int`.
+(d) Legal - note that there will be a narrowing conversion from `3.8` to `3`, since the last parameter of `sum()` is an `int`.
 
 ### Exercise 6.20
 
@@ -406,6 +406,8 @@ Then we will not be able to pass `const` objects and literals that could be boun
 > Write a function that takes an `int` and a pointer to an `int` and returns the larger of the `int` value or the value to which the pointer points. What type should you use for the pointer?
 
 **Answer:**
+
+`const int *`.
 
 - [`06-21.cpp`](06-21.cpp)
 
