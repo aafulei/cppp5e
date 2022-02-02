@@ -183,7 +183,6 @@ void factMax(int num) {
 
 **Answer:**
 
-- [`Chapter6.h`](Chapter6.h)
 - [`fact.cc`](fact.cc)
 - [`factMain.cc`](factMain.cc)
 
