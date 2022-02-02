@@ -379,11 +379,37 @@ vector<int>::iterator change_val(int val, vector<int>::iterator it);
 
 **Answer:**
 
+(a)
+
+Illegal - mismatch between the declaration and the call.
+
+In the declaration, `calc()` takes only 1 parameter, but the call passes 2 arguments.
+
+(b)
+
+Legal.
+
+(c)
+
+Legal.
+
+(d)
+
+Legal, but note that there will be a narrowing conversion from `3.8` to `3`, because the last parameter of `sum()` is an `int`.
+
 ### Exercise 6.20
 
 > When should reference parameters be references to `const`? What happens if we make a parameter a plain reference when it could be a reference to `const`?
 
 **Answer:**
+
+> When should reference parameters be references to `const`?
+
+Whenever the function does not change the parameters.
+
+> What happens if we make a parameter a plain reference when it could be a reference to `const`?
+
+Then we will not be able to pass `const` objects and literals that could be bound to references to `const`.
 
 ### Exercise 6.21
 
