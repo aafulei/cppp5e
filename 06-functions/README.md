@@ -319,6 +319,16 @@ The program would not compile as we modifies `occurs` in `find_char`.
 
 **Answer:**
 
+The reference should be a reference-to-`const` instead of a plain reference.
+
+Fix -
+
+```c++
+bool is_empty(const string &s) {
+  return s.empty();
+}
+```
+
 ### Exercise 6.17
 
 > Write a function to determine whether a string contains any capital letters. Write a function to change a string to all lowercase. Do the parameters you used in these functions have the same type? If so, why? If not, why not?
