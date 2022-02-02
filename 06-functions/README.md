@@ -53,22 +53,22 @@
 >
 > ```c++
 > int f() {
->     string s;
->     // . . .
->     return s;
+>   string s;
+>   // ...
+>   return s;
 > }
 > ```
 >
 > (b)
 >
 > ```c++
-> f2(int i) { /* . . . */ }
+> f2(int i) { /* ... */ }
 > ```
 >
 > (c)
 >
 > ```c++
-> int calc(int v1, int v1) /* . . . */ }
+> int calc(int v1, int v1)  /* ... */ }
 > ```
 >
 > (d)
@@ -79,9 +79,7 @@
 
 **Answer:**
 
-(a)
-
-Problem - return value does not match the return type. Fix -
+(a) Problem - return value does not match the return type. Fix -
 
 ```c++
 string f() {
@@ -91,25 +89,19 @@ string f() {
 }
 ```
 
-(b)
-
-Problem - missing return type. Fix -
+(b) Problem - missing return type. Fix -
 
 ```c++
 void f(int i) { /* ... */}
 ```
 
-(c)
-
-Problem - duplicated parameter names; missing an opening curly brace. Fix -
+(c) Problem - duplicated parameter names; missing an opening curly brace. Fix -
 
 ```c++
 int calc(int v1, int v2) { /* ... */}
 ```
 
-(d)
-
-Problem - missing curly braces. Fix -
+(d) Problem - missing curly braces. Fix -
 
 ```c++
 double square(double) { return x * x; }
