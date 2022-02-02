@@ -224,11 +224,43 @@ Using a reference is easier, becasue
 
 **Answer:**
 
+| `void f(T)`            | `void f(T&)`               |
+| ---------------------- | -------------------------- |
+| pass argument by value | pass argument by reference |
+
 ### Exercise 6.14
 
 > Give an example of when a parameter should be a reference type. Give an example of when a parameter should not be a reference.
 
 **Answer:**
+
+- a parameter that should be a reference type
+
+```c++
+std::size_t len(const std::string &s) {
+  return s.size();
+}
+```
+
+`s` should be passed by reference as it could be expansive to copy a `string`.
+
+```c++
+bool is_good(const std::ostream &os) {
+  return os.good();
+}
+```
+
+`os` must be passed by reference as `std::ostream` cannot be copied.
+
+- a parameter that should not be a reference type
+
+```c++
+size_t len(const char *str) {
+  return strlen(str);
+}
+```
+
+In dealing with C-style strings, we operate on pointers, and there is no need to pass a pointer by reference.
 
 ### Exercise 6.15
 
