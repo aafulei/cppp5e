@@ -560,14 +560,26 @@ Yes, it is legal. It assigns to elements of array `ia[10]` their indices.
 ### Exercise 6.34
 
 > What would happen if the stopping condition in `factorial` were `if (val != 0)`?
+>
+> ```c++
+> int factorial(int val) {
+>   if (val > 1)
+>     return factorial(val - 1) * val;
+>   return 1;
+> }
+> ```
 
 **Answer:**
+
+It could cause problems if a negative `val` is passed.
 
 ### Exercise 6.35
 
 > In the call to `factorial`, why did we pass `val - 1` rather than `val--`?
 
 **Answer:**
+
+Value of the expression `val--` is the same as original `val`.
 
 ### Exercise 6.36
 
