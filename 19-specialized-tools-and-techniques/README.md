@@ -110,11 +110,9 @@
 > Given the following class hierarchy in which each class defines a public default constructor and virtual destructor, which type name do the following statements print?
 >
 > ```c++
-> class A { /* . . . */
-> };
-> class B : public A {
->   /* . . .
-> class C : public B { /* . . .
+> class A { /* ... */ };
+> class B : public A { /* ... */ };
+> class C : public B { /* ... */ };
 > ```
 
 **Answer:**

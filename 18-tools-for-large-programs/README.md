@@ -314,12 +314,9 @@
 > Assume we have two base classes, Base1 and Base2, each of which defines a virtual member named print and a virtual destructor. From these base classes we derive the following classes, each of which redefines the print function:
 >
 > ```c++
-> class D1 : public Base1 { /* . . . */
-> };
-> class D2 : public Base2 { /* . . . */
-> };
-> class MI : public D1, public D2 { /* . . . */
-> };
+> class D1 : public Base1 { /* ... */ };
+> class D2 : public Base2 { /* ... */ };
+> class MI : public D1, public D2 { /* ... */ };
 > ```
 >
 > Using the following pointers, determine which function is used in each call:
