@@ -41,11 +41,16 @@
 
 **Answer:**
 
+- A parameter is a local variable defined in a function's parameter list.
+
+- An argument is a value that is used to initialize the parameter.
+
 ### Exercise 6.2
 
 > Indicate which of the following functions are in error and why. Suggest how you might correct the problems.
 >
 > (a)
+>
 > ```c++
 > int f() {
 >     string s;
@@ -55,21 +60,60 @@
 > ```
 >
 > (b)
+>
 > ```c++
 > f2(int i) { /* . . . */ }
 > ```
 >
 > (c)
+>
 > ```c++
 > int calc(int v1, int v1) /* . . . */ }
 > ```
 >
 > (d)
+>
 > ```c++
 > double square(double x) return x * x;
 > ```
 
 **Answer:**
+
+(a)
+
+Problem - return value does not match the return type. Fix -
+
+```c++
+string f() {
+  string s;
+  // ...
+  return s;
+}
+```
+
+(b)
+
+Problem - missing return type. Fix -
+
+```c++
+void f(int i) { /* ... */}
+```
+
+(c)
+
+Problem - duplicated parameter names; missing an opening curly brace. Fix -
+
+```c++
+int calc(int v1, int v2) { /* ... */}
+```
+
+(d)
+
+Problem - missing curly braces. Fix -
+
+```c++
+double square(double) { return x * x; }
+```
 
 ### Exercise 6.3
 
