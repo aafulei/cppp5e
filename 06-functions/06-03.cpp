@@ -6,9 +6,6 @@
 #include <iostream>
 
 int fact(int val) {
-  if (val == 0) {
-    return 1;
-  }
   int res = 1;
   for (int i = 1; i <= val; ++i) {
     res *= i;
