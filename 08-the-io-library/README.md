@@ -119,7 +119,9 @@ In particular, the `while` loop would terminate when `cin` evaluates to `false`,
 
 > Why didn't we use in-class initializers in `PersonInfo`?
 
-**Answer:** Because there is no need. Both `std::string` and `std::vector<std::string>` have default constructors that initialize the objects with empty values.
+**Answer:**
+
+Because there is no need. Both `std::string` and `std::vector<std::string>` have default constructors that initialize the objects with empty values.
 
 ### Exercise 8.13
 
@@ -133,4 +135,6 @@ In particular, the `while` loop would terminate when `cin` evaluates to `false`,
 
 > Why did we declare `entry` and `nums` as `const auto &`?
 
-**Answer:** Because we do not modify the data.
+**Answer:**
+
+Because we do not modify the data.
