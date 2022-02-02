@@ -407,7 +407,7 @@ Then we will not be able to pass `const` objects and literals that could be boun
 
 **Answer:**
 
-Should use `const int *` for the pointer.
+`const int *`
 
 - [`06-21.cpp`](06-21.cpp)
 
@@ -485,8 +485,19 @@ void print(const int (&ia)[10]) {
 ### Exercise 6.28
 
 > In the second version of `error_msg` that has an `ErrCode` parameter, what is the type of `elem` in the `for` loop?
+>
+> ```c++
+> void error_msg(ErrCode e, initializer_list<string> il) {
+>   cout << e.msg() << ": ";
+>   for (const auto &elem : il)
+>     cout << elem << " ";
+>   cout << endl;
+> }
+> ```
 
 **Answer:**
+
+`const string &`
 
 ### Exercise 6.29
 
