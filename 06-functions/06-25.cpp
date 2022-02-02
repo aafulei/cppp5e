@@ -1,4 +1,4 @@
-// 21/12/26 = Sun
+// 22/02/02 = Wed
 // 18/02/07 = Wed
 
 // Exercise 6.25: Write a main function that takes two arguments. Concatenate the supplied arguments and print the resulting string.

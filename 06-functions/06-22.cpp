@@ -1,4 +1,4 @@
-// 21/12/26 = Sun
+// 22/02/02 = Wed
 // 18/02/06 = Tue
 
 // Exercise 6.22: Write a function to swap two int pointers.

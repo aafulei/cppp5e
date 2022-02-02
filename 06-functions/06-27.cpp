@@ -1,4 +1,4 @@
-// 21/12/26 = Sun
+// 22/02/02 = Wed
 // 18/02/07 = Wed
 
 // Exercise 6.27: Write a function that takes an initializer_list<int> and produces the sum of the elements in the list.

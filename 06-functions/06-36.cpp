@@ -1,4 +1,4 @@
-// 21/12/26 = Sun
+// 22/02/02 = Wed
 // 18/02/07 = Wed
 
 // Exercise 6.36: Write the declaration for a function that returns a reference to an array of ten strings, without using either a trailing return, decltype, or a type alias.

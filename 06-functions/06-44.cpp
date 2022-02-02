@@ -1,4 +1,4 @@
-// 21/12/26 = Sun
+// 22/02/02 = Wed
 // 18/02/08 = Thu
 
 // Exercise 6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
