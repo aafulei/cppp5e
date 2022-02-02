@@ -294,7 +294,7 @@ Because it is very cheap to copy a `char` (1 byte).
 
 > What would happen if we made `s` a plain refernce?
 
-The function `find_char` would still work, but it will cause trouble for other functions that call `find_char`. If they have a variable that is a reference-to-`const string`, they can't pass it when calling `find_char`.
+The function `find_char()` would still work, but it will cause trouble for other functions that call `find_char()`. If they have a variable that is a reference-to-`const string`, they can't pass it to `find_char()`.
 
 ```c++
 bool is_sentence(const string &s) {
@@ -303,11 +303,11 @@ bool is_sentence(const string &s) {
 }
 ```
 
-Had we made `s` a plain reference if `find_char`, the above function `is_sentence` would not compile.
+Had we made `s` a plain reference if `find_char()`, the above function `is_sentence()` would not compile.
 
 > What would happen if we made `occurs` a refernce to `const`?
 
-The program would not compile as we modifies `occurs` in `find_char`.
+The program would not compile as we modifies `occurs` in `find_char()`.
 
 ### Exercise 6.16
 
@@ -319,9 +319,7 @@ The program would not compile as we modifies `occurs` in `find_char`.
 
 **Answer:**
 
-The reference should be a reference-to-`const` instead of a plain reference.
-
-Fix -
+The reference should be a reference-to-`const` instead of a plain reference. Fix -
 
 ```c++
 bool is_empty(const string &s) {
