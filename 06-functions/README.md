@@ -501,9 +501,11 @@ void print(const int (&ia)[10]) {
 
 ### Exercise 6.29
 
-> When you use an `initializer_list` in a range for would you ever use a reference as the loop control variable? If so, why? If not, why not?
+> When you use an `initializer_list` in a range `for` would you ever use a reference as the loop control variable? If so, why? If not, why not?
 
 **Answer:**
+
+Yes, if the element type is expensive to copy. `const auto &` is recommended, to make it clear that we promise not to change any element in the list. However, since the elements in an `initializer_list` are always `const`, it should be the same if we just use `auto &`.
 
 ## Section 6.3 Return Types and the return Statement
 
