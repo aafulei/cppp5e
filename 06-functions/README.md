@@ -444,7 +444,9 @@ Should use `const int *` for the pointer.
 
 **Answer:**
 
-The function tries to print out the elements in an array of 10 `int`s. However, array cannot be copied and thus cannot be passed by value. Fix -
+The function tries to print out the elements in an array of 10 `int`s. However, array cannot be copied and thus cannot be passed by value.
+
+Fix -
 
 ```c++
 void print(const int (&ia)[10]) {
@@ -456,7 +458,7 @@ void print(const int (&ia)[10]) {
 
 ### Exercise 6.25
 
-> Write a main function that takes two arguments. Concatenate the supplied arguments and print the resulting string.
+> Write a `main` function that takes two arguments. Concatenate the supplied arguments and print the resulting `string`.
 
 **Answer:**
 
@@ -464,7 +466,9 @@ void print(const int (&ia)[10]) {
 
 ### Exercise 6.26
 
-> Write a program that accepts the options presented in this section. Print the values of the arguments passed to main.
+> Write a program that accepts the options presented in this section. Print the values of the arguments passed to `main`.
+>
+> *^ i.e. `prog -d -o file data0`*
 
 **Answer:**
 
