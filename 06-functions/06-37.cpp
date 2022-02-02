@@ -1,42 +1,33 @@
 // 22/02/02 = Wed
 // 18/02/07 = Wed
 
-// Exercise 6.37: Write three additional declarations for the function in the previous exercise. One should use a type alias, one should use a trailing return, and the third should use decltype. Which form do you prefer and why?
+// Exercise 6.37: Write three additional declarations for the function in the
+// previous exercise. One should use a type alias, one should use a trailing
+// return, and the third should use decltype. Which form do you prefer and why?
 
-// Exercise 6.36: Write the declaration for a function that returns a reference to an array of ten strings, without using either a trailing return, decltype, or a type alias.
+// Exercise 6.36: Write the declaration for a function that returns a reference
+// to an array of ten strings, without using either a trailing return, decltype,
+// or a type alias.
 
-// Answer: I prefer "using new-type-S = type-T;" introduced in C++11. Modern and readable.
+// Answer: I prefer the using type declaration introduced in C++11. Modern and
+// readable.
 
 #include <iostream>
 #include <string>
 
-using std::cout;
-using std::endl;
-using std::string;
+using T = std::string (&)[10];
+std::string _[10];
 
-using U = string [10];
-using R = string (&)[10];
-typedef string S[10];
-typedef string (&T)[10];
+// A function can be declared many times, so long as the declarations are
+// consistent themselves. In what follows, we declare foo() several times using
+// different forms, and rely on the compiler to check their consistency.
+std::string (&foo(std::string (&)[10]))[10];          // 0. original
+T foo(T);                                             // 1. type alias
+auto foo(std::string (&)[10]) -> std::string (&)[10]; // 2. trailing return
+decltype(_) &foo(decltype(_) &a);                     // 3. decltype
 
-// A function can be declared many times, so long as the declarations are consistent themselves. In what follows, we declare foo() several times using different forms, and rely on the compiler to check their consistency.
+T foo(T a) { return a; }
 
-string (& foo(string (&)[10]))[10];
-U & foo(U &);
-R & foo(R);
-S & foo(S &);
-T foo(T);
-auto foo(string (&)[10]) -> string (&)[10];
-
-// The same as lp-06-36.cpp below
-
-// pass and return a reference to an array of ten strings
-string (&foo(string (& a)[10]))[10]
-{
-	return a;
-}
-
-// To assign to the array and print out:
 // X
 // XX
 // XXX
@@ -47,14 +38,14 @@ string (&foo(string (& a)[10]))[10]
 // XXXXXXXX
 // XXXXXXXXX
 // XXXXXXXXXX
-
-int main()
-{
-	string a[10] {};
-	int i = 0;
-	for (auto &s : foo(a))
-		s = string(++i, 'X');
-	for (auto s : a)
-		cout << s << endl;
-	return 0;
+int main() {
+  std::string a[10];
+  // C++20
+  for (int i = 0; auto &s : foo(a)) {
+    s = std::string(++i, 'X');
+  }
+  for (auto s : a) {
+    std::cout << s << std::endl;
+  }
+  return 0;
 }

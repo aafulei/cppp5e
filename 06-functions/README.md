@@ -595,6 +595,8 @@ Value of the expression `val--` is the same as original `val`.
 
 **Answer:**
 
+I prefer the `using` type declaration introduced in C++11. Modern and readable.
+
 - [`06-37.cpp`](06-37.cpp)
 
 ### Exercise 6.38
