@@ -255,7 +255,15 @@ bool is_good(const std::ostream &os) {
 - a parameter that should not be a reference type
 
 ```c++
-size_t len(const char *str) {
+bool is_upper(char c) {
+  return 'A' <= c && c <= 'Z';
+}
+```
+
+It is very cheap and straightforward to copy a `char` (1 byte), so we do not take a reference.
+
+```c++
+std::size_t len(const char *str) {
   return strlen(str);
 }
 ```
@@ -264,9 +272,33 @@ In dealing with C-style strings, we operate on pointers, and there is no need to
 
 ### Exercise 6.15
 
-> Explain the rationale for the type of each of `find_char`'s parameters In particular, why is `s` a reference to `const` but `occurs` is a plain reference? Why are these parameters references, but the `char` parameter `c` is not? What would happen if we made `s` a plain reference? What if we made `occurs` a reference to `const`?
+> Explain the rationale for the type of each of `find_char`'s parameters. In particular, why is `s` a reference to `const` but `occurs` is a plain reference? Why are these parameters references, but the `char` parameter `c` is not? What would happen if we made `s` a plain reference? What if we made `occurs` a reference to `const`?
+>
+> ```c++
+> string::size_type find_char(const string &s, char c, string::size_type &occurs) { /* ... */ }
+> ```
 
 **Answer:**
+
+> Why is `s` a reference to `const`?
+
+Because we do not modify the `string` in the function, and, for parameters that we do not modify, it is recommended to declare the reference as `const`.
+
+> Why is `occurs` a plain reference?
+
+Because we will modify the `string` in the function.
+
+> Why is `char` parameter `c` not a reference?
+
+It is very cheap and straightforward to copy a `char` (1 byte), so we just copy it.
+
+> What would happen if we made `s` a plain refernce?
+
+The function `find_char` will still work, but it will cause trouble for other functions that call `find_char`. If they have a variable that is a reference to `const string`, they can't pass it when calling `find_char`.
+
+> What would happen if we made `occurs` a refernce to `const`?
+
+The program won't compile as we modify `occurs` in the function.
 
 ### Exercise 6.16
 
