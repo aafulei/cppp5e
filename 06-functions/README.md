@@ -206,11 +206,17 @@ void factMax(int num) {
 
 ### Exercise 6.12
 
-> Rewrite the program from exercise 6.10 in Section 6.2.1 (p. 210) to use references instead of pointers to swap the value of two ints. Which version do you think would be easier to use and why?
+> Rewrite the program from exercise 6.10 in Section 6.2.1 (p. 210) to use references instead of pointers to swap the value of two `int`s. Which version do you think would be easier to use and why?
 
 **Answer:**
 
 - [`06-12.cpp`](06-12.cpp)
+
+Using a reference is easier, becasue
+
+1. it is less error-prone;
+
+2. it avoids copying, which, in some cases, might be expensive or impossible.
 
 ### Exercise 6.13
 
