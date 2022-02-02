@@ -147,16 +147,17 @@ double square(double) { return x * x; }
 
 - A local static variable is a local variable that has static lifetime. That is, it exists across the calls to the function.
 
-For example, in the function below, `num` is a parameter, `i` is a local (automatic) variable, and `k` is a local static variable.
+For example, the function below returns the max factorial computed so far, where `num` is a parameter, `res` is a local (automatic) variable, while `max` is a local static variable.
 
 ```c++
-void foo(int num) {
-  int i = 0;
-  while (i <= num) {
-    std::cout << ++i << std::endl;
+void factMax(int num) {
+  int res = 1;
+  static int max = 1;
+  for (int i = 1; i <= num; ++i) {
+    res *= i;
   }
-  static int k = 0;
-  std::cerr << "foo() called " << ++k << " times" << std::endl;
+  max = res > max ? res : max;
+  return max;
 }
 ```
 
