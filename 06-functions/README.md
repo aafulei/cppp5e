@@ -379,23 +379,13 @@ vector<int>::iterator change_val(int val, vector<int>::iterator it);
 
 **Answer:**
 
-(a)
+(a) Illegal - mismatch between the declaration and the call. In the declaration, `calc()` takes only 1 parameter, but the call passes 2 arguments.
 
-Illegal - mismatch between the declaration and the call.
+(b) Legal.
 
-In the declaration, `calc()` takes only 1 parameter, but the call passes 2 arguments.
+(c) Legal.
 
-(b)
-
-Legal.
-
-(c)
-
-Legal.
-
-(d)
-
-Legal, but note that there will be a narrowing conversion from `3.8` to `3`, because the last parameter of `sum()` is an `int`.
+(d) Legal, but note that there will be a narrowing conversion from `3.8` to `3`, because the last parameter of `sum()` is an `int`.
 
 ### Exercise 6.20
 
