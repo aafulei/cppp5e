@@ -175,7 +175,7 @@ void factMax(int num) {
 
 **Answer:**
 
-- [`06-08.cpp`](06-08.cpp)
+- [`Chapter6.h`](Chapter6.h)
 
 ### Exercise 6.9
 
@@ -183,7 +183,9 @@ void factMax(int num) {
 
 **Answer:**
 
-- [`06-09.cpp`](06-09.cpp)
+- [`Chapter6.h`](Chapter6.h)
+- [`fact.cc`](fact.cc)
+- [`factMain.cc`](factMain.cc)
 
 ## Section 6.2 Argument Passing
 
