@@ -407,7 +407,7 @@ Then we will not be able to pass `const` objects and literals that could be boun
 
 **Answer:**
 
-`const int *`.
+Should use `const int *` for the pointer.
 
 - [`06-21.cpp`](06-21.cpp)
 
