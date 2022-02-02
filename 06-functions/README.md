@@ -421,7 +421,7 @@ Then we will not be able to pass `const` objects and literals that could be boun
 
 ### Exercise 6.23
 
-> Write your own versions of each of the print functions presented in this section. Call each of these functions to print i and j defined as follows:
+> Write your own versions of each of the `print` functions presented in this section. Call each of these functions to print `i` and `j` defined as follows:
 >
 > ```c++
 > int i = 0, j[2] = {0, 1};

@@ -5,39 +5,28 @@
 
 #include <iostream>
 
-using std::cout;
-using std::endl;
-
-void swap_by_ref(int *& r, int *& s)
-{
-	int * t = r;
-	r = s;
-	s = t;
+void swap_by_ptr(int **ppa, int **ppb) {
+  int *ppt = *ppa;
+  *ppa = *ppb;
+  *ppb = ppt;
 }
 
-void swap_by_ptr(int ** r, int ** s)
-{
-	int * t = *r;
-	*r = *s;
-	*s = t;
+void swap_by_ref(int *&pa, int *&pb) {
+  int *pt = pa;
+  pa = pb;
+  pb = pt;
 }
 
-int main()
-{
-	int a[] = {42, 24};
-	int * p = a, * q = a + 1;
-	cout << "p points to " << *p << endl;
-	cout << "q points to " << *q << endl;
+void test() {
+  int a = 3, b = 4, *pa = &a, *pb = &b;
+  std::cout << "*pa = " << *pa << ", *pb = " << *pb << std::endl;
+  swap_by_ptr(&pa, &pb);
+  std::cout << "*pa = " << *pa << ", *pb = " << *pb << std::endl;
+  swap_by_ref(pa, pb);
+  std::cout << "*pa = " << *pa << ", *pb = " << *pb << std::endl;
+}
 
-	cout << "swapping ..." << endl;
-	swap_by_ref(p, q);
-	cout << "p points to " << *p << endl;
-	cout << "q points to " << *q << endl;
-
-	cout << "swapping ..." << endl;
-	swap_by_ptr(&p, &q);
-	cout << "p points to " << *p << endl;
-	cout << "q points to " << *q << endl;
-
-	return 0;
+int main() {
+  test();
+  return 0;
 }
