@@ -190,9 +190,11 @@ void factMax(int num) {
 
 ### Exercise 6.10
 
-> Using pointers, write a function to swap the values of two ints. Test the function by calling it and printing the swapped values.
+> Using pointers, write a function to swap the values of two `int`s. Test the function by calling it and printing the swapped values.
 
 **Answer:**
+
+- [`06-10.cpp`](06-10.cpp)
 
 ### Exercise 6.11
 
