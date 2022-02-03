@@ -908,7 +908,9 @@ A viable function in addition must have the same number of parameters as there a
 
 **Answer:**
 
-(a) and (b) offer better matches for arguments with low-level `const`. (c) is illegal because just top-level `const` is insufficient to differentiate the arguments.
+(a) and (b) offer better matches for arguments with low-level `const`.
+
+(c) is illegal because just top-level `const` is insufficient to differentiate the arguments.
 
 
 ## Section 6.7 Pointers to Functions
