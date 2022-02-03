@@ -866,9 +866,9 @@ A viable function in addition must have the same number of parameters as there a
 
 **Answer:**
 
-(a) Rank 3 - Promotion.
+(a) Rank 3 - promotion.
 
-(b) Rank 4 - Arithmetic conversion.
+(b) Rank 4 - arithmetic conversion.
 
 *To recap, ranks are*
 
