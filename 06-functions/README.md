@@ -751,13 +751,15 @@ would be *legal*, because the default arguments for `wd` and `bckgrnd` have been
 
 ### Exercise 6.45
 
-> Review the programs you've written for the earlier exercises and decide whether they should be defined as inline. If so, do so. If not, explain why they should not be inline.
+> Review the programs you've written for the earlier exercises and decide whether they should be defined as `inline`. If so, do so. If not, explain why they should not be `inline`.
 
 **Answer:**
 
+I would put the definitions of some short helper functions, e.g. the `isShorter()` function above, in headers and mark them `inline`.
+
 ### Exercise 6.46
 
-> Would it be possible to define isShorter as a `constexpr`? If so, do so. If not, explain why not.
+> Would it be possible to define `isShorter` as a `constexpr`? If so, do so. If not, explain why not.
 
 **Answer:**
 
