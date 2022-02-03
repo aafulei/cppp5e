@@ -775,6 +775,8 @@ I would put some short helper functions in headers and mark them `inline`.
 error: call to non-‘constexpr’ function ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::size_type std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::size() const [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>; std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::size_type = long unsigned int]’
 ```
 
+- [`06-46.cpp`](06-46.cpp)
+
 ### Exercise 6.47
 
 > Revise the program you wrote in the exercises in Section 6.3.2 (p. 228) that used recursion to print the contents of a vector to conditionally print information about its execution. For example, you might print the size of the vector on each call. Compile and run the program with debugging turned on and again with it turned off.
