@@ -755,13 +755,25 @@ would be *legal*, because the default arguments for `wd` and `bckgrnd` have been
 
 **Answer:**
 
-I would put the definitions of some short helper functions, e.g. the `isShorter()` function above, in headers and mark them `inline`.
+I would put some short helper functions in headers and mark them `inline`.
 
 ### Exercise 6.46
 
 > Would it be possible to define `isShorter` as a `constexpr`? If so, do so. If not, explain why not.
+>
+> ```c++
+> bool isShorter(const string &s1, const string &s2) {
+>   return s1.size() < s2.size();
+> }
+> ```
 
-**Answer:**
+**Answer:** No, because `std::string` is not a literal type.
+
+*Compiling with `g++-11` would yield the following error:*
+
+```
+error: call to non-‘constexpr’ function ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::size_type std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::size() const [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>; std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::size_type = long unsigned int]’
+```
 
 ### Exercise 6.47
 
