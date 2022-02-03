@@ -862,8 +862,24 @@ A viable function in addition must have the same number of parameters as there a
 > what is the rank (Section 6.6.1, p. 245) of each conversion in the following calls?
 >
 > (a) `manip('a', 'z');`
+> (b) `manip(55.4, dobj);`
 
 **Answer:**
+
+To recap, ranks are
+
+1. exact match
+  a. identical
+  b. array/function-to-pointer
+  c. top-level const
+2. const conversion
+3. promotion
+4. arithmetic/pointer conversion
+5. class-type conversion
+
+(a) Rank 3 - Promotion.
+
+(b) Rank 4 - Arithmetic conversion.
 
 ### Exercise 6.53
 
