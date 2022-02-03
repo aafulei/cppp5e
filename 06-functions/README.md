@@ -662,6 +662,29 @@ I prefer the `using` type declaration introduced in C++11. Modern and readable.
 
 **Answer:**
 
+If the declarations are the only ones in the scope, then (a) is legal while (b) is illegal, because we can only specify default arguments for trailing parameters.
+
+However, we could create a context where (a) is illegal but (b) is legal. Had we already had
+
+```c++
+int ff(int a, int b, int c = 0);
+char *init(int ht, int wd = 80, char bckgrnd = ' ');
+```
+
+then
+
+```c++
+int ff(int a, int b = 0, int c = 0);
+```
+
+would be *illegal*, because it tries to specify the default argument for `c` for the second time, while
+
+```c++
+char *init(int ht = 24, int wd, char bckgrnd);
+```
+
+would be *legal*, because the default arguments for `wd` and `bckgrnd` have been specified in a previous declaration.
+
 ### Exercise 6.41
 
 > Which, if any, of the following calls are illegal? Why? Which, if any, are legal but unlikely to match the programmer's intent? Why?
