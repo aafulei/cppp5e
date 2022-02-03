@@ -866,20 +866,20 @@ A viable function in addition must have the same number of parameters as there a
 
 **Answer:**
 
-To recap, ranks are
+(a) Rank 3 - Promotion.
+
+(b) Rank 4 - Arithmetic conversion.
+
+*To recap, ranks are*
 
 1. exact match
     1. identical
     2. array/function-to-pointer
     3. top-level `const`
-2. const conversion
+2. `const` conversion
 3. promotion
 4. arithmetic/pointer conversion
 5. class-type conversion
-
-(a) Rank 3 - Promotion.
-
-(b) Rank 4 - Arithmetic conversion.
 
 ### Exercise 6.53
 
