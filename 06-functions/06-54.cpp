@@ -8,18 +8,20 @@
 #include <iostream>
 #include <vector>
 
-int foo1(int, int) { return 1; }
+using F = int(int, int);
+using PF = int (*)(int, int);
 
+int foo1(int, int) { return 1; }
 int foo2(int, int) { return 2; }
 
-void test(const std::vector<int (*)(int, int)> &vec) {
-  for (int (*pf)(int, int) : vec) {
+void test(const std::vector<PF> &vec) {
+  for (PF pf : vec) {
     std::cout << pf(0, 0) << std::endl;
   }
 }
 
 int main() {
-  std::vector<int (*)(int, int)> vec{foo1, foo2};
+  std::vector<PF> vec{foo1, foo2};
   test(vec);
   return 0;
 }
