@@ -703,7 +703,9 @@ would be *legal*, because the default arguments for `wd` and `bckgrnd` have been
 
 (b) Legal - calling `init()` function with `ht=24`, `wd=10` and `bckgrnd=' '`.
 
-(c) Legal, but unlikely to match the programmer's intent - calling `init()` function with `ht=14`, `wd=42` (`42` is the ASCII value for `'*'`) and `bckgrnd=' '`.
+(c) Legal, but unlikely to match the programmer's intent - calling `init()` function with `ht=14`, `wd=42` and `bckgrnd=' '`.
+
+*^ `42` is the ASCII value for `'*'`*
 
 ### Exercise 6.42
 
