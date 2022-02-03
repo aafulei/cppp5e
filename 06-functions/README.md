@@ -644,6 +644,12 @@ I prefer the `using` type declaration introduced in C++11. Modern and readable.
 
 **Answer:**
 
+(a) Illegal - top-level `const` is indistinguishable in function overloading.
+
+(b) Illegal - only differing in return types is insufficient for function overloading.
+
+(c) Legal - the first takes a `int *` and returns a `int *`; the second overloads the function, which takes a `double *` and returns a `double *`.
+
 ## Section 6.5 Features for Specialized Uses
 
 ### Exercise 6.40
