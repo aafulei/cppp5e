@@ -731,6 +731,10 @@ would be *legal*, because the default arguments for `wd` and `bckgrnd` have been
 
 **Answer:**
 
+(a) Header - inline functions may be defined multiple times, while the compiler needs the definition to expand the code.
+
+(b) Header - in general, functions declarations should be put in headers.
+
 ### Exercise 6.44
 
 > Rewrite the `isShorter` function from Section 6.2.2 (p. 211) to be inline.
