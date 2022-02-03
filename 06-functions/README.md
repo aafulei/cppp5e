@@ -824,8 +824,24 @@ A viable function in addition must have the same number of parameters as there a
 > (c) `f(42, 0)`
 >
 > (d) `f(2.56, 3.14)`
+>
+> ```c++
+> void f();
+> void f(int);
+> void f(int, int);
+> void f(double, double = 3.14);
+> ```
 
 **Answer:**
+
+(a) Viable functions are `void f(int, int);` and `void f(double, double = 3.14);`. The call is ambiguous.
+
+(b) Viable functions are `void f(int);` and `void f(double, double = 3.14);`. The best match is `void f(int);`.
+
+(c) Viable functions are `void f(int, int);` and `void f(double, double = 3.14);`. The best match is `void f(int);`.
+
+(d) Viable functions are `void f(int, int);` and `void f(double, double = 3.14);`. The best match is `void f(double, double = 3.14);`.
+
 
 ### Exercise 6.51
 
