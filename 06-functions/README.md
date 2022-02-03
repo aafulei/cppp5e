@@ -710,8 +710,16 @@ would be *legal*, because the default arguments for `wd` and `bckgrnd` have been
 ### Exercise 6.42
 
 > Give the second parameter of `make_plural` (Section 6.3.2, p. 224) a default argument of `'s'`. Test your program by printing singular and plural versions of the words success and failure.
+>
+> ```c++
+> string make_plural(size_t ctr, const string &word, const string &ending) {
+>   return (ctr > 1) ? word + ending : word;
+> }
+> ```
 
 **Answer:**
+
+- [`06-42.cpp`](06-42.cpp)
 
 ### Exercise 6.43
 
