@@ -809,6 +809,10 @@ The loop reads from `cin` until end-of-file or the `sought` string is found. It 
 
 **Answer:**
 
+A candidate function is a function with the same name as the called function and for which the declaration is visible at the point of the call.
+
+A viable function in addition must have the same number of parameters as there are arguments in the call, and the type of each argument must match -- or be convertible to -- the type of its corresponding parameter.
+
 ### Exercise 6.50
 
 > Given the declarations for f from *page 242*, list the viable functions, if any for each of the following calls. Indicate which function is the best match, or if the call is illegal whether there is no match or why the call is ambiguous.
