@@ -869,9 +869,9 @@ A viable function in addition must have the same number of parameters as there a
 To recap, ranks are
 
 1. exact match
-  - identical
-  - array/function-to-pointer
-  - top-level `const`
+    1. identical
+    2. array/function-to-pointer
+    3. top-level `const`
 2. const conversion
 3. promotion
 4. arithmetic/pointer conversion
