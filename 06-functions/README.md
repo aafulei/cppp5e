@@ -789,16 +789,19 @@ error: call to non-‘constexpr’ function ‘std::__cxx11::basic_string<_CharT
 
 ### Exercise 6.48
 
-> Explain what this loop does and whether it is a good use of assert:
+> Explain what this loop does and whether it is a good use of `assert`:
 >
 > ```c++
 > string s;
-> while (cin >> s && s != sought) {
-> }
+> while (cin >> s && s != sought) { } // empty body
 > assert(cin);
 > ```
 
 **Answer:**
+
+The loop reads from `cin` until end-of-file or the `sought` string is found.
+
+It might not be a good use of `assert` to check the `cin` state, because when `NDEBUG` is defined in the release environment, this guard would be gone.
 
 ## Section 6.6 Function Matching
 
