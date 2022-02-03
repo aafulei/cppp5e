@@ -699,6 +699,12 @@ would be *legal*, because the default arguments for `wd` and `bckgrnd` have been
 
 **Answer:**
 
+(a) Illegal - no default argument for the first argument `ht`.
+
+(b) Legal - calling `init()` function with `ht=24`, `wd=10` and `bckgrnd=' '`.
+
+(c) Legal, but unlikely to match the programmer's intent - calling `init()` function with `ht=14`, `wd=42` (`42` is the ASCII value for `'*'`) and `bckgrnd=' '`.
+
 ### Exercise 6.42
 
 > Give the second parameter of `make_plural` (Section 6.3.2, p. 224) a default argument of `'s'`. Test your program by printing singular and plural versions of the words success and failure.
