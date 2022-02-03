@@ -28,28 +28,14 @@ void f(int);
 void f(int, int);
 void f(double, double = 3.14);
 
-void f() {
-#ifndef NDEBUG
-  std::clog << "void f();" << std::endl;
-#endif
-}
+void f() { std::clog << "void f();" << std::endl; }
 
-void f(int) {
-#ifndef NDEBUG
-  std::clog << "void f(int);" << std::endl;
-#endif
-}
+void f(int) { std::clog << "void f(int);" << std::endl; }
 
-void f(int, int) {
-#ifndef NDEBUG
-  std::clog << "void f(int, int);" << std::endl;
-#endif
-}
+void f(int, int) { std::clog << "void f(int, int);" << std::endl; }
 
 void f(double, double) {
-#ifndef NDEBUG
   std::clog << "void f(double, double = 3.14);" << std::endl;
-#endif
 }
 
 void test() {

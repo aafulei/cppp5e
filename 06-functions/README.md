@@ -921,6 +921,11 @@ A viable function in addition must have the same number of parameters as there a
 
 **Answer:**
 
+```c++
+int foo(int, int);
+std::vector<int (*)(int, int)> vec;
+```
+
 - [`06-54.cpp`](06-54.cpp)
 
 ### Exercise 6.55
