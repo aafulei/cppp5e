@@ -817,6 +817,13 @@ A viable function in addition must have the same number of parameters as there a
 
 > Given the declarations for f from *page 242*, list the viable functions, if any for each of the following calls. Indicate which function is the best match, or if the call is illegal whether there is no match or why the call is ambiguous.
 >
+> ```c++
+> void f();
+> void f(int);
+> void f(int, int);
+> void f(double, double = 3.14);
+> ```
+>
 > (a) `f(2.56, 42)`
 >
 > (b) `f(42)`
@@ -824,13 +831,6 @@ A viable function in addition must have the same number of parameters as there a
 > (c) `f(42, 0)`
 >
 > (d) `f(2.56, 3.14)`
->
-> ```c++
-> void f();
-> void f(int);
-> void f(int, int);
-> void f(double, double = 3.14);
-> ```
 
 **Answer:**
 
@@ -838,10 +838,9 @@ A viable function in addition must have the same number of parameters as there a
 
 (b) Viable functions are `void f(int);` and `void f(double, double = 3.14);`. The best match is `void f(int);`.
 
-(c) Viable functions are `void f(int, int);` and `void f(double, double = 3.14);`. The best match is `void f(int);`.
+(c) Viable functions are `void f(int, int);` and `void f(double, double = 3.14);`. The best match is `void f(int, int);`.
 
 (d) Viable functions are `void f(int, int);` and `void f(double, double = 3.14);`. The best match is `void f(double, double = 3.14);`.
-
 
 ### Exercise 6.51
 
