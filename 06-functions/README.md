@@ -294,7 +294,7 @@ Because it is very cheap to copy a `char` (1 byte).
 
 > What would happen if we made `s` a plain refernce?
 
-The function `find_char()` would still work, but it will cause trouble for other functions that call `find_char()`. If they have a variable that is a reference-to-`const string`, they can't pass it to `find_char()`.
+The function `find_char()` would still work, but it will cause trouble for other functions that call `find_char()`. If they have a variable that is a reference to `const string`, they can't pass it to `find_char()`.
 
 ```c++
 bool is_sentence(const string &s) {
