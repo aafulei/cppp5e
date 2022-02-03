@@ -622,18 +622,21 @@ I prefer the `using` type declaration introduced in C++11. Modern and readable.
 > Explain the effect of the second declaration in each one of the following sets of declarations. Indicate which, if any, are illegal.
 >
 > (a)
+>
 > ```c++
 > int calc(int, int);
 > int calc(const int, const int);
 > ```
 >
 > (b)
+>
 > ```c++
 > int get();
 > double get();
 > ```
 >
 > (c)
+>
 > ```c++
 > int *reset(int *);
 > double *reset(double *);
