@@ -862,6 +862,7 @@ A viable function in addition must have the same number of parameters as there a
 > what is the rank (Section 6.6.1, p. 245) of each conversion in the following calls?
 >
 > (a) `manip('a', 'z');`
+>
 > (b) `manip(55.4, dobj);`
 
 **Answer:**
