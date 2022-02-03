@@ -737,7 +737,13 @@ would be *legal*, because the default arguments for `wd` and `bckgrnd` have been
 
 ### Exercise 6.44
 
-> Rewrite the `isShorter` function from Section 6.2.2 (p. 211) to be inline.
+> Rewrite the `isShorter` function from Section 6.2.2 (p. 211) to be `inline`.
+>
+> ```c++
+> bool isShorter(const string &s1, const string &s2) {
+>   return s1.size() < s2.size();
+> }
+> ```
 
 **Answer:**
 
