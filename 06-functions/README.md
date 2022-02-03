@@ -801,7 +801,7 @@ error: call to non-‘constexpr’ function ‘std::__cxx11::basic_string<_CharT
 
 The loop reads from `cin` until end-of-file or the `sought` string is found.
 
-It might not be a good use of `assert` to check the `cin` state, because when `NDEBUG` is defined in the release environment, this guard would be gone.
+It might not be a good use of `assert` to ensure the `cin` state, because when `NDEBUG` is defined in the release environment, this guard would be gone.
 
 ## Section 6.6 Function Matching
 
