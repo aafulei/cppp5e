@@ -648,7 +648,7 @@ I prefer the `using` type declaration introduced in C++11. Modern and readable.
 
 (b) Illegal - only differing in return types is insufficient for function overloading.
 
-(c) Legal - the first takes a `int *` and returns a `int`; the second overloads the function: it takes a `double *` and returns a `double *`.
+(c) Legal - the second declaration overloads the `reset()` function: it takes a `double *` and returns a `double *`.
 
 ## Section 6.5 Features for Specialized Uses
 
