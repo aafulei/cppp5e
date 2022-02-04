@@ -751,17 +751,17 @@ i *= static_cast<int>(d);
 >
 > (c) `pv = &d;`
 >
-> (d) `pc = (char*) pv;`
+> (d) `pc = (char*)pv;`
 
 **Answer:**
 
-(a) `pv = const_cast<string *>(ps);` *INCORRECT:* `const_cast<void *>`
+(a) `pv = const_cast<string *>(ps);` *INCORRECT -* `const_cast<void *>(ps)`
 
 (b) `i = static_cast<int>(*pc);` though integer promotion will take place even without cast
 
 (c) `pv = static_cast<void *>(&d);` though `(void *)` can hold any type of non-`const` pointers
 
-(d) `pc = static_cast<char *>(pv);` *INCORRECT:* `reinterpret_cast`
+(d) `pc = static_cast<char *>(pv);` *INCORRECT -* `reinterpret_cast<char *>(pv)`
 
 ### Exercise 4.38
 
