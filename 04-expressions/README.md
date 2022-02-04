@@ -518,6 +518,28 @@ If `unsigned int` has 32 bits, the effect would be same. However, if `unsigned i
 
 **Answer:**
 
+(a) `3`
+
+```
+  ul1 & ul2
+= (bin) 0011 & 0111
+= (bin) 0011
+= (dec) 3
+```
+
+(b) `7`
+
+```
+  ul1 | ul2
+= (bin) 0011 | 0111
+= (bin) 0111
+= (dec) 7
+```
+
+(c) `true`, or `1` after integer promotion
+
+(d) `true`, or `1` after integer promotion
+
 ## Section 4.9 The `sizeof` Operator
 
 ### Exercise 4.28
