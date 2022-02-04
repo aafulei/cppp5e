@@ -364,7 +364,7 @@ The loop would print out the elements that are 1 element next to what should be 
 
 (c) because the order of evaluation is undefined, this expression has indeterministic behavior; should be `++ival, vec[ival - 1] < vec[ival]`
 
-*^ as of C++11, only four operators guarantee the order of evaluation: (1) `&&` (2) `||` (3) `?:` (4) `,`. In C++17, it has been additionally guaranteed that the right-hand side of the assignment operator `=` is sequenced before the left-hand side. That is, from C++17 onwards, `i = i++ + 1;` is well defined.*
+*^ as of C++11, only four operators guarantee the order of evaluation: (1) `&&` (2) `||` (3) `?:` (4) `,`. Since C++17, it has been additionally guaranteed that the right-hand side of the assignment operator `=` is sequenced before the left-hand side. That is, from C++17 onwards, `i = i++ + 1;` is well defined.*
 
 ## Section 4.6 The Member Access Operators
 
