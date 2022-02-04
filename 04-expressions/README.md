@@ -304,11 +304,13 @@ pi = 0;
 
 **Answer:**
 
-(a) `if (p = getPtr() != 0)` is equivalent to `if (p = (getPtr() != 0))` because `!=` has higher precedence than does `=`. Rewrite -
+(a) `if (p = getPtr() != 0)` is equivalent to `if (p = (getPtr() != 0))`, which tests the pointer is not null and assigns either `1` or `0` to `p`. Rewrite -
 
 ```c++
 if ((p = getPtr()) != 0)
 ```
+
+*^ note that `!=` is higher than `=` in precedence.*
 
 (b) The expression in the condition assigns `1024` to `i` and always evaluates to `true`. Rewrite -
 
