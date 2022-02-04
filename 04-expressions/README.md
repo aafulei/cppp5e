@@ -755,13 +755,13 @@ i *= static_cast<int>(d);
 
 **Answer:**
 
-(a) `INCORRECT: const_cast<void *> ...`  `pv = const_cast<string *>(ps);`
+(a) `pv = const_cast<string *>(ps);` *INCORRECT:* `const_cast<void *>`
 
 (b) `i = static_cast<int>(*pc);` though integer promotion will take place even without cast
 
 (c) `pv = static_cast<void *>(&d);` though `(void *)` can hold any type of non-`const` pointers
 
-(d) `INCORRECT: reinterpret_cast` `pc = static_cast<char *>(pv);`
+(d) `pc = static_cast<char *>(pv);` *INCORRECT:* `reinterpret_cast`
 
 ### Exercise 4.38
 
