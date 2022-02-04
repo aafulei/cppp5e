@@ -231,7 +231,7 @@ a > b && b > c && c > d
 
 **Answer:**
 
-`i != j < k` is equivalent to `i != (j < k)`. The subexpression `(j < k)`  evaluates to `1` if `j < k` or `0` if `j >= k`. Then the expression will compare `i` with the result, and yield `1` if the values are unequal, or `0` if the values are equal.
+`i != j < k` is equivalent to `i != (j < k)`. The subexpression `(j < k)`  evaluates to `1` if `j < k` or `0` if `j >= k`. Then the expression will compare `i` with the result, yielding `1` if the values are unequal, or `0` if the values are equal.
 
 *^ note that `<` is higher than `!=` in precedence.*
 
