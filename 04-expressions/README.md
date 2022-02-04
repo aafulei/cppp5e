@@ -304,6 +304,19 @@ pi = 0;
 
 **Answer:**
 
+(a) Note that `!=` has higher precedence than does `=`, so `if (p = getPtr() != 0)` is equivalent to `if (p = (getPtr() != 0))`. Rewrite -
+
+```c++
+if ((p = getPtr()) != 0)
+```
+
+(b) The condition assigns `1024` to `i` and always evaluates to `true`. Rewrite -
+
+
+```c++
+if (i == 1024)
+```
+
 ## Section 4.5 Increment and Decrement Operators
 
 ### Exercise 4.17
