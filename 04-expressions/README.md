@@ -498,7 +498,7 @@ The program won't compile, because `"high pass"` is a `const char *` while `(gra
 
 **Answer:**
 
-If `unsigned int` has 32 bits, the effect would be same. However, if `unsigned int` has only 16 bits, then `quiz1` would be unable to represent the pass/fail status of all 30 students. In such case, `bool status = quiz1 & (1UL << 27);` would always initialize `status` to `false`.
+If `unsigned int` has 32 bits, the effect would be same. However, if `unsigned int` has only 16 bits, then `quiz1` would be unable to represent the pass/fail status of all 30 students. In such case, for example, `quiz1 & (1UL << 27);` would always be `0`.
 
 ### Exercise 4.27
 
