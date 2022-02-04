@@ -304,13 +304,13 @@ pi = 0;
 
 **Answer:**
 
-(a) Note that `!=` has higher precedence than does `=`, so `if (p = getPtr() != 0)` is equivalent to `if (p = (getPtr() != 0))`. Rewrite -
+(a) `if (p = getPtr() != 0)` is equivalent to `if (p = (getPtr() != 0))` because `!=` has higher precedence than does `=`. Rewrite -
 
 ```c++
 if ((p = getPtr()) != 0)
 ```
 
-(b) The condition assigns `1024` to `i` and always evaluates to `true`. Rewrite -
+(b) The expression in the condition assigns `1024` to `i` and always evaluates to `true`. Rewrite -
 
 
 ```c++
