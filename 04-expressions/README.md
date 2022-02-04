@@ -143,13 +143,23 @@ Yes. On one hand, C++ is for performance. On the other hand, it is programmers' 
 
 **Answer:**
 
-- [`04-06.cpp`](04-06.cpp)
+```c++
+a % 2 == 0
+```
+
+The above expression yields `1` if `int` `a` is even, or `0` if `a` is odd.
 
 ### Exercise 4.7
 
 > What does overflow mean? Show three expressions that will overflow.
 
 **Answer:**
+
+An overflow happens when a value that is computed is out of range.
+
+```c++
+
+```
 
 ## Section 4.3 Logical and Relational Operators
 
