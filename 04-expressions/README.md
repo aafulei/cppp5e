@@ -208,7 +208,12 @@ The condition tests that `cp` points to something (i.e. not a null pointer) and 
 
 **Answer:**
 
-- [`04-10.cpp`](04-10.cpp)
+```c++
+int num;
+while (std::cin >> num && num != 42) {
+  // ...
+}
+```
 
 ### Exercise 4.11
 
