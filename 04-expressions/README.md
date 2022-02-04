@@ -427,6 +427,19 @@ The loop would print out the elements that are 1 element next to what should be 
 
 **Answer:**
 
+Line 2 is equivalent to
+
+```c++
+string pl = (s + s[s.size() - 1]) == 's' ? "" : "s";
+```
+
+but equality operator `==` is not defined between `std::string` and `char`. Fix -
+
+```c++
+string s = "word";
+string pl = s + (s[s.size() - 1] == 's' ? "" : "s");
+```
+
 ### Exercise 4.24
 
 > Our program that distinguished between high pass, pass, and fail depended on the fact that the conditional operator is right associative. Describe how that operator would be evaluated if the operator were left associative.
