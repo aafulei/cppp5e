@@ -233,7 +233,7 @@ a > b && b > c && c > d
 
 `i != j < k` is equivalent to `i != (j < k)`. The subexpression `(j < k)`  evaluates to `1` if `j < k` or `0` if `j >= k`. Then the expression will compare `i` with the result, yielding `1` if the values are unequal, or `0` if the values are equal.
 
-*^ note that `<` is higher than `!=` in precedence.*
+*^ note that `<` is higher than `!=` in precedence*
 
 ## Section 4.4 Assignment Operators
 
@@ -310,7 +310,7 @@ pi = 0;
 if ((p = getPtr()) != 0)
 ```
 
-*^ note that `!=` is higher than `=` in precedence.*
+*^ note that `!=` is higher than `=` in precedence*
 
 (b) The expression in the condition assigns `1024` to `i` and always evaluates to `true`. Rewrite -
 
