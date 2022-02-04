@@ -231,7 +231,9 @@ a > b && b > c && c > d
 
 **Answer:**
 
-Note that `<` is higher than `!=` in precedence. `i != j < k` is equivalent to `i != (j < k)`. The comparison `(j < k)` would evaluate to `1` if `j < k` or `0` if `j >= k`. Then the expression will compare `i` with the result, and yield `1` if the values are unequal, or `0` if the values are equal.
+`i != j < k` is equivalent to `i != (j < k)`. The comparison `(j < k)` would evaluate to `1` if `j < k` or `0` if `j >= k`. Then the expression will compare `i` with the result, and yield `1` if the values are unequal, or `0` if the values are equal.
+
+*^ note that `<` is higher than `!=` in precedence.*
 
 ## Section 4.4 Assignment Operators
 
