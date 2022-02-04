@@ -267,6 +267,10 @@ a > b && b > c && c > d
 
 **Answer:**
 
+- `if (42 = i)` is illegal because it tries to assign to `42` which is an *rvalue*
+
+- `if (i = 42)` evalutes to `true` because `i` is assigned `42` which is non-zero
+
 ### Exercise 4.15
 
 > The following assignment is illegal. Why? How would you correct it?
