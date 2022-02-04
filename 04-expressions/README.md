@@ -623,7 +623,7 @@ Note that `sizeof(x)` returns the size of the array, whereas `sizeof(p)` returns
 
 **Answer:**
 
-Postfix increment is only used when necessary, because it stores a copy of the old value before incrementing the variable, which might incur a little cost. However, in standalone expressions, `i++` has the same effect as `++i`, so there is no change to make.
+It is recommended to use postfix increment only when necessary, because it stores a copy of the old value before incrementing the variable, which might incur a little cost. However, in standalone expressions, `i++` has the same effect as `++i`, so there is no change to make.
 
 - [`04-31.cpp`](04-31.cpp)
 
@@ -641,7 +641,7 @@ Postfix increment is only used when necessary, because it stores a copy of the o
 
 **Answer:**
 
-The `for` loop iterates over an `int` array `ia` using both pointer `ptr` and index `ix`. *It is unnecessary to use both though. Either one will do the job.*
+The `for` loop iterates over an `int` array `ia` using both pointer `ptr` and index `ix`. *It is unnecessary to use both. Either one will do the job.*
 
 ### Exercise 4.33
 
