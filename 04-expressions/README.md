@@ -304,7 +304,7 @@ pi = 0;
 
 **Answer:**
 
-(a) `if (p = getPtr() != 0)` is equivalent to `if (p = (getPtr() != 0))`, which tests the pointer is not null and assigns either `1` or `0` to `p`. Rewrite -
+(a) `if (p = getPtr() != 0)` is equivalent to `if (p = (getPtr() != 0))`. Rewrite -
 
 ```c++
 if ((p = getPtr()) != 0)
