@@ -284,9 +284,7 @@ a > b && b > c && c > d
 
 **Answer:**
 
-The result of an assignment is its left-hand operand. In this case, it is illegal to assign the value of a pointer (`pi`) to an `int` (`ival`).
-
-Fix -
+The result of an assignment is its left-hand operand. In this case, it is illegal to assign the value of a pointer (`pi`) to an `int` (`ival`). Fix -
 
 ```c++
 double dval;
