@@ -204,13 +204,13 @@ The condition tests that `cp` points to something (i.e. not a null pointer) and 
 
 ### Exercise 4.10
 
-> Write the condition for a `while` loop that would read ints from the standard input and stop when the value read is equal to `42`.
+> Write the condition for a `while` loop that would read `int`s from the standard input and stop when the value read is equal to `42`.
 
 **Answer:**
 
 ```c++
-int num;
-while (std::cin >> num && num != 42) {
+int a;
+while (std::cin >> a && a != 42) {
   // ...
 }
 ```
@@ -221,13 +221,17 @@ while (std::cin >> num && num != 42) {
 
 **Answer:**
 
-- [`04-11.cpp`](04-11.cpp)
+```c++
+a > b && b > c && c > d
+```
 
 ### Exercise 4.12
 
 > Assuming `i`, `j`, and `k` are all `int`s, explain what `i != j < k` means.
 
 **Answer:**
+
+Note that `<` is higher than `!=` in precedence. `i != j < k` is equivalent to `i != (j < k)`. The comparison `(j < k)` would evaluate to `1` if `j < k` or `0` if `j >= k`. Then the expression will compare `i` with the result, and yield `1` if the values are unequal, or `0` if the values are equal.
 
 ## Section 4.4 Assignment Operators
 
