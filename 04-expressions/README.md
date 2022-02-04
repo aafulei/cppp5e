@@ -269,7 +269,7 @@ a > b && b > c && c > d
 
 - `if (42 = i)` is illegal because it tries to assign to `42` which is an *rvalue*
 
-- `if (i = 42)` evalutes to `true` because `42` is assigned to `i` which now has a nonzero value
+- `if (i = 42)` evaluates to `true` because `42` is assigned to `i` which now has a nonzero value
 
 ### Exercise 4.15
 
@@ -344,11 +344,11 @@ if (i == 1024)
 
 **Answer:**
 
-The loop would print out the elements that are 1 element next to what should be printed out. In particular, the loop might try to derefence one past the end of the `vector`, which has undefined behavior.
+The loop would print out the elements that are 1 element next to what should be printed out. In particular, the loop might try to deference one past the end of the `vector`, which has undefined behavior.
 
 ### Exercise 4.19
 
-> Given that ptr points to an `int`, that vec is a vector<`int`>, and that ival is an `int`, explain the behavior of each of these expressions. Which, if any, are likely to be incorrect? Why? How might each be corrected?
+> Given that ptr points to an `int`, that `vec` is a `vector<int>`, and that `ival` is an `int`, explain the behavior of each of these expressions. Which, if any, are likely to be incorrect? Why? How might each be corrected?
 >
 > (a) `ptr != 0 && *ptr++`
 >
@@ -357,6 +357,12 @@ The loop would print out the elements that are 1 element next to what should be 
 > (c) `vec[ival++] <= vec[ival]`
 
 **Answer:**
+
+(a) if `ptr` is not null, dereference the pointer and increment it by 1
+
+(b) increment `ival` by 1, and test that both its old and new values are not zero
+
+(c) because the order of evaluation is undefined, this expression has indeterministic behavior; should be `++ival, vec[ival - 1] < vec[ival]`
 
 ## Section 4.6 The Member Access Operators
 
