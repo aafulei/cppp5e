@@ -158,8 +158,16 @@ The above expression yields `1` if `int` `a` is even, or `0` if `a` is odd.
 An overflow happens when a value that is computed is out of range.
 
 ```c++
-
+// assume 16-bit short, 32-bit int
+short a = 32767;
+int b = 2147483647;
+signed char c = 127;
+a += 1;
+b += 1;
+c += 1;
 ```
+
+*^ note that unsigned numbers do not overflow.*
 
 ## Section 4.3 Logical and Relational Operators
 
