@@ -227,6 +227,10 @@ c += 1;
 
 **Answer:**
 
+(a) `i` is `3`, `d` is `3.0`
+
+(b) `i` is `3`, `d` is `3.5`
+
 ### Exercise 4.14
 
 > Explain what happens in each of the `if` tests:
