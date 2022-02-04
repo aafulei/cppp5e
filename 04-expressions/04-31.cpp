@@ -1,3 +1,4 @@
+// 22/02/04 = Fri
 // 21/12/25 = Sat
 // 18/02/03 = Sat
 
@@ -10,19 +11,8 @@
 // for(vector<int>::size_type ix = 0; ix != ivec.size(); ++ix, --cnt)
 //   ivec[ix] = cnt;
 
-// Answer: There is no difference between prefix and postfix increment in
-// standalone expression.
-
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 04-31-postfix.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 04-31-postfix.cpp && a
-
-=== Output ===
-10 9 8 7 6 5 4 3 2 1
-*/
+// Answer: There is no change to make. In standalone expressions, i++ has no
+// difference with ++i in effect.
 
 #include <iostream>
 #include <vector>
@@ -33,9 +23,8 @@ int main() {
   for (std::vector<int>::size_type ix = 0; ix != ivec.size(); ix++, cnt--) {
     ivec[ix] = cnt;
   }
-  for (auto i : ivec) {
-    std::cout << i << " ";
+  for (int i : ivec) {
+    std::cout << i << std::endl;
   }
-  std::cout << std::endl;
   return 0;
 }

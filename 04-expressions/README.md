@@ -331,6 +331,7 @@ if (i == 1024)
 | --------------------- | -------------------- | -------------------- |
 | **notation**          | `++i`                | `i++`                |
 | **effect on operand** | increment `i` by `1` | increment `i` by `1` |
+| **expression type**   | lvalue               | rvalue               |
 | **expression value**  | incremented `i`      | unincremented `i`    |
 
 ### Exercise 4.18
@@ -608,7 +609,6 @@ Note that `sizeof(x)` returns the size of the array, whereas `sizeof(p)` returns
 
 (d) `sizeof(f())`
 
-
 ## Section 4.10 Comma Operator
 
 ### Exercise 4.31
@@ -616,6 +616,8 @@ Note that `sizeof(x)` returns the size of the array, whereas `sizeof(p)` returns
 > The program in this section used the prefix increment and decrement operators. Explain why we used prefix and not postfix. What changes would have to be made to use the postfix versions? Rewrite the program using postfix operators.
 
 **Answer:**
+
+Postfix increment is only used when necessary, because it stores a copy of the old value before incrementing the variable, which might incur a little cost. However, in standalone expressions, `i++` has the same effect as `++i`, so there is no change to make.
 
 - [`04-31.cpp`](04-31.cpp)
 
