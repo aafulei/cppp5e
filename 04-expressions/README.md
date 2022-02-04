@@ -414,6 +414,8 @@ The loop would print out the elements that are 1 element next to what should be 
 
 **Answer:**
 
+The version with more `if` statements is easier to understand, because nested conditional operators heavily reduce readability.
+
 - [`04-22.cpp`](04-22.cpp)
 
 ### Exercise 4.23
@@ -443,8 +445,20 @@ string pl = s + (s[s.size() - 1] == 's' ? "" : "s");
 ### Exercise 4.24
 
 > Our program that distinguished between high pass, pass, and fail depended on the fact that the conditional operator is right associative. Describe how that operator would be evaluated if the operator were left associative.
+>
+> ```c++
+> final_grade = (grade > 90) ? "high pass" : (grade < 60) ? "fail" : "pass";
+> ```
 
 **Answer:**
+
+Were the operator left associative, the statement would be equivalent to
+
+```c++
+final_grade = ((grade > 90) ? "high pass" : (grade < 60)) ? "fail" : "pass";
+```
+
+The program won't compile, because `"high pass"` is a `const char *` while `(grade < 60)` yields a `bool`. The two operand types are different.
 
 ## Section 4.8 The Bitwise Operators
 

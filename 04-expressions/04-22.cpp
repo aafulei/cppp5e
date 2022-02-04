@@ -21,10 +21,10 @@
 #include <string>
 
 std::string getGrade1(int grade) {
-  return grade > 90    ? "high pass"
-         : grade > 75  ? "pass"
-         : grade >= 60 ? "low pass"
-                       : "fail";
+  return (grade > 90)   ? "high pass"
+         : (grade > 75) ? "pass"
+         : (grade < 60) ? "fail"
+                        : "low pass";
 }
 
 std::string getGrade2(int grade) {
@@ -32,10 +32,10 @@ std::string getGrade2(int grade) {
     return "high pass";
   } else if (grade > 75) {
     return "pass";
-  } else if (grade >= 60) {
-    return "low pass";
-  } else {
+  } else if (grade < 60) {
     return "fail";
+  } else {
+    return "low pass";
   }
 }
 
