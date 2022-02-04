@@ -4,42 +4,33 @@
 // Exercise 4.28: Write a program to print the size of each of the built-in
 // types.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 04-28-sizeof.cpp && ./a.out
+// Linux/macOS:
+// sizeof(bool) = 1
+// sizeof(char) = 1
+// sizeof(wchar_t) = 4
+// sizeof(char16_t) = 2
+// sizeof(char32_t) = 4
+// sizeof(short) = 2
+// sizeof(int) = 4
+// sizeof(long) = 8
+// sizeof(long long) = 8
+// sizeof(float) = 4
+// sizeof(double) = 8
+// sizeof(long double) = 16
 
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 04-28-sizeof.cpp && a
-
-=== Output ===
-(Linux/macOS)
-sizeof(bool) = 1
-sizeof(char) = 1
-sizeof(wchar_t) = 4
-sizeof(char16_t) = 2
-sizeof(char32_t) = 4
-sizeof(short) = 2
-sizeof(int) = 4
-sizeof(long) = 8
-sizeof(long long) = 8
-sizeof(float) = 4
-sizeof(double) = 8
-sizeof(long double) = 16
-
-(Windows)
-sizeof(bool) = 1
-sizeof(char) = 1
-sizeof(wchar_t) = 2
-sizeof(char16_t) = 2
-sizeof(char32_t) = 4
-sizeof(short) = 2
-sizeof(int) = 4
-sizeof(long) = 4
-sizeof(long long) = 8
-sizeof(float) = 4
-sizeof(double) = 8
-sizeof(long double) = 16
-*/
+// Windows:
+// sizeof(bool) = 1
+// sizeof(char) = 1
+// sizeof(wchar_t) = 2
+// sizeof(char16_t) = 2
+// sizeof(char32_t) = 4
+// sizeof(short) = 2
+// sizeof(int) = 4
+// sizeof(long) = 4
+// sizeof(long long) = 8
+// sizeof(float) = 4
+// sizeof(double) = 8
+// sizeof(long double) = 16
 
 #include <iostream>
 

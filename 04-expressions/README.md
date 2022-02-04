@@ -25,7 +25,7 @@
 - [Section 4.8 The Bitwise Operators](#section-48-the-bitwise-operators)
   - *Exercises* [`4.25`](#exercise-425) [`4.26`](#exercise-426) [`4.27`](#exercise-427)
 
-- [Section 4.9 The sizeof Operator](#section-49-the-sizeof-operator)
+- [Section 4.9 The `sizeof` Operator](#section-49-the-sizeof-operator)
   - *Exercises* [`4.28`](#exercise-428) [`4.29`](#exercise-429) [`4.30`](#exercise-430)
 
 - [Section 4.10 Comma Operator](#section-410-comma-operator)
@@ -547,6 +547,21 @@ If `unsigned int` has 32 bits, the effect would be same. However, if `unsigned i
 > Write a program to print the size of each of the built-in types.
 
 **Answer:**
+
+| `sizeof`      | Linux/macOS | Windows |
+| ------------- | ----------- | ------- |
+| `bool`        | 1           | 1       |
+| `char`        | 1           | 1       |
+| `wchar_t`     | 4           | 2       |
+| `char16_t`    | 2           | 2       |
+| `char32_t`    | 4           | 4       |
+| `short`       | 2           | 2       |
+| `int`         | 4           | 4       |
+| `long`        | 8           | 4       |
+| `long long`   | 8           | 8       |
+| `float`       | 4           | 4       |
+| `double`      | 8           | 8       |
+| `long double` | 16          | 16      |
 
 - [`04-28.cpp`](04-28.cpp)
 
