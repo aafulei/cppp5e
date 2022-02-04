@@ -730,6 +730,10 @@ After that, no matter what value `someValue` is, decrement `y` by 1, and return 
 
 **Answer:**
 
+```c++
+i *= static_cast<int>(d);
+```
+
 ### Exercise 4.37
 
 > Rewrite each of the following old-style casts to use a named cast:
