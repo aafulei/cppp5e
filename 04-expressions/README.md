@@ -430,7 +430,7 @@ The loop would print out the elements that are 1 element next to what should be 
 Line 2 is equivalent to
 
 ```c++
-string pl = (s + s[s.size() - 1]) == 's' ? "" : "s";
+string pl = ((s + s[s.size() - 1]) == 's') ? "" : "s";
 ```
 
 but equality operator `==` is not defined between `std::string` and `char`. Fix -
