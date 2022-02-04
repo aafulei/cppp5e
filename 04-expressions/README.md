@@ -483,7 +483,7 @@ The program won't compile, because `"high pass"` is a `const char *` while `(gra
 
 - [`04-25.cpp`](04-25.cpp)
 
-*^ note that promotion takes place before `~` operation*
+*^ note that integer promotion takes place before the `~` operation*
 
 ### Exercise 4.26
 
