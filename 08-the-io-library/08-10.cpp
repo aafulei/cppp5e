@@ -22,7 +22,8 @@ int main(int argc, char *argv[]) {
   for (std::string line; std::getline(ifs, line); /* empty */) {
     res.push_back(line);
   }
-  for (std::string word; const std::string &line : res) { // C++20
+  // C++20
+  for (std::string word; const std::string &line : res) {
     std::istringstream iss(line);
     while (iss >> word) {
       std::cout << word << ' ';
