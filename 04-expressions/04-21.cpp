@@ -21,10 +21,14 @@ void doubleOdd(std::vector<int> &vec) {
   }
 }
 
-int main() {
+void test() {
   std::vector<int> vec{8, 0, 9, 2, 4, 1, 3, 5};
   print(vec);
   doubleOdd(vec);
   print(vec);
+}
+
+int main() {
+  test();
   return 0;
 }
