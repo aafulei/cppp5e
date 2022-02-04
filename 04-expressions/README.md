@@ -269,7 +269,7 @@ a > b && b > c && c > d
 
 - `if (42 = i)` is illegal because it tries to assign to `42` which is an *rvalue*
 
-- `if (i = 42)` evalutes to `true` because `i` is assigned `42` which is non-zero
+- `if (i = 42)` evalutes to `true` because `42` is assigned to `i` which now has a nonzero value
 
 ### Exercise 4.15
 
@@ -283,6 +283,18 @@ a > b && b > c && c > d
 > ```
 
 **Answer:**
+
+The result of an assignment is its left-hand operand. In this case, it is illegal to assign the value of a pointer (`pi`) to an `int` (`ival`).
+
+Fix -
+
+```c++
+double dval;
+int ival;
+int *pi;
+dval = ival = 0;
+pi = 0;
+```
 
 ### Exercise 4.16
 
