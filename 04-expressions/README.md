@@ -773,5 +773,7 @@ i *= static_cast<int>(d);
 
 **Answer:**
 
+Do integral division of `j / i`, then explicitly convert the result from an `int` to a `double` and initialize `slope` with it.
+
 ## Section 4.12 Operator Precedence Table
 
