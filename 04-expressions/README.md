@@ -45,7 +45,12 @@
 
 **Answer:**
 
-`105`
+```
+  5 + 10 * 20 / 2
+= 5 + 200 / 2
+= 5 + 100
+= 105
+```
 
 ### Exercise 4.2
 
@@ -57,11 +62,17 @@
 
 **Answer:**
 
+(a) `*(((vec.begin)()))`
+
+(b) `(*(((vec.begin)()))) + 1`
+
 ### Exercise 4.3
 
 > Order of evaluation for most of the binary operators is left undefined to give the compiler opportunities for optimization. This strategy presents a trade-off between efficient code generation and potential pitfalls in the use of the language by the programmer. Do you consider that an acceptable trade-off? Why or why not?
 
 **Answer:**
+
+Yes. On one hand, C++ is for performance. On the other hand, it is programmers' responsibility to write clear code without ambiguity.
 
 ## Section 4.2 Arithmetic Operators
 
@@ -88,6 +99,43 @@
 > (d) `-30 / 3 * 21 % 4`
 
 **Answer:**
+
+(a)
+
+```
+  -30 * 3 + 21 / 5
+= -90 + 4
+= -86
+```
+
+(b)
+
+```
+  -30 + 3 * 21 / 5
+= -30 + 63 / 5
+= -30 + 12
+= -18
+```
+
+(c)
+
+```
+  30 / 3 * 21 % 5
+= 10 * 21 % 5
+= 210 % 5
+= 0
+```
+
+(d)
+
+```
+  -30 / 3 * 21 % 4
+= -10 * 21 % 4
+= -210 % 4
+= -2
+```
+
+*^ Note that in C/C++ the remainder has the same sign as the dividend. This is because the quotient is rounded towards zero.*
 
 ### Exercise 4.6
 
