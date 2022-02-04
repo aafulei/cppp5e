@@ -669,6 +669,13 @@ After that, no matter what value `someValue` is, decrement `y` by 1, and return 
 
 > Given the variable definitions in this section, explain what conversions take place in the following expressions:
 >
+> ```c++
+> char cval;
+> double dval;
+> float fval;
+> int ival;
+> ```
+>
 > (a) `if (fval)`
 >
 > (b) `dval = fval + ival;`
@@ -676,6 +683,12 @@ After that, no matter what value `someValue` is, decrement `y` by 1, and return 
 > (c) `dval + ival * cval;`
 
 **Answer:**
+
+(a) `fval` is converted to `bool`: to `false` if it has value 0, to `true` if otherwise
+
+(b) `ival` is converted to `float`, and then the sum is converted to `double`
+
+(c) `cval` is promoted to `int`, and then the product is converted to `double`
 
 ### Exercise 4.35
 
