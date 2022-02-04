@@ -336,8 +336,15 @@ if (i == 1024)
 ### Exercise 4.18
 
 > What would happen if the `while` loop on *page 148* that prints the elements from a vector used the prefix increment operator?
+>
+> ```c++
+> while (pbeg != v.end() && *pbeg >= 0)
+>   cout << *pbeg++ << endl;
+> ```
 
 **Answer:**
+
+The loop would print out the elements that are 1 element next to what should be printed out. In particular, the loop might try to derefence one past the end of the `vector`, which has undefined behavior.
 
 ### Exercise 4.19
 
