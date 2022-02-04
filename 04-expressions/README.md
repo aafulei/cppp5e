@@ -488,8 +488,14 @@ The program won't compile, because `"high pass"` is a `const char *` while `(gra
 ### Exercise 4.26
 
 > In our grading example in this section, what would happen if we used `unsigned int` as the type for `quiz1`?
+>
+> ```c++
+> unsigned long quiz1 = 0;
+> ```
 
 **Answer:**
+
+If `unsigned int` has 32 bits, the effect would be same. However, if `unsigned int` has only 16 bits, then `quiz1` would be unable to represent the pass/fail status of all 30 students. In such case, `bool status = quiz1 & (1UL << 27);` would always initialize `status` to `false`.
 
 ### Exercise 4.27
 
