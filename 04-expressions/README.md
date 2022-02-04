@@ -696,10 +696,33 @@ After that, no matter what value `someValue` is, decrement `y` by 1, and return 
 >
 > ```c++
 > char cval;
+> int ival;
+> unsigned int ui;
 > float fval;
+> double dval;
 > ```
+>
+> identify the implicit type conversions, if any, taking place:
+>
+> (a) `cval = 'a' + 3;`
+>
+> (b) `fval = ui - ival * 1.0;`
+>
+> (c) `dval = ui * fval;`
+>
+> (d) `cval = ival + fval + dval;`
 
 **Answer:**
+
+(a) first integral promotion of `'a'` from `char` to `int`, then conversion from `int` to `char`.
+
+(b) first `ival` is converted to `double`, then `ui` to `double`, finally in assignment the result to `float`.
+
+(c) first `ui` is converted to `float`, to preserve precision, then the result is converted to `double`.
+
+(d) first from `int` to `float`, then to `double`, finally to `char`.
+
+*^ note that `1.0` as a floating-point literal is a `double`; to have a literal of type `float`, use `1.0f`*
 
 ### Exercise 4.36
 
