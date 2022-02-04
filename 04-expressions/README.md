@@ -331,7 +331,7 @@ if (i == 1024)
 | --------------------- | -------------------- | -------------------- |
 | **notation**          | `++i`                | `i++`                |
 | **effect on operand** | increment `i` by `1` | increment `i` by `1` |
-| **expression type**   | lvalue               | rvalue               |
+| **expression type**   | *lvalue*             | *rvalue*             |
 | **expression value**  | incremented `i`      | unincremented `i`    |
 
 ### Exercise 4.18
@@ -614,6 +614,12 @@ Note that `sizeof(x)` returns the size of the array, whereas `sizeof(p)` returns
 ### Exercise 4.31
 
 > The program in this section used the prefix increment and decrement operators. Explain why we used prefix and not postfix. What changes would have to be made to use the postfix versions? Rewrite the program using postfix operators.
+>
+> ```c++
+> for (std::vector<int>::size_type ix = 0; ix != ivec.size(); ++ix, --cnt) {
+>   ivec[ix] = cnt;
+> }
+> ```
 
 **Answer:**
 
@@ -634,6 +640,8 @@ Postfix increment is only used when necessary, because it stores a copy of the o
 > ```
 
 **Answer:**
+
+The `for` loop iterates over an `int` array `ia` using both pointer `ptr` and index `ix`. *It is unnecessary to use both though. Either one will do the job.*
 
 ### Exercise 4.33
 
