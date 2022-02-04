@@ -468,6 +468,23 @@ The program won't compile, because `"high pass"` is a `const char *` while `(gra
 
 **Answer:**
 
+```
+  ~'q' << 6
+= ~(0000 0000 0000 0000 0000 0000 0111 0001) << 6
+=  (1111 1111 1111 1111 1111 1111 1000 1110) << 6
+=   1111 1111 1111 1111 1110 0011 1000 0000
+= (HEX) FF FF E3 80
+= -65536 + (14 * 16 + 3) * 256 + (8 * 16)
+= -(256 * 256 - 227 * 256 - 8 * 16)
+= -(29 * 16 * 16 - 8 * 16)
+= -(456 * 16)
+= -7296
+```
+
+- [`04-25.cpp`](04-25.cpp)
+
+*^ note that promotion takes place before `~` operation*
+
 ### Exercise 4.26
 
 > In our grading example in this section, what would happen if we used `unsigned int` as the type for `quiz1`?
@@ -492,7 +509,7 @@ The program won't compile, because `"high pass"` is a `const char *` while `(gra
 
 **Answer:**
 
-## Section 4.9 The sizeof Operator
+## Section 4.9 The `sizeof` Operator
 
 ### Exercise 4.28
 
