@@ -452,7 +452,7 @@ string pl = s + (s[s.size() - 1] == 's' ? "" : "s");
 
 **Answer:**
 
-If the `?:` operator were left associative, the statement would be equivalent to
+If the conditional operator `?:` were left associative, the statement would be equivalent to
 
 ```c++
 final_grade = ((grade > 90) ? "high pass" : (grade < 60)) ? "fail" : "pass";
