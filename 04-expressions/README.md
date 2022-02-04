@@ -135,7 +135,7 @@ Yes. On one hand, C++ is for performance. On the other hand, it is programmers' 
 = -2
 ```
 
-*^ Note that in C/C++ the remainder has the same sign as the dividend. This is because the quotient is rounded towards zero.*
+*^ note that in C/C++ the remainder has the same sign as the dividend. This is because the quotient is rounded towards zero.*
 
 ### Exercise 4.6
 
