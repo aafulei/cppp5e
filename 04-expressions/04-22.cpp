@@ -1,3 +1,4 @@
+// 22/02/04 = Fri
 // 21/12/25 = Sat
 // 18/02/03 = Sat
 
@@ -7,57 +8,53 @@
 // should use one or more if statements. Which version do you think is easier to
 // understand and why?
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 04-22-grades-conditional.cpp && \
-./a.out <../data/scores2.txt
+// Answer: The version with more if statements is easier to understand, because
+// nested conditional operators heavily reduce readability.
 
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 04-22-grades-conditional.cpp && ^
-a <..\data\scores2.txt
-
-=== Input ===
-42
-65
-95
-100
-39
-67
-95
-76
-88
-76
-83
-92
-76
-93
-
-=== Output ===
-fail
-low pass
-high pass
-high pass
-fail
-low pass
-high pass
-pass
-pass
-pass
-pass
-high pass
-pass
-high pass
-*/
+// Grading scheme:
+// 91-100   high pass
+// 76-90    pass
+// 60-75    low pass
+// 0-59     fail
 
 #include <iostream>
+#include <string>
+
+std::string getGrade1(int grade) {
+  return grade > 90    ? "high pass"
+         : grade > 75  ? "pass"
+         : grade >= 60 ? "low pass"
+                       : "fail";
+}
+
+std::string getGrade2(int grade) {
+  if (grade > 90) {
+    return "high pass";
+  } else if (grade > 75) {
+    return "pass";
+  } else if (grade >= 60) {
+    return "low pass";
+  } else {
+    return "fail";
+  }
+}
+
+void test() {
+  std::cout << 100 << '\t' << getGrade1(100) << std::endl;
+  std::cout << 100 << '\t' << getGrade2(100) << std::endl;
+  std::cout << 90 << '\t' << getGrade1(90) << std::endl;
+  std::cout << 90 << '\t' << getGrade2(90) << std::endl;
+  std::cout << 80 << '\t' << getGrade1(80) << std::endl;
+  std::cout << 80 << '\t' << getGrade2(80) << std::endl;
+  std::cout << 70 << '\t' << getGrade1(70) << std::endl;
+  std::cout << 70 << '\t' << getGrade2(70) << std::endl;
+  std::cout << 60 << '\t' << getGrade1(60) << std::endl;
+  std::cout << 60 << '\t' << getGrade2(60) << std::endl;
+  std::cout << 50 << '\t' << getGrade1(50) << std::endl;
+  std::cout << 50 << '\t' << getGrade2(50) << std::endl;
+}
 
 int main() {
-  for (int grade; std::cin >> grade; /* empty */) {
-    std::cout << (grade >= 90   ? "high pass"
-                  : grade > 75  ? "pass"
-                  : grade >= 60 ? "low pass"
-                                : "fail")
-              << std::endl;
-  }
+  test();
   return 0;
 }
