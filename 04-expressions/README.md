@@ -570,10 +570,21 @@ If `unsigned int` has 32 bits, the effect would be same. However, if `unsigned i
 > Predict the output of the following code and explain your reasoning. Now run the program. Is the output what you expected? If not, figure out why.
 >
 > ```c++
-> int x[10];
+> int x[10]; int *p = x;
+> cout << sizeof(x)/sizeof(*x) << endl;
+> cout << sizeof(p)/sizeof(*p) << endl;
 > ```
 
 **Answer:**
+
+```
+10
+2
+```
+
+Note that `sizeof(x)` returns the size of the array, whereas `sizeof(p)` returns the size of the pointer.
+
+- [`04-29.cpp`](04-29.cpp)
 
 ### Exercise 4.30
 
@@ -588,6 +599,15 @@ If `unsigned int` has 32 bits, the effect would be same. However, if `unsigned i
 > (d) `sizeof f()`
 
 **Answer:**
+
+(a) `(sizeof x) + y`
+
+(b) `sizeof((p->mem)[i])`
+
+(c) `sizeof(a) < b`
+
+(d) `sizeof(f())`
+
 
 ## Section 4.10 Comma Operator
 
