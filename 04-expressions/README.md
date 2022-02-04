@@ -370,13 +370,13 @@ The loop would print out the elements that are 1 element next to what should be 
 
 ### Exercise 4.20
 
-> Assuming that iter is a vector<string>::iterator, indicate which, if any, of the following expressions are legal. Explain the behavior of the legal expressions and why those that aren't legal are in error.
+> Assuming that `iter` is a `vector<string>::iterator`, indicate which, if any, of the following expressions are legal. Explain the behavior of the legal expressions and why those that aren't legal are in error.
 >
 > (a) `*iter++;`
 >
 > (b) `(*iter)++;`
 >
-> (c) `*iter.empty()`
+> (c) `*iter.empty();`
 >
 > (d) `iter->empty();`
 >
@@ -385,6 +385,18 @@ The loop would print out the elements that are 1 element next to what should be 
 > (f) `iter++->empty();`
 
 **Answer:**
+
+(a) Legal - access the element and increment the iterator by 1
+
+(b) Legal - the same as (a)
+
+(c) Illegal - `empty()` is not defined for `vector<string>::iterator`
+
+(d) Legal - test if the `string` element is empty
+
+(e) Illegal - prefix increment operator `++` is not defined for `string`
+
+(f) Legal - increment the iterator by 1, test if the original unincremented `string` element is empty
 
 ## Section 4.7 The Conditional Operator
 
