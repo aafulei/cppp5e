@@ -634,8 +634,8 @@ It is recommended to use postfix increment only when necessary, because it store
 > ```c++
 > constexpr int size = 5;
 > int ia[size] = {1, 2, 3, 4, 5};
-> for (int *ptr = ia, ix = 0; ix != size && ptr != ia + size;
->      ++ix, ++ptr) { /* ... */
+> for (int *ptr = ia, ix = 0; ix != size && ptr != ia + size; ++ix, ++ptr) {
+>   /* ... */
 > }
 > ```
 
@@ -645,9 +645,25 @@ The `for` loop iterates over an `int` array `ia` using both pointer `ptr` and in
 
 ### Exercise 4.33
 
-> Using Table 4.12 (p. 166) explain what the following expression does: someValue ? ++x, ++y : --x, --y
+> Using Table 4.12 (p. 166) explain what the following expression does:
+>
+> ```c++
+> someValue ? ++x, ++y : --x, --y
+> ```
 
 **Answer:**
+
+The expression is equivalent to
+
+```c++
+(someValue ? ++x, ++y : --x), --y
+```
+
+If `someValue` is `true`, then increment `x` and `y` each by 1.
+
+If `someValue` is `false`, then decrement `x` by 1.
+
+No matter what value `someValue` is,  decrement `y` by 1, and return `y` as the expression value.
 
 ## Section 4.11 Type Conversions
 
