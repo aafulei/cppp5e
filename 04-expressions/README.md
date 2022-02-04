@@ -177,19 +177,17 @@ c += 1;
 
 **Answer:**
 
-Short-circuit evaluation for logical AND and OR.
-
 - `a && b`
 
-`b` is evaluated only if `a` has been evaluated to `true`.
+  `b` is evaluated only if `a` has been evaluated to `true`.
 
 - `a || b`
 
-`b` is evaluated only if `a` has been evaluated to `false`.
+  `b` is evaluated only if `a` has been evaluated to `false`.
 
 - `a == b`
 
-Both `a` and `b` will be evaluated. Which one will be evaluated first is undefined.
+  Both `a` and `b` will be evaluated. Which one will be evaluated first is undefined.
 
 ### Exercise 4.9
 
@@ -202,9 +200,7 @@ Both `a` and `b` will be evaluated. Which one will be evaluated first is undefin
 
 **Answer:**
 
-The condition tests that `cp` points to something (i.e. not a null pointer) and that the C-style string it points is non-empty (i.e. not starting with a null character `\0`).
-
-In this case, the condition evaluates to `true`, because `cp` points to a non-empty C-style string `"Hello World"`.
+The condition tests that `cp` points to something (i.e. not a null pointer) and that the C-style string it points is not empty (i.e. not starting with a null character `\0`). In this case, the condition evaluates to `true`, because `cp` points to a non-empty C-style string `"Hello World"`.
 
 ### Exercise 4.10
 
