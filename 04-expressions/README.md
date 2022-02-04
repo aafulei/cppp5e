@@ -659,11 +659,9 @@ The expression is equivalent to
 (someValue ? ++x, ++y : --x), --y
 ```
 
-If `someValue` is `true`, then increment `x` and `y` each by 1.
+If `someValue` is `true`, then increment `x` and `y` each by 1. If `someValue` is `false`, then decrement `x` by 1.
 
-If `someValue` is `false`, then decrement `x` by 1.
-
-No matter what value `someValue` is,  decrement `y` by 1, and return `y` as the expression value.
+After that, no matter what value `someValue` is, decrement `y` by 1, and return `y` as the expression value.
 
 ## Section 4.11 Type Conversions
 
