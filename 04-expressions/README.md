@@ -327,11 +327,11 @@ if (i == 1024)
 
 **Answer:**
 
-|                  | prefix increment     | postfix increment    |
-| ---------------- | -------------------- | -------------------- |
-| notation         | `++i`                | `i++`                |
-| effect on `i`    | increment `i` by `1` | increment `i` by `1` |
-| expression value | incremented `i`      | unincremented `i`    |
+|                       | prefix increment     | postfix increment    |
+| --------------------- | -------------------- | -------------------- |
+| **notation**          | `++i`                | `i++`                |
+| **effect on operand** | increment `i` by `1` | increment `i` by `1` |
+| **expression value**  | incremented `i`      | unincremented `i`    |
 
 ### Exercise 4.18
 
