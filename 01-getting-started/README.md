@@ -138,7 +138,7 @@ std::cout << /*  "*/" /* "/*"  */;  // legal: (space)/*(space)
 
 ### Exercise 1.9
 
-> Write a program that uses a `while` to sum the numbers from `50` to `100`.
+> Write a program that uses a `while` to sum the numbers from 50 to 100.
 
 **Answer:**
 
@@ -146,7 +146,7 @@ std::cout << /*  "*/" /* "/*"  */;  // legal: (space)/*(space)
 
 ### Exercise 1.10
 
-> In addition to the `++` operator that adds `1` to its operand, there is a decrement operator (`--`) that subtracts `1`. Use the decrement operator to write a `while` that prints the numbers from ten down to zero.
+> In addition to the `++` operator that adds 1 to its operand, there is a decrement operator (`--`) that subtracts 1. Use the decrement operator to write a `while` that prints the numbers from ten down to zero.
 
 **Answer:**
 
