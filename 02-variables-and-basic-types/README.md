@@ -648,10 +648,10 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 
 **Answer:**
 
-- Integer `v2` has top-level const
-- Pointer `p2` has low-level const
-- Pointer `p3` has both top-level const and low-level const
-- Reference `r2` has low-level const
+- Integer `v2` has top-level `const`
+- Pointer `p2` has low-level `const`
+- Pointer `p3` has both top-level `const` and low-level `const`
+- Reference `r2` has low-level `const`
 
 *^ top-level `const` is the constness on itself; low-level `const` is the constness on the object that it refers/points to*
 
