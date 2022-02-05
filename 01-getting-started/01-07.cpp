@@ -7,10 +7,6 @@
 
 // clang-format off
 int main() {
-  /* This program won't compile, because it
-   * has /* incorrectly nested comments. */
-   * Now this line is taken as code instead
-   * of a comment.
-   */
+  /* This program won't compile. It has /*incorrectly*/ nested comments. */
   return 0;
 }
