@@ -4,18 +4,9 @@
 // Exercise 2.18: Write code to change the value of a pointer. Write code to
 // change the value to which the pointer points.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-18-pointer.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-18-pointer.cpp && a
-
-=== Output ===
-i = 3, p = 0
-i = 3, p = 0xc13ddffd18, *p = 3
-i = 4, p = 0xc13ddffd18, *p = 4
-*/
+// i = 3, p = 0
+// i = 3, p = 0xc13ddffd18, *p = 3
+// i = 4, p = 0xc13ddffd18, *p = 4
 
 #include <iostream>
 

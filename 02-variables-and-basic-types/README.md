@@ -259,6 +259,14 @@ double salary = 9999.99, wage = 9999.99;
 
 **Answer:**
 
+(a) definition, because it provides `ix` with an explicit initializer `= 1024`
+
+(b) definition, because by default a variable declaration is also a definition
+
+(c) declaration, because there is an `extern` keyword and there is not an explicit initializer
+
+*^ a definition is also a declaration. By identifying a "definition", we mean both. By identifying a "declaration", we mean a declaration but not a definition.*
+
 ### Exercise 2.12
 
 > Which, if any, of the following names are invalid?
@@ -275,6 +283,16 @@ double salary = 9999.99, wage = 9999.99;
 
 **Answer:**
 
+(a) invalid, as `double` is reserved keyword in C++
+
+(b) valid, as identifiers are allowed to begin with `_`
+
+(c) invalid, as `-` is not allowed in an identifier
+
+(d) invalid, as identifiers are not allowed to begin with a digit
+
+(e) valid, as identifiers are case-sensitive
+
 ### Exercise 2.13
 
 > What is the value of `j` in the following program?
@@ -289,6 +307,8 @@ double salary = 9999.99, wage = 9999.99;
 
 **Answer:**
 
+100
+
 ### Exercise 2.14
 
 > Is the following program legal? If so, what values are printed?
@@ -301,6 +321,8 @@ double salary = 9999.99, wage = 9999.99;
 > ```
 
 **Answer:**
+
+Yes. `100 45`.
 
 ## Section 2.3 Compound Types
 
@@ -317,6 +339,14 @@ double salary = 9999.99, wage = 9999.99;
 > (d) `int &rval3;`
 
 **Answer:**
+
+(a) valid
+
+(b) invalid - cannot bind a plain reference (reference-to-non-const) to a literal
+
+(c) valid
+
+(d) invalid - reference must be initialized
 
 ### Exercise 2.16
 
@@ -337,6 +367,14 @@ double salary = 9999.99, wage = 9999.99;
 
 **Answer:**
 
+(a) valid - assign 3.14159 to `d`, which `r2` refers to
+
+(b) valid - assign value of `i`, which `r1` refers to, to `d`, which `r2` refers to
+
+(c) valid - assign value of `d`, which `r2` refers to, to `i`
+
+(d) valid - assign value of `d` to `i`, which `r1` refers to
+
 ### Exercise 2.17
 
 > What does the following code print?
@@ -349,6 +387,8 @@ double salary = 9999.99, wage = 9999.99;
 > ```
 
 **Answer:**
+
+`10 10`
 
 ### Exercise 2.18
 
@@ -364,6 +404,12 @@ double salary = 9999.99, wage = 9999.99;
 
 **Answer:**
 
+| Pointer                         | Reference                           |
+| ------------------------------- | ----------------------------------- |
+| an object by itself             | not an object, just an alias        |
+| need not be initialized         | must be initialized                 |
+| can point to different objects  | cannot rebind to a different object |
+
 ### Exercise 2.20
 
 > What does the following program do?
@@ -375,6 +421,8 @@ double salary = 9999.99, wage = 9999.99;
 > ```
 
 **Answer:**
+
+Assign to integer `i`, via pointer `*p1`, the value of itself getting squared, which is `42 x 42 = 1764`.
 
 ### Exercise 2.21
 
