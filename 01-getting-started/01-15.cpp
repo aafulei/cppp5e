@@ -5,7 +5,7 @@
 // box on page 16. Familiarize yourself with the messages the compiler
 // generates.
 
-// Note: This program won't compile.
+// Note: Copied from the textbook. This program won't compile.
 
 // clang-format off
 #include <iostream>

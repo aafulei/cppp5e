@@ -4,7 +4,7 @@
 // Exercise 1.25: Using the Sales_item.h header from the Web site, compile and
 // execute the bookstore program presented in this section.
 
-// Copied from the book
+// Copied from the textbook
 
 #include "Sales_item.h"
 #include <iostream>
