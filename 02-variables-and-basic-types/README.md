@@ -653,7 +653,7 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 - Pointer `p3` has both top-level `const` and low-level `const`
 - Reference `r2` has low-level `const`
 
-*^ top-level `const` is the constness on itself. Low-level `const` is the constness on the object that it refers/points to*
+*^ top-level `const` is the constness on itself. Low-level `const` is the constness on the object that it refers/points to.*
 
 ### Exercise 2.31
 
