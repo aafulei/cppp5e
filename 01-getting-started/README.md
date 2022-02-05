@@ -30,7 +30,7 @@
 
 **Answer:**
 
-For GNU compiler `g++` or Clang/LLVM compiler `clang++`
+For the GNU compiler `g++` or the Clang/LLVM compiler `clang++`
 
 | System       | Executable File Extension  | How to Run          |
 | ------------ | -------------------------- | ------------------- |
