@@ -56,7 +56,7 @@ For the GNU compiler `g++` or the Clang/LLVM compiler `clang++`
 
 ### Exercise 1.3
 
-> Write a program to print `Hello, World` on the standard output.
+> Write a program to print *Hello, World* on the standard output.
 
 **Answer:**
 
