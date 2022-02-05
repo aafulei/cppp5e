@@ -23,25 +23,6 @@
 // a = 42; b = 42; c = 42;
 // d = 42; e = 42; g = 42;
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-34-auto.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-34-auto.cpp && a
-
-=== Output ===
-a = 0
-a = 42
-b = 0
-b = 42
-c = 0
-c = 42
-d = 0x26b9fffa98, *d = 0
-e = 0x26b9fffa88, *e = 0
-g = 0
-*/
-
 #include <iostream>
 
 int main() {

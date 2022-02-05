@@ -9,20 +9,6 @@
 // ++c;
 // ++d;
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-36-decltype.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-36-decltype.cpp && a
-
-=== Output ===
-a = 4
-b = 4
-c = 4
-d = 4
-*/
-
 // Answer:
 //
 // | Variable | Type  | Finishing Value |

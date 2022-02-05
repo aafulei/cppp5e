@@ -9,23 +9,6 @@
 // decltype(a) c = a;
 // decltype(a = b) d = a;
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-37-decltype.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-37-decltype.cpp && a
-
-=== Compiler Warning ===
-warning: expression with side effects has no effect in an unevaluated context
-
-=== Output ===
-a = 3
-b = 4
-c = 3
-d = 3
-*/
-
 // Answer:
 //
 // | Variable | Type    | Finishing Value |

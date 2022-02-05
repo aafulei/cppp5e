@@ -667,6 +667,16 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 
 **Answer:**
 
+`r1 = v2;` is legal, because `v2` has top-level const and can be ignored in assignment
+
+`p1 = p2;` is illegal, because `p2` has low-level const and cannot be in assignment
+
+`p2 = p1;` is legal, because we can assign a pointer-to-non-const to a pointer-to-const
+
+`p1 = p3;` is illegal, because `p3` has low-level const and cannot be ignored in assignment
+
+`p2 = p3;` is legal, because both `p2` and `p3` have low-level const
+
 ### Exercise 2.32
 
 > Is the following code legal or not? If not, how might you make it legal?
@@ -677,6 +687,12 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 
 **Answer:**
 
+Illegal - cannot initialize pointer `p` with an `int`, even if that `int` has value 0. Fix -
+
+```c++
+int null = 0, *p = 0;
+```
+
 ## Section 2.5 Dealing with Types
 
 ### Exercise 2.33
@@ -684,11 +700,34 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 > Using the variable definitions from this section, determine what happens in each of these assignments:
 >
 > ```c++
-> a = 42;
-> d = 42;
+> int i = 0, &r = i;
+> auto a = r;
+> const int ci = i, &cr = ci;
+> auto b = ci;
+> auto c = cr;
+> auto d = &i;
+> auto e = &ci;
+> const auto f = ci;
+> auto &g = ci;
+> ```
+>
+> ```c++
+> a = 42; b = 42; c = 42; d = 42; e = 42; g = 42;
 > ```
 
 **Answer:**
+
+- `a = 42;` assigns 42 to `a`, which is an `int`
+
+- `b = 42;` assigns 42 to `b`, which is an `int`
+
+- `c = 42;` assigns 42 to `c`, which is an `int`
+
+- `d = 42;` is invalid because `d` is an `int *`
+
+- `e = 42;` is invalid because `e` is a `const int *`
+
+- `g = 42;` is invalid because `g`, which is a `const int &`, has low-level `const` that promises not to change the object that it refers to
 
 ### Exercise 2.34
 
@@ -712,6 +751,15 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 
 **Answer:**
 
+| Variable | Type          |
+| -------- | ------------- |
+| `i`      | `const int`   |
+| `j`      | `int`         |
+| `k`      | `const int &` |
+| `p`      | `const int *` |
+| `j2`     | `const int`   |
+| `k2`     | `const int &` |
+
 ### Exercise 2.36
 
 > In the following code, determine the type of each variable and the value each variable has when the code finishes:
@@ -726,9 +774,19 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 
 **Answer:**
 
+| Variable | Type    | Finishing Value |
+| -------- | ------- | --------------- |
+| `a`      | `int`   | 4               |
+| `b`      | `int`   | 4               |
+| `c`      | `int`   | 4               |
+| `d`      | `int &` | 4               |
+
+- [`02-36.cpp`](02-36.cpp)
+
+
 ### Exercise 2.37
 
-> Assignment is an example of an expression that yields a reference type. The type is a reference to the type of the left-hand operand. That is, if i is an `int`, then the type of the expression `i = x` is `int &`. Using that knowledge, determine the type and value of each variable in this code:
+> Assignment is an example of an expression that yields a reference type. The type is a reference to the type of the left-hand operand. That is, if `i` is an `int`, then the type of the expression `i = x` is `int &`. Using that knowledge, determine the type and value of each variable in this code:
 >
 > ```c++
 > int a = 3, b = 4;
@@ -738,11 +796,88 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 
 **Answer:**
 
+| Variable | Type    | Finishing Value |
+| -------- | ------- | --------------- |
+| `a`      | `int`   | 3               |
+| `b`      | `int`   | 4               |
+| `c`      | `int`   | 3               |
+| `d`      | `int &` | 3               |
+
+- [`02-37.cpp`](02-37.cpp)
+
 ### Exercise 2.38
 
 > Describe the differences in type deduction between `decltype` and `auto`. Give an example of an expression where `auto` and `decltype` will deduce the same type and an example where they will deduce differing types.
 
 **Answer:**
+
+Both `auto` and `decltype` ask the compiler to use an expression to deduce the type for a variable. The differences are
+
+- `auto`
+
+  - If you want to use the expression for type deduction to initialize the variable, use `auto`
+
+    - e.g. `auto a = 3 * 4;`
+
+  - Top-level `const` in the initializer is ignored
+
+    - e.g. `const ci = 3; auto a = ci; // a is an int, not a const int`
+
+    - If you want a `const` type, require explicitly with `const auto`
+
+      - e.g. `const auto a = 3; // a is a const int`
+
+  - Reference in the initializer is ignored
+
+    - e.g. `int i = 3, &r = i; auto a = r; // a is an int, not an int &`
+
+    - If you want a reference type, require explicitly with `auto &`
+
+      - e.g. `int i = 3; auto &a = i; // a is an int & referring to i`
+
+      - However, when asking for a reference type, the top-level const in the initializer won't be ignored
+
+        - .e.g `const int ci = 3; auto &a = ci; // a is a const int &, not just an int &`
+
+- `decltype`
+
+  - If you don't want to use the expression to initialize the variable, use `decltype` -- and that expression won't be evaluated
+
+    - e.g. `int f(); decltype(f()) a = 3; // a is an int, f() won't be called`
+
+  - Top-level `const` is not ignored
+
+    - e.g. `const int ci = 3; decltype(ci) a = 4; // a is a const int`
+
+  - Reference is not ignored
+
+    - e.g. `int i = 3, &r = i; decltype(r) a = i; // a is an int &`
+
+  - For an expression which is not just a variable and which yields an lvalue, `decltype` returns a reference type
+
+    - e.g. `int i = 3, *p = &i; decltype(*p) a = i; // a is an int &, not just an int`
+
+    - The form of the expression matters - `decltype` a variable name wrapped in `()` yields a reference type
+
+      - e.g. `int i = 3; decltype(i) a = i; // a is an int`
+
+      - e.g. `int i = 3; decltype((i)) a = i; // a is an int &, not just an int`
+
+Example where `auto` and `decltype` deduce the same type:
+
+```c++
+int i = 3;
+auto a = i;         // a is an int
+decltype (i) b = i; // b is an int
+```
+
+Example where `auto` and `decltype` deduce different types:
+
+```c++
+int i = 3, *p = &i;
+auto a = *p;         // a is an int
+decltype(*p) b = *p; // b is an int & referring to i
+```
 
 ## Section 2.6 Defining Our Own Data Structures
 
@@ -751,8 +886,8 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 > Compile the following program to see what happens when you forget the semicolon after a class definition. Remember the message for future reference.
 >
 > ```c++
-> struct Foo { /* empty */
-> } // Note: no semicolon
+> struct Foo { /* empty */ } // Note: no semicolon
+>
 > int main()
 > {
 >   return 0;
@@ -761,11 +896,15 @@ No. What is stored in `p` is a memory address. It is impossible to tell, from th
 
 **Answer:**
 
+```
+(clang++) error: expected ';' after struct
+```
+
 - [`02-39.cpp`](02-39.cpp)
 
 ### Exercise 2.40
 
-> Write your own version of the Sales_data class.
+> Write your own version of the `Sales_data` class.
 
 **Answer:**
 
