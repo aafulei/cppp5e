@@ -910,17 +910,23 @@ decltype(*p) b = *p; // b is an int & referring to i
 
 - [`02-40.cpp`](02-40.cpp)
 
+*^ the class is named `SalesData` to follow a consistent naming convention*
+
 ### Exercise 2.41
 
-> Use your Sales_data class to rewrite the exercises in Section 1.5.1 (p. 22), Section 1.5.2 (p. 24), and Section 1.6 (p. 25). For now, you should define your Sales_data class in the same file as your main function.
+> Use your `Sales_data` class to rewrite the exercises in Section 1.5.1 (p. 22), Section 1.5.2 (p. 24), and Section 1.6 (p. 25). For now, you should define your `Sales_data` class in the same file as your `main` function.
 
 **Answer:**
 
+- [`02-41.cpp`](02-41.cpp)
+
 ### Exercise 2.42
 
-> Write your own version of the [`Sales_data.h`](Sales_data.h) header and use it to rewrite the exercise from Section 2.6.2 (p. 76).
+> Write your own version of the `Sales_data.h` header and use it to rewrite the exercise from Section 2.6.2 (p. 76).
 
 **Answer:**
 
 - [`02-42.cpp`](02-42.cpp)
+
+  - [`SalesData.h`](SalesData.h)
 
