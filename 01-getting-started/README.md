@@ -203,9 +203,9 @@ It sums integers from -100 to 100 inclusive. The final value of `sum` is 0.
 
 **Answer:**
 
-1. Syntax errors
-2. Type errors
-3. Declaration errors
+1. syntax errors
+2. type errors
+3. declaration errors
 
 - [`01-15.cpp`](01-15.cpp)
 
