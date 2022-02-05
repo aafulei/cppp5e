@@ -250,7 +250,9 @@ If the input values are all equal, upon end of file, the program will print that
 
 > Compile and run the program from this section giving it only equal values as input. Run it again giving it values in which no number is repeated.
 
-**Answer:** *See exercise [`1.17`](#exercise-117)*
+**Answer:**
+
+*See the answer to exercise [`1.17`](#exercise-117)*
 
 ### Exercise 1.19
 
