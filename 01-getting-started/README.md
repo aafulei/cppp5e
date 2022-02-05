@@ -52,6 +52,8 @@ For the GNU compiler `g++` or the Clang/LLVM compiler `clang++`
 
 - [`01-02.cpp`](01-02.cpp)
 
+*^ note: `EXIT_FAILURE`, an implementation-defined value in `<cstdlib>` has value `1` on my machine*
+
 ## Section 1.2 A First Look at Input/Output
 
 ### Exercise 1.3
