@@ -8,33 +8,6 @@
 
 // Note: This program is the same as the one in the textbook.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-17-count-numbers.cpp && \
-./a.out <../data/same-numbers.txt && ./a.out <../data/several-numbers.txt
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-17-count-numbers.cpp && ^
-a <..\data\same-numbers.txt && a <..\data\several-numbers.txt
-
-=== Input ===
-(same-numbers.txt)
-42 42 42
-
-(several-numbers.txt)
-12 34 56 78
-
-=== Output ===
-(same-numbers.txt)
-42 occurs 3 times
-
-(several-numbers.txt)
-12 occurs 1 times
-34 occurs 1 times
-56 occurs 1 times
-78 occurs 1 times
-*/
-
 #include <iostream>
 
 int main() {

@@ -5,25 +5,6 @@
 // Write a program that uses the multiplication operator, *, to print the
 // product instead.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra \
-01-04-multiplication-operator.cpp && ./a.out <../data/two-numbers.txt
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra ^
-01-04-multiplication-operator.cpp && a <..\data\two-numbers.txt
-
-=== Input ===
-(two-numbers.txt)
-3 5
-
-=== Output ===
-(two-numbers.txt)
-Enter two numbers:
-The product of 3 and 5 is 15
-*/
-
 #include <iostream>
 
 int main() {

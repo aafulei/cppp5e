@@ -6,19 +6,7 @@
 // Exercise 1.9: Write a program that uses a while to sum the numbers from 50 to
 // 100.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-13-sum-from-50-to-100.cpp && \
-./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-13-sum-from-50-to-100.cpp && a
-
-=== Output ===
-3825
-*/
-
-// Modified from 01-09-sum-from-50-to-100.cpp
+// Modified from 01-09.cpp
 
 #include <iostream>
 

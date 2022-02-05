@@ -5,13 +5,6 @@
 
 // Note: This program won't compile.
 
-/* === Compile ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-07-comments.cpp
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-07-comments.cpp */
-
 // clang-format off
 int main() {
   /* This program won't compile, because it

@@ -7,13 +7,6 @@
 
 // Note: This program won't compile.
 
-/* === Compile ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-15-errors.cpp
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-15-errors.cpp */
-
 // clang-format off
 #include <iostream>
 

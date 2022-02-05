@@ -12,13 +12,6 @@
 // After you’ve predicted what will happen, test your answers by compiling a
 // program with each of these statements. Correct any errors you encounter.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-08-comments.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-08-comments.cpp && a */
-
 // clang-format off
 #include <iostream>
 

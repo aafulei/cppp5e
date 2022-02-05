@@ -183,7 +183,7 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 **Answer:**
 
-- [`01-18.cpp`](01-18.cpp)
+- *See [`1.17`](#exercise-117)*
 
 ### Exercise 1.19
 
