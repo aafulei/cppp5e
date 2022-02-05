@@ -387,17 +387,17 @@ The loop would print out the elements that are 1 element next to what should be 
 
 **Answer:**
 
-(a) Legal - access the element and increment the iterator by 1
+(a) legal - access the element and increment the iterator by 1
 
-(b) Legal - the same as (a)
+(b) legal - the same as (a)
 
-(c) Illegal - `empty()` is not defined for `vector<string>::iterator`
+(c) illegal - `empty()` is not defined for `vector<string>::iterator`
 
-(d) Legal - test if the `string` element is empty
+(d) legal - test if the `string` element is empty
 
-(e) Illegal - prefix increment operator `++` is not defined for `string`
+(e) illegal - prefix increment operator `++` is not defined for `string`
 
-(f) Legal - increment the iterator by 1, test if the original unincremented `string` element is empty
+(f) legal - increment the iterator by 1, test if the original unincremented `string` element is empty
 
 ## Section 4.7 The Conditional Operator
 

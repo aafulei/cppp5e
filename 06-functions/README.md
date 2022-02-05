@@ -379,13 +379,13 @@ vector<int>::iterator change_val(int val, vector<int>::iterator it);
 
 **Answer:**
 
-(a) Illegal - mismatch between the declaration and the call. In the declaration, `calc()` takes only 1 parameter, but the call passes 2 arguments.
+(a) illegal - mismatch between the declaration and the call. In the declaration, `calc()` takes only 1 parameter, but the call passes 2 arguments.
 
-(b) Legal.
+(b) legal
 
-(c) Legal.
+(c) legal
 
-(d) Legal - note that there will be a narrowing conversion from `3.8` to `3`, since the last parameter of `sum()` is an `int`.
+(d) legal - note that there will be a narrowing conversion from `3.8` to `3`, since the last parameter of `sum()` is an `int`.
 
 ### Exercise 6.20
 
@@ -644,11 +644,11 @@ I prefer the `using` type declaration introduced in C++11. Modern and readable.
 
 **Answer:**
 
-(a) Illegal - top-level `const` is indistinguishable in function overloading.
+(a) illegal - top-level `const` is indistinguishable in function overloading.
 
-(b) Illegal - only differing in return types is insufficient for function overloading.
+(b) illegal - only differing in return types is insufficient for function overloading.
 
-(c) Legal - the second declaration overloads the `reset()` function: it takes a `double *` and returns a `double *`.
+(c) legal - the second declaration overloads the `reset()` function: it takes a `double *` and returns a `double *`.
 
 ## Section 6.5 Features for Specialized Uses
 
@@ -699,11 +699,11 @@ would be *legal*, because the default arguments for `wd` and `bckgrnd` have been
 
 **Answer:**
 
-(a) Illegal - no default argument for the first argument `ht`.
+(a) illegal - no default argument for the first argument `ht`.
 
-(b) Legal - calling `init()` function with `ht=24`, `wd=10` and `bckgrnd=' '`.
+(b) legal - calling `init()` function with `ht=24`, `wd=10` and `bckgrnd=' '`.
 
-(c) Legal, but unlikely to match the programmer's intent - calling `init()` function with `ht=14`, `wd=42` and `bckgrnd=' '`.
+(c) legal, but unlikely to match the programmer's intent - calling `init()` function with `ht=14`, `wd=42` and `bckgrnd=' '`.
 
 *^ `42` is the ASCII value for `'*'`*
 
