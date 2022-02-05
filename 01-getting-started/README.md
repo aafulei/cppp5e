@@ -313,7 +313,7 @@ If the input values are all equal, upon end of file, the program will print that
 
 ### Exercise 1.25
 
-> Using the [`Sales_item.h`](Sales_item.h) header from the Web site, compile and execute the bookstore program presented in this section.
+> Using the `Sales_item.h` header from the Web site, compile and execute the bookstore program presented in this section.
 
 **Answer:**
 
