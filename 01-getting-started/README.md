@@ -190,7 +190,7 @@ It sums integers from -100 to 100 inclusive. The final value of `sum` is 0.
 
 - `while` is the most basic form
   - when having no clue about the details, start with an *ugly* `while (1) { /* code */ }` and dress it with conditions later
-- `for` is compact, designed for certain patterns. It
+- `for`, as a compact form, is tailor-made for certain patterns. It
   - defines variables local to its scope,
   - separates increment for clarity, and
   - is best suited when the increment step is simple
