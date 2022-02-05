@@ -30,7 +30,7 @@
 
 **Answer:**
 
-For the Clang/LLVM compiler `clang++`
+For GNU compiler `g++` or Clang/LLVM compiler `clang++`
 
 | System       | Executable File Extension  | How to Run          |
 | ------------ | -------------------------- | ------------------- |
@@ -59,7 +59,9 @@ For the Clang/LLVM compiler `clang++`
 
 > Write a program to print `Hello, World` on the standard output.
 
-**Answer:** [`01-03.cpp`](01-03.cpp)
+**Answer:**
+
+- [`01-03.cpp`](01-03.cpp)
 
 ### Exercise 1.4
 
@@ -287,9 +289,7 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 > Test the previous program by giving multiple transactions representing multiple ISBN s. The records for each ISBN should be grouped together.
 
-**Answer:**
-
-*See exercise [`1.23`](#exercise-123)*
+**Answer:** *See exercise [`1.23`](#exercise-123)*
 
 ## Section 1.6 The Bookstore Program
 
