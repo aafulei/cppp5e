@@ -6,7 +6,7 @@
 // Exercise 1.17: What happens in the program presented in this section if the
 // input values are all equal? What if there are no duplicated values?
 
-// Note: This program is the same as the one in the textbook.
+// Copied from the book
 
 #include <iostream>
 

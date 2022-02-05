@@ -219,6 +219,26 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 ### Exercise 1.17
 
 > What happens in the program presented in this section if the input values are all equal? What if there are no duplicated values?
+>
+> ```c++
+> int main() {
+>   int currVal = 0, val = 0;
+>   if (std::cin >> currVal) {
+>     int cnt = 1;
+>     while (std::cin >> val) {
+>       if (val == currVal) {
+>         ++cnt;
+>       } else {
+>         std::cout << currVal << " occurs " << cnt << " times" << std::endl;
+>         currVal = val;
+>         cnt = 1;
+>       }
+>     }
+>     std::cout << currVal << " occurs " << cnt << " times" << std::endl;
+>   }
+>   return 0;
+> }
+> ```
 
 **Answer:**
 
@@ -247,7 +267,7 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 ### Exercise 1.20
 
-> http://www.informit.com/title/0321714113 contains a copy of [`Sales_item.h`](Sales_item.h) in the Chapter 1 code directory. Copy that file to your working directory. Use it to write a program that reads a set of book sales transactions, writing each transaction to the standard output.
+> http://www.informit.com/title/0321714113 contains a copy of `Sales_item.h` in the Chapter 1 code directory. Copy that file to your working directory. Use it to write a program that reads a set of book sales transactions, writing each transaction to the standard output.
 
 **Answer:**
 
