@@ -16,9 +16,8 @@
 #include <iostream>
 
 int main() {
-  std::cout << "/*";                  // legal
-  std::cout << "*/";                  // legal
-  // std::cout << /* "*/" */;         // illegal: won't compile if uncommented
-  std::cout << /*  "*/" /* "/*"  */;  // legal: print /**/ /*
-  return 0;
+  std::cout << "/*";                  // /*
+  std::cout << "*/";                  // */
+  // std::cout << /* "*/" */;         // illegal - won't compile if uncommented
+  std::cout << /*  "*/" /* "/*"  */;  // (space)/*(space)
 }

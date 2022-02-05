@@ -30,6 +30,13 @@
 
 **Answer:**
 
+For the Clang/LLVM compiler `clang++`
+
+| System       | Executable File Extension  | How to Run          |
+| ------------ | -------------------------- | ------------------- |
+| Linux/macOS  | no requirement             | `./a.out`           |
+| Windows      | `.exe`                     | `a.exe` or just `a` |
+
 - [`01-01.cpp`](01-01.cpp)
 
 ### Exercise 1.2
@@ -37,6 +44,12 @@
 > Change the program to return `-1`. A return value of `-1` is often treated as an indicator that the program failed. Recompile and rerun your program to see how your system treats a failure indicator from main.
 
 **Answer:**
+
+| Operating System | How to Obtain Exit Status | Result |
+| ---------------- | ------------------------- | ------ |
+| Linux/macOS      | `echo $?`                 | `255`  |
+| Windows          | `echo %ERRORLEVEL%`       | `-1`   |
+
 
 - [`01-02.cpp`](01-02.cpp)
 
@@ -80,6 +93,14 @@
 
 **Answer:**
 
+The program is illegal because `;` is only needed at the end of a statement. Fix -
+
+```c++
+std::cout << "The sum of " << v1
+          << " and " << v2
+          << " is " << v1 + v2 << std::endl;
+```
+
 ## Section 1.3 A Word about Comments
 
 ### Exercise 1.7
@@ -102,6 +123,17 @@
 > ```
 
 **Answer:**
+
+All the output statements except for the third one are legal.
+
+```c++
+std::cout << "/*";                  // legal
+std::cout << "*/";                  // legal
+std::cout << /* "*/" */;            // illegal
+std::cout << /*  "*/" /* "/*"  */;  // legal
+```
+
+- [`01-08.cpp`](01-08.cpp)
 
 ## Section 1.4 Flow of Control
 
@@ -155,11 +187,24 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 **Answer:**
 
+- `while` is the basic form to start with
+  - when you don't have any clue writing a loop, start with an ugly `while (1) { /* code */ }` and then improve on it
+- `for` is more compact, designed for certain patterns. It
+  - defines variables local to its scope,
+  - separates increment for clarity, and
+  - is best suited when
+    - the increment step is simple, and
+    - the number of iterations is known in advance
+
 ### Exercise 1.15
 
 > Write programs that contain the common errors discussed in the box on *page 16*. Familiarize yourself with the messages the compiler generates.
 
 **Answer:**
+
+1. Syntax errors
+2. Type errors
+3. Declaration errors
 
 - [`01-15.cpp`](01-15.cpp)
 
@@ -177,13 +222,18 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 **Answer:**
 
+- If the input values are all equal, upon end of file, the program will print that value occurs `N` times.
+- If there no duplicated values, each time a new value is read, or upon end of file, the program will print that the last value occurs 1 time(s).
+
+- [`01-17.cpp`](01-17.cpp)
+
 ### Exercise 1.18
 
 > Compile and run the program from this section giving it only equal values as input. Run it again giving it values in which no number is repeated.
 
 **Answer:**
 
-- *See [`1.17`](#exercise-117)*
+- *See [`01-17.cpp`](01-17.cpp)*
 
 ### Exercise 1.19
 
@@ -201,6 +251,10 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 **Answer:**
 
+- [`01-20.cpp`](01-20.cpp)
+
+  - [`Sales_item.h`](Sales_item.h)
+
 ### Exercise 1.21
 
 > Write a program that reads two `Sales_item` objects that have the same ISBN and produces their sum.
@@ -208,6 +262,8 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 **Answer:**
 
 - [`01-21.cpp`](01-21.cpp)
+
+  - [`Sales_item.h`](Sales_item.h)
 
 ### Exercise 1.22
 
@@ -217,6 +273,8 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 - [`01-22.cpp`](01-22.cpp)
 
+  - [`Sales_item.h`](Sales_item.h)
+
 ### Exercise 1.23
 
 > Write a program that reads several transactions and counts how many transactions occur for each ISBN .
@@ -225,11 +283,15 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 - [`01-23.cpp`](01-23.cpp)
 
+  - [`Sales_item.h`](Sales_item.h)
+
 ### Exercise 1.24
 
 > Test the previous program by giving multiple transactions representing multiple ISBN s. The records for each ISBN should be grouped together.
 
 **Answer:**
+
+*See exercise [`1.23`](#exercise-123)*
 
 ## Section 1.6 The Bookstore Program
 
@@ -239,3 +301,6 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 **Answer:**
 
+- [`01-25.cpp`](01-25.cpp)
+
+  - [`Sales_item.h`](Sales_item.h)
