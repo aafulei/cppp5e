@@ -28,7 +28,7 @@ int main() {
       }
       break;
     } catch (const std::runtime_error &e) {
-      std::cout << "Please enter again: ";
+      std::cout << "Can't divide by zero. Please Enter again: ";
     }
   }
   if (std::cin) {

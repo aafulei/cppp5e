@@ -12,7 +12,7 @@
 int main() {
   std::string s1, s2;
   do {
-    std::cout << "Please enter two strings: ";
+    std::cout << "Enter two strings: ";
     if (std::cin >> s1 >> s2) {
       if (s1 < s2) {
         std::cout << -1 << std::endl;

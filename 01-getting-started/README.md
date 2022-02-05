@@ -41,7 +41,7 @@ For the GNU compiler `g++` or the Clang/LLVM compiler `clang++`
 
 ### Exercise 1.2
 
-> Change the program to return `-1`. A return value of `-1` is often treated as an indicator that the program failed. Recompile and rerun your program to see how your system treats a failure indicator from main.
+> Change the program to return `-1`. A return value of `-1` is often treated as an indicator that the program failed. Recompile and rerun your program to see how your system treats a failure indicator from `main`.
 
 **Answer:**
 
@@ -49,7 +49,6 @@ For the GNU compiler `g++` or the Clang/LLVM compiler `clang++`
 | ---------------- | ------------------------- | ------ |
 | Linux/macOS      | `echo $?`                 | `255`  |
 | Windows          | `echo %ERRORLEVEL%`       | `-1`   |
-
 
 - [`01-02.cpp`](01-02.cpp)
 
