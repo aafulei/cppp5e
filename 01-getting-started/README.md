@@ -123,7 +123,7 @@ std::cout << "The sum of " << v1
 
 **Answer:**
 
-Line 1, 2, 4 are legal. Line 3 is illegal.
+All the statements are legal except for the third one.
 
 ```c++
 std::cout << "/*";                  // legal: /*
