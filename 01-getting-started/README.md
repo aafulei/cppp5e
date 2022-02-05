@@ -309,7 +309,9 @@ If the input values are all equal, upon end of file, the program will print that
 
 > Test the previous program by giving multiple transactions representing multiple ISBN s. The records for each ISBN should be grouped together.
 
-**Answer:** *See exercise [`1.23`](#exercise-123)*
+**Answer:**
+
+- *See exercise [`1.23`](#exercise-123)*
 
 ## Section 1.6 The Bookstore Program
 
