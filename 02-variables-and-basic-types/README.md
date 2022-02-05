@@ -429,12 +429,22 @@ Assign to integer `i`, via pointer `*p1`, the value of itself getting squared, w
 > Explain each of the following definitions. Indicate whether any are illegal and, if so, why.
 >
 > ```c++
-> int i = 0;
+> `int i = 0;`
 > ```
 >
 > (a) `double* dp = &i;`
+>
+> (b) `int *ip = i;`
+>
+> (c) `int *p = &i;`
 
 **Answer:**
+
+(a) illegal - mismatch between the pointer type and the object type that it points to
+
+(b) illegal - cannot initialize a pointer with an `int`, even if that `int` has value `0`
+
+(c) legal
 
 ### Exercise 2.22
 
@@ -447,29 +457,69 @@ Assign to integer `i`, via pointer `*p1`, the value of itself getting squared, w
 
 **Answer:**
 
+- `if (p)` checks if the pointer `p` is not a null pointer
+
+- `if (*p)` checks if the integer to which `*p` points is non-zero
+
 ### Exercise 2.23
 
 > Given a pointer p, can you determine whether p points to a valid object? If so, how? If not, why not?
 
 **Answer:**
 
+No. What is stored in `p` is a memory address. It is impossible to tell, from the memory address itself, that the pointer is valid or not.
+
 ### Exercise 2.24
 
 > Why is the initialization of `p` legal but that of `lp` illegal?
 >
 > ```c++
-> int i = 42;
+> int i = 42; void *p = &i; long *lp = &i;
 > ```
 
 **Answer:**
+
+`void *` is a special pointer. It may hold the address of any object. Apart from it, with two exceptions, pointer type and object type must match.
+
+*^ exceptions are*
+
+*1. a pointer-to-const may point to a non-const object*
+
+*2. a pointer to base type may point to an object of derived type*
 
 ### Exercise 2.25
 
 > Determine the types and values of each of the following variables.
 >
 > (a) `int* ip, i, &r = i;`
+>
+> (b) `int i, *ip = 0;`
+>
+> (c) `int* ip, ip2;`
 
 **Answer:**
+
+(a)
+
+| Variable | Type    | Value         |
+| -------- | ------- | ------------- |
+| `ip`     | `int *` | uninitialized |
+| `i`      | `int`   | uninitialized |
+| `r`      | `int &` | same as `i`   |
+
+(b)
+
+| Variable | Type    | Value         |
+| -------- | ------- | ------------- |
+| `i`      | `int`   | uninitialized |
+| `ip`     | `int *` | null pointer  |
+
+(c)
+
+| Variable | Type    | Value         |
+| -------- | ------- | ------------- |
+| `ip`     | `int *` | uninitialized |
+| `ip2`    | `int`   | uninitialized |
 
 ## Section 2.4 const Qualiﬁer
 
@@ -486,6 +536,14 @@ Assign to integer `i`, via pointer `*p1`, the value of itself getting squared, w
 > (d) `++cnt; ++sz;`
 
 **Answer:**
+
+(a) illegal - const objects must be initialized
+
+(b) legal
+
+(c) legal
+
+(d) illegal - cannot change value of `sz`, which is a const object
 
 ### Exercise 2.27
 
@@ -507,6 +565,20 @@ Assign to integer `i`, via pointer `*p1`, the value of itself getting squared, w
 
 **Answer:**
 
+(a) illegal - must bind reference `r` to an object
+
+(b) legal
+
+(c) legal - *note that `r` is a reference-to-const*
+
+(d) legal
+
+(e) legal
+
+(f) illegal - (1) references must be initialized (2) cannot qualify a reference with `const`
+
+(g) legal
+
 ### Exercise 2.28
 
 > Explain the following definitions. Identify any that are illegal.
@@ -522,6 +594,16 @@ Assign to integer `i`, via pointer `*p1`, the value of itself getting squared, w
 > (e) `const int *p;`
 
 **Answer:**
+
+(a)  `i` is an `int`. `cp` is a const pointer to `int`. Definition of `cp` is illegal because a const object must be initialized.
+
+(b) `p1` is a pointer to `int`. `p2` is a const pointer to `int`. Definition of `p2` is illegal because a const object must be initialized.
+
+(c) `ic` is a const `int`. `r` is a reference-to-const `int` bound to `ic`. Definition of `ic` is illegal because a const object must be initialized.
+
+(d) `p3` is a const pointer to const `int`. Definition of `p3` is illegal because a const object must be initialized.
+
+(e) `p` is a pointer-to-const `int`.
 
 ### Exercise 2.29
 
@@ -541,6 +623,18 @@ Assign to integer `i`, via pointer `*p1`, the value of itself getting squared, w
 
 **Answer:**
 
+(a) legal - top-level const can be ignored in assignment
+
+(b) illegal - low-level const cannot be ignored in assignment
+
+(c) illegal - trying to point to a const `int` using a pointer-to-non-const
+
+(d) illegal - `p3` is a const pointer, and thus cannot be assigned
+
+(e) illegal - `p2` is a const pointer, and thus cannot be assigned
+
+(f) illegal - `ic` is a const `int`, and thus cannot be assigned
+
 ### Exercise 2.30
 
 > For each of the following declarations indicate whether the object being declared has top-level or low-level `const`.
@@ -553,6 +647,13 @@ Assign to integer `i`, via pointer `*p1`, the value of itself getting squared, w
 > ```
 
 **Answer:**
+
+- Integer `v2` has top-level const
+- Pointer `p2` has low-level const
+- Pointer `p3` has both top-level const and low-level const
+- Reference `r2` has low-level const
+
+*^ top-level `const` is the constness on itself; low-level `const` is the constness on the object that it refers/points to*
 
 ### Exercise 2.31
 
