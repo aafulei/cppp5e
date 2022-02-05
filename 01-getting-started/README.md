@@ -52,7 +52,7 @@ For the GNU compiler `g++` or the Clang/LLVM compiler `clang++`
 
 - [`01-02.cpp`](01-02.cpp)
 
-*^ `EXIT_FAILURE`, an implementation-defined value defined in `<cstdlib>`, has value `1` (instead of `-1` or `255`) on my machine*
+*^ `EXIT_FAILURE`, an implementation-defined value defined in `<cstdlib>`, has value `1` on my machine*
 
 ## Section 1.2 A First Look at Input/Output
 
