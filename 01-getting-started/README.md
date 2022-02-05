@@ -126,10 +126,10 @@ std::cout << "The sum of " << v1
 Line 1, 2, 4 are legal. Line 3 is illegal.
 
 ```c++
-  std::cout << "/*";                  // legal: /*
-  std::cout << "*/";                  // legal: */
-  // std::cout << /* "*/" */;         // illegal: won't compile
-  std::cout << /*  "*/" /* "/*"  */;  // legal: (space)/*(space)
+std::cout << "/*";                  // legal: /*
+std::cout << "*/";                  // legal: */
+// std::cout << /* "*/" */;         // illegal: won't compile if uncommented
+std::cout << /*  "*/" /* "/*"  */;  // legal: (space)/*(space)
 ```
 
 - [`01-08.cpp`](01-08.cpp)

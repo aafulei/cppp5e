@@ -18,6 +18,6 @@
 int main() {
   std::cout << "/*";                  // legal: /*
   std::cout << "*/";                  // legal: */
-  // std::cout << /* "*/" */;         // illegal: won't compile
+  // std::cout << /* "*/" */;         // illegal: won't compile if uncommented
   std::cout << /*  "*/" /* "/*"  */;  // legal: (space)/*(space)
 }
