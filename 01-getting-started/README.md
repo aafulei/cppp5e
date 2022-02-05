@@ -188,14 +188,12 @@ It sums integers from -100 to 100 inclusive. The final value of `sum` is 0.
 
 **Answer:**
 
-- `while` is the basic form to start with
-  - when you don't have any clue writing a loop, start with an ugly `while (1) { /* code */ }` and then improve on it
-- `for` is more compact, designed for certain patterns. It
+- `while` is the most basic form
+  - when having no clue about the details, start with an *ugly* `while (1) { /* code */ }` and dress it with conditions later
+- `for` is compact, designed for certain patterns. It
   - defines variables local to its scope,
   - separates increment for clarity, and
-  - is best suited when
-    - the increment step is simple, and
-    - the number of iterations is known in advance
+  - is best suited when the increment step is simple
 
 ### Exercise 1.15
 
