@@ -252,7 +252,7 @@ If the input values are all equal, upon end of file, the program will print that
 
 **Answer:**
 
-*See the answer to exercise [`1.17`](#exercise-117)*
+- *See the answer to exercise [`1.17`](#exercise-117)*
 
 ### Exercise 1.19
 
