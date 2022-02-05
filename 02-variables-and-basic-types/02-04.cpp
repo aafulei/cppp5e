@@ -15,22 +15,6 @@
 // std::cout << i - u << std::endl;
 // std::cout << u - i << std::endl;
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-04-signed-unsigned.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-04-signed-unsigned.cpp && a
-
-=== Output ===
-32
-4294967264
-32
--32
-0
-0
-*/
-
 #include <iostream>
 
 int main() {

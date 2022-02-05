@@ -39,11 +39,21 @@
 
 **Answer:**
 
+Difference
+
+- between `int`, `long`, `long long`, and `short` - size
+
+- between `unsigned` and `signed` - signedness
+
+- between `float` and `double` - precision
+
 ### Exercise 2.2
 
 > To calculate a mortgage payment, what types would you use for the rate, principal, and payment? Explain why you selected each type.
 
 **Answer:**
+
+I would use `double`, because floating-point computations are involved, and `double` is the most widely used type. `float` might not have enough precision while `long double` has unnecessary computational cost.
 
 ### Exercise 2.3
 
@@ -61,6 +71,15 @@
 > ```
 
 **Answer:**
+
+```
+32          // unsigned
+4294967264  // unsigned
+32          // int
+-32         // int
+0           // unsigned
+0           // unsigned
+```
 
 ### Exercise 2.4
 
@@ -84,6 +103,43 @@
 
 **Answer:**
 
+- (a)
+
+| Literal | Literal Type      | Type               |
+| ------- | ----------------- | ------------------ |
+| `'a'`   | character literal | `char`             |
+| `L'a'`  | character literal | `wchar_t`          |
+| `"a"`   | string literal    | `const char[2]`    |
+| `L"a"`  | string literal    | `const wchar_t[2]` |
+
+- (b)
+
+| Literal | Notation     | Literal Type    | Type            |
+| ------- | ------------ | --------------- | --------------- |
+| `10`    | decimal      | integer literal | `int`           |
+| `10u`   | decimal      | integer literal | `unsigned`      |
+| `10L`   | decimal      | integer literal | `long`          |
+| `10uL`  | decimal      | integer literal | `unsigned long` |
+| `012`   | octal        | integer literal | `int`           |
+| `0xC`   | hexadecimal  | integer literal | `int`           |
+
+- (c)
+
+| Literal | Literal Type           | Type          |
+| ------- | ---------------------- | ------------- |
+| `3.14`  | floating-point literal | `double`      |
+| `3.14f` | floating-point literal | `float`       |
+| `3.14L` | floating-point literal | `long double` |
+
+- (d)
+
+| Literal | Literal Type           | Type          |
+| ------- | ---------------------- | ------------- |
+| `10`    | integer literal        | `int`         |
+| `10u`   | integer literal        | `unsigned`    |
+| `10.`   | floating-point literal | `double`      |
+| `10e-2` | floating-point literal | `double`      |
+
 ### Exercise 2.6
 
 > What, if any, are the differences between the following definitions:
@@ -94,6 +150,14 @@
 > ```
 
 **Answer:**
+
+For the integer literals,
+
+- `9` and `7` are decimals.
+
+- `09` is invalid because digit `9` is not allowed in octal notation.
+
+- `07` is an octal.
 
 ### Exercise 2.7
 
@@ -108,6 +172,13 @@
 > (d) `3.14L`
 
 **Answer:**
+
+| Literal                          | Literal Type           | Type             | Value                       |
+| -------------------------------- | ---------------------- | ---------------- | --------------------------- |
+| `"Who goes with F\145rgus?\012"` | string literal         | `const char[23]` | `"Who goes with Fergus?\n"` |
+| `3.14e1L`                        | floating-point literal | `long double`    | `31.4`                      |
+| `1024f`                          | floating-point literal | `float`          | `1024.0`                    |
+| `3.14L`                          | floating-point literal | `double`         | `3.14`                      |
 
 ### Exercise 2.8
 
@@ -133,6 +204,27 @@
 
 **Answer:**
 
+(a) illegal - a variable definition cannot be mixed with the statement that uses it
+
+```c++
+int input_value;
+std::cin >> input_value;
+```
+
+(b) illegal - list initialization does not allow narrowing conversion
+
+```c++
+int i = 3.14;
+```
+
+(c) illegal - commas are required to separate multiple variable definitions
+
+```c++
+double salary = 9999.99, wage = 9999.99;
+```
+
+(d) legal - define `i` as an `int` and initialize it with integer value `3`, which is truncated from `3.14`
+
 ### Exercise 2.10
 
 > What are the initial values, if any, of each of the following variables?
@@ -147,6 +239,13 @@
 > ```
 
 **Answer:**
+
+| Variable     | Initial Value               |
+| ------------ | --------------------------- |
+| `global_str` | empty `std::string`         |
+| `global_int` | `0`                         |
+| `local_int`  | indeterminate integer value |
+| `local_int`  | empty `std::string`         |
 
 ### Exercise 2.11
 
