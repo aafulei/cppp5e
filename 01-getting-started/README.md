@@ -172,7 +172,7 @@ std::cout << /*  "*/" /* "/*"  */;  // legal: (space)/*(space)
 
 **Answer:**
 
-It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`.
+It sums integers from -100 to 100 inclusive. The final value of `sum` is 0.
 
 ### Exercise 1.13
 
