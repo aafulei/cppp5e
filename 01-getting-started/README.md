@@ -242,9 +242,9 @@ It sums integers from `-100` to `100` inclusive. The final value of `sum` is `0`
 
 **Answer:**
 
-- If the input values are all equal, upon end of file, the program will print that value occurs `N` times.
-- If there no duplicated values, each time a new value is read, or upon end of file, the program will print that the last value occurs 1 time(s).
-  - [`01-17.cpp`](01-17.cpp)
+If the input values are all equal, upon end of file, the program will print that value occurs `N` times. If there no duplicated values, each time a new value is read, or upon end of file, the program will print that the last value occurs 1 time(s).
+
+- [`01-17.cpp`](01-17.cpp)
 
 ### Exercise 1.18
 
