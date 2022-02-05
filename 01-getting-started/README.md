@@ -59,9 +59,7 @@ For the Clang/LLVM compiler `clang++`
 
 > Write a program to print `Hello, World` on the standard output.
 
-**Answer:**
-
-- [`01-03.cpp`](01-03.cpp)
+**Answer:** [`01-03.cpp`](01-03.cpp)
 
 ### Exercise 1.4
 
