@@ -1,3 +1,10 @@
+# Coding Style
+
+- [Format](#format)
+- [Style](#style)
+- [Naming Convention](#naming-convention)
+
+
 ## Format
 
 We use `clang-format` with default options, which is the *LLVM* style. Four most noticeable styles are
@@ -74,6 +81,18 @@ for (int &elem : vec) {
 ```
 
 ## Naming Convention
+
+When we modify the existing code in the book, we inherit its names, no matter how bizarre it is. One such example is
+
+```c++
+struct Sales_data {
+  std::string bookNo;       // camelCase variable name
+  unsigned units_sold = 0;  // lowercase variable name with underscores
+  double revenue = 0.0;
+};
+```
+
+For the names that we newly define,
 
 ### Class / Struct Names
 
