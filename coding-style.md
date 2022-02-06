@@ -7,7 +7,7 @@
 
 ## Format
 
-We use `clang-format` with default options, which is the *LLVM* style. Four most noticeable styles are
+We use `clang-format` with default options, which is the *LLVM* style. Four most noticeable style controls are
 
 1. *line width at 80 characters*
 2. *identation with 2 spaces*
