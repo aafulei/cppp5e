@@ -72,7 +72,7 @@ int rewriteExercise_1_21() {
 }
 
 // assume multiple books have the same ISBN
-void rewriteExercise_1_22() {
+int rewriteExercise_1_22() {
   Sales_data data, sum;
   double price = 0;
   if (std::cin >> data.bookNo >> data.units_sold >> price) {
@@ -86,6 +86,7 @@ void rewriteExercise_1_22() {
   }
   std::cout << sum.bookNo << " " << sum.units_sold << " " << sum.revenue << " "
             << sum.revenue / sum.units_sold << std::endl;
+  return 0;
 }
 
 int rewriteExercise_1_23() {
@@ -156,6 +157,6 @@ int main() {
                "-D RE123 for rewrite of Exercise 1.23\n\t"
                "-D RE125 for rewrite of Exercise 1.25"
             << std::endl;
-#endif
   return 0;
+#endif
 }

@@ -50,45 +50,158 @@ using std::endl;
 using std::string;
 
 struct Sales_data {
-  string book_number;
-  unsigned units_sold;
-  double revenue;
+  string bookNo;
+  unsigned units_sold = 0;
+  double revenue = 0.0;
 };
 
-int main() {
-  Sales_data total;
+int rewriteExercise0109() {
+  int sum = 0, val = 50;
+  while (val <= 100) {
+    sum += val;
+    ++val;
+  }
+  cout << sum << endl;
+  return 0;
+}
+
+int rewriteExercise0110() {
+  int n = 10;
+  while (n >= 0) {
+    cout << n << endl;
+    --n;
+  }
+  return 0;
+}
+
+int rewriteExercise0111() {
+  cout << "Enter two numbers:" << endl;
+  int v1 = 0, v2 = 0;
+  cin >> v1 >> v2;
+  while (v1 <= v2) {
+    cout << v1 << endl;
+    ++v1;
+  }
+  return 0;
+}
+
+// assume two books have the same ISBN
+int rewriteExercise0121() {
+  Sales_data data1, data2;
   double price = 0;
-  if (cin >> total.book_number >> total.units_sold >> price) {
-    total.revenue = total.units_sold * price;
-    Sales_data trans;
-    while (cin >> trans.book_number >> trans.units_sold >> price) {
-      trans.revenue = trans.units_sold * price;
-      if (total.book_number == trans.book_number) {
-        total.units_sold += trans.units_sold;
-        total.revenue += trans.revenue;
-      } else {
-        cout << total.book_number << " " << total.units_sold << " "
-             << total.revenue << " ";
-        if (total.revenue != 0) {
-          cout << (total.revenue / total.units_sold) << endl;
-        } else {
-          cout << "(no sales)" << endl;
-        }
-        total = trans;
-        total.units_sold = total.units_sold;
-        total.revenue = total.revenue;
-      }
-    }
-    cout << total.book_number << " " << total.units_sold << " " << total.revenue
-         << " ";
-    if (total.revenue != 0) {
-      cout << (total.revenue / total.units_sold) << endl;
+  cin >> data1.bookNo >> data1.units_sold >> price;
+  data1.revenue = data1.units_sold * price;
+  cin >> data2.bookNo >> data2.units_sold >> price;
+  data2.revenue = data2.units_sold * price;
+  if (data1.bookNo == data2.bookNo) {
+    unsigned totalCnt = data1.units_sold + data2.units_sold;
+    double totalRevenue = data1.revenue + data2.revenue;
+    cout << data1.bookNo << " " << totalCnt << " " << totalRevenue << " ";
+    if (totalCnt != 0) {
+      cout << totalRevenue / totalCnt << endl;
     } else {
       cout << "(no sales)" << endl;
     }
+    return 0;
+  } else {
+    cerr << "Data must refer to the same ISBN" << endl;
+    return -1;
+  }
+}
+
+// assume multiple books have the same ISBN
+int rewriteExercise0122() {
+  Sales_data data, sum;
+  double price = 0;
+  if (cin >> data.bookNo >> data.units_sold >> price) {
+    data.revenue = data.units_sold * price;
+    sum = data;
+    while (cin >> data.bookNo >> data.units_sold >> price) {
+      data.revenue = data.units_sold * price;
+      sum.units_sold += data.units_sold;
+      sum.revenue += sum.revenue;
+    }
+  }
+  cout << sum.bookNo << " " << sum.units_sold << " " << sum.revenue << " "
+       << sum.revenue / sum.units_sold << endl;
+  return 0;
+}
+
+int rewriteExercise0123() {
+  Sales_data currVal, val;
+  double price = 0;
+  if (cin >> currVal.bookNo >> currVal.units_sold >> price) {
+    currVal.revenue = currVal.units_sold * price;
+    int cnt = 1;
+    while (cin >> val.bookNo >> val.units_sold >> price) {
+      val.revenue = val.units_sold * price;
+      if (val.bookNo == currVal.bookNo) {
+        ++cnt;
+      } else {
+        cout << currVal.bookNo << " occurs " << cnt << " times" << endl;
+        currVal = val;
+        cnt = 1;
+      }
+    }
+    cout << currVal.bookNo << " occurs " << cnt << " times" << endl;
+  }
+  return 0;
+}
+
+int rewriteExercise0125() {
+  Sales_data total;
+  double price = 0;
+  if (cin >> total.bookNo >> total.units_sold >> price) {
+    total.revenue = total.units_sold * price;
+    Sales_data trans;
+    while (cin >> trans.bookNo >> trans.units_sold >> price) {
+      trans.revenue = trans.units_sold * price;
+      if (total.bookNo == trans.bookNo) {
+        total.units_sold += trans.units_sold;
+        total.revenue += trans.revenue;
+      } else {
+        cout << total.bookNo << " " << total.units_sold << " " << total.revenue
+             << " " << total.revenue / total.units_sold << endl;
+        total = trans;
+      }
+    }
+    cout << total.bookNo << " " << total.units_sold << " " << total.revenue
+         << " " << total.revenue / total.units_sold << endl;
   } else {
     cerr << "No data?!" << endl;
     return -1;
   }
   return 0;
+}
+
+int main() {
+#ifdef RE0109
+  return rewriteExercise0109();
+#elif RE0110
+  return rewriteExercise0110();
+#elif RE0111
+  return rewriteExercise0111();
+#elif RE0120
+  return rewriteExercise0120();
+#elif RE0121
+  return rewriteExercise0121();
+#elif RE0122
+  return rewriteExercise0122();
+#elif RE0123
+  return rewriteExercise0123();
+#elif RE0125
+  return rewriteExercise0125();
+#else
+  cerr << "Compile options:\n\t"
+          "-DRE0109 for rewrite of Exercise 1.9\n\t"
+          "-DRE0110 for rewrite of Exercise 1.10\n\t"
+          "-DRE0111 for rewrite of Exercise 1.11\n\t"
+          "-DRE0120 for rewrite of Exercise 1.20\n\t"
+          "-DRE0121 for rewrite of Exercise 1.21\n\t"
+          "-DRE0122 for rewrite of Exercise 1.22\n\t"
+          "-DRE0123 for rewrite of Exercise 1.23\n\t"
+          "-DRE0125 for rewrite of Exercise 1.25"
+       << endl;
+  return 0;
+#endif
 }
