@@ -915,6 +915,8 @@ decltype(*p) b = *p; // b is an int & referring to i
 ### Exercise 2.41
 
 > Use your `Sales_data` class to rewrite the exercises in Section 1.5.1 (p. 22), Section 1.5.2 (p. 24), and Section 1.6 (p. 25). For now, you should define your `Sales_data` class in the same file as your `main` function.
+>
+> *^ i.e. exercises [`1.20`](../01-getting-started/README.md#exercise-120) [`1.21`](../01-getting-started/README.md#exercise-121) [`1.22`](../01-getting-started/README.md#exercise-122) [`1.23`](../01-getting-started/README.md#exercise-123) [`1.24`](../01-getting-started/README.md#exercise-124) [`1.25`](../01-getting-started/README.md#exercise-125)*
 
 **Answer:**
 
