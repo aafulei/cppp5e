@@ -43,46 +43,46 @@ We tend to be explicit. That is,
 
 1. always prefix with namespaces
 
-For example,
+  For example,
 
-```c++
-int main() {
-  std::cout << "Hello, World!" << std::endl;
-  return 0;
-}
-```
+  ```c++
+  int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+  }
+  ```
 
 2. always use curly braces `if`, `else`, `while` and `for` statements
 
-For example,
+  For example,
 
-```c++
-void visit(TreeNode *node) {
-  if (!node) {
-    return;
+  ```c++
+  void visit(TreeNode *node) {
+    if (!node) {
+      return;
+    }
+    // ...
   }
-  // ...
-}
-```
+  ```
 
 3. never use `auto` when possible
 
-For example,
+  For example,
 
-```c++
-for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.end();
-  ++it) {
-  // ...
-}
+  ```c++
+  for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.end();
+    ++it) {
+    // ...
+  }
 
-for (int &elem : vec) {
-  ++elem;
-}
-```
+  for (int &elem : vec) {
+    ++elem;
+  }
+  ```
 
 ## Naming Convention
 
-When we modify the existing code in the book, we inherit its names, no matter how bizarre it is. One such example is
+When we modify the existing code in the book, we inherit its names, no matter how strange-looking it is. One such example is
 
 ```c++
 struct Sales_data {
@@ -92,7 +92,7 @@ struct Sales_data {
 };
 ```
 
-For the names that we newly define,
+Otherwise,
 
 ### Class / Struct Names
 
