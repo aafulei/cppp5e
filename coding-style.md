@@ -64,7 +64,7 @@ void visit(TreeNode *node) {
 3. *never use `auto` when possible.* For example, we prefer
 
 ```c++
-int a = 0;
+unsigned long long a = 0ULL;
 
 for (int &elem : vec) {
   // ...
@@ -79,7 +79,7 @@ for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.cend();
 to
 
 ```c++
-auto a = 0;
+auto a = 0ULL;
 
 for (auto &elem : vec) {
   // ...
