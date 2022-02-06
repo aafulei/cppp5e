@@ -31,6 +31,8 @@
 ### Exercise 3.1
 
 > Rewrite the exercises from Section 1.4.1 (p. 13) and Section 2.6.2 (p. 76) with appropriate using declarations.
+>
+> *^ i.e. exercises [`1.9`](../01-getting-started/README.md#exercise-19) [`1.10`](../01-getting-started/README.md#exercise-110) [`1.11`](../01-getting-started/README.md#exercise-111) [`2.41`](../02-variables-and-basic-types/README.md#exercise-241)*
 
 **Answer:**
 
