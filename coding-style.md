@@ -66,12 +66,12 @@ void visit(TreeNode *node) {
 ```c++
 unsigned long long a = 0ULL;
 
-for (int &elem : vec) {
+for (unsigned long long &elem : vec) {
   // ...
 }
 
-for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.cend();
-     ++it) {
+for (const std::vector<unsigned long long>::const_iterator it = vec.cbegin();
+     it != vec.cend(); ++it) {
   // ...
 }
 ```
