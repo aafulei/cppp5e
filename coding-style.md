@@ -65,7 +65,7 @@ void visit(TreeNode *node) {
 
 ```c++
 for (int &elem : vec) {
-  ++elem;
+  // ...
 }
 
 for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.cend();
