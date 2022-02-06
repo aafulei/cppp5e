@@ -104,11 +104,11 @@ struct Sales_data {
 
 Otherwise,
 
-| Name Type      | Example                                                  |
-| -------------- | -------------------------------------------------------- |
-| Class Name     | `class PascalCase; struct PascalCase2;`                  |
-| File Name      | `lowercase-with-hyphens.hpp; lowercase-with-hyphens.cpp` |
-| Function Name  | `void camelCase();`                                      |
-| Macro Name     | `#define UPPERCASE_WITH_UNDERSCORES`                     |
-| Namespace Name | `namespace lowercase_with_underscores {}`                |
-| Variable Name  | `int lowercase_with_underscores;`                        |
+| Name Type      | Example                                                   |
+| -------------- | --------------------------------------------------------- |
+| Class Name     | `class PascalCase;` `struct PascalCase;`                  |
+| File Name      | `lowercase-with-hyphens.hpp` `lowercase-with-hyphens.cpp` |
+| Function Name  | `void camelCase();`                                       |
+| Macro Name     | `#define UPPERCASE_WITH_UNDERSCORES`                      |
+| Namespace Name | `namespace lowercase_with_underscores {}`                 |
+| Variable Name  | `int lowercase_with_underscores;`                         |
