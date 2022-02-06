@@ -55,6 +55,7 @@ struct Sales_data {
   double revenue = 0.0;
 };
 
+// sum from 50 to 100
 int rewriteExercise_1_9() {
   int sum = 0, val = 50;
   while (val <= 100) {
@@ -65,6 +66,7 @@ int rewriteExercise_1_9() {
   return 0;
 }
 
+// print from 10 donw to 0
 int rewriteExercise_1_10() {
   int n = 10;
   while (n >= 0) {
@@ -74,6 +76,7 @@ int rewriteExercise_1_10() {
   return 0;
 }
 
+// print integers in range
 int rewriteExercise_1_11() {
   cout << "Enter two numbers:" << endl;
   int v1 = 0, v2 = 0;
@@ -85,7 +88,19 @@ int rewriteExercise_1_11() {
   return 0;
 }
 
-// assume two books have the same ISBN
+// read multiple book transactions and print them out
+int rewriteExercise_1_20() {
+  Sales_data data;
+  double price = 0;
+  while (std::cin >> data.bookNo >> data.units_sold >> price) {
+    data.revenue = data.units_sold * price;
+    std::cout << data.bookNo << " " << data.units_sold << " " << data.revenue
+              << " " << data.revenue / data.units_sold << std::endl;
+  }
+  return 0;
+}
+
+// sum two book transactions: assume two books have the same ISBN
 int rewriteExercise_1_21() {
   Sales_data data1, data2;
   double price = 0;
@@ -109,7 +124,7 @@ int rewriteExercise_1_21() {
   }
 }
 
-// assume multiple books have the same ISBN
+// sum multiple book transactions: assume multiple books have the same ISBN
 int rewriteExercise_1_22() {
   Sales_data data, sum;
   double price = 0;
@@ -127,6 +142,7 @@ int rewriteExercise_1_22() {
   return 0;
 }
 
+// count book transactions
 int rewriteExercise_1_23() {
   Sales_data currVal, val;
   double price = 0;
@@ -148,6 +164,7 @@ int rewriteExercise_1_23() {
   return 0;
 }
 
+// bookstore program
 int rewriteExercise_1_25() {
   Sales_data total;
   double price = 0;

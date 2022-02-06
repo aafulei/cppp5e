@@ -36,6 +36,7 @@ struct Sales_data {
   double revenue = 0.0;
 };
 
+// read multiple book transactions and print them out
 int rewriteExercise_1_20() {
   Sales_data data;
   double price = 0;
@@ -47,7 +48,7 @@ int rewriteExercise_1_20() {
   return 0;
 }
 
-// assume two books have the same ISBN
+// sum two book transactions: assume two books have the same ISBN
 int rewriteExercise_1_21() {
   Sales_data data1, data2;
   double price = 0;
@@ -71,7 +72,7 @@ int rewriteExercise_1_21() {
   }
 }
 
-// assume multiple books have the same ISBN
+// sum multiple book transactions: assume multiple books have the same ISBN
 int rewriteExercise_1_22() {
   Sales_data data, sum;
   double price = 0;
@@ -89,6 +90,7 @@ int rewriteExercise_1_22() {
   return 0;
 }
 
+// count book transactions
 int rewriteExercise_1_23() {
   Sales_data currVal, val;
   double price = 0;
@@ -111,6 +113,7 @@ int rewriteExercise_1_23() {
   return 0;
 }
 
+// bookstore program
 int rewriteExercise_1_25() {
   Sales_data total;
   double price = 0;
