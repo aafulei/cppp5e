@@ -151,11 +151,11 @@ int main() {
   return rewriteExercise_1_25();
 #else
   std::cerr << "Compile options:\n\t"
-               "-D RE120 for rewrite of Exercise 1.20\n\t"
-               "-D RE121 for rewrite of Exercise 1.21\n\t"
-               "-D RE122 for rewrite of Exercise 1.22\n\t"
-               "-D RE123 for rewrite of Exercise 1.23\n\t"
-               "-D RE125 for rewrite of Exercise 1.25"
+               "-DRE120 for rewrite of Exercise 1.20\n\t"
+               "-DRE121 for rewrite of Exercise 1.21\n\t"
+               "-DRE122 for rewrite of Exercise 1.22\n\t"
+               "-DRE123 for rewrite of Exercise 1.23\n\t"
+               "-DRE125 for rewrite of Exercise 1.25"
             << std::endl;
   return 0;
 #endif

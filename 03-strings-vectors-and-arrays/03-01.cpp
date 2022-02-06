@@ -55,7 +55,7 @@ struct Sales_data {
   double revenue = 0.0;
 };
 
-int rewriteExercise0109() {
+int rewriteExercise_1_9() {
   int sum = 0, val = 50;
   while (val <= 100) {
     sum += val;
@@ -65,7 +65,7 @@ int rewriteExercise0109() {
   return 0;
 }
 
-int rewriteExercise0110() {
+int rewriteExercise_1_10() {
   int n = 10;
   while (n >= 0) {
     cout << n << endl;
@@ -74,7 +74,7 @@ int rewriteExercise0110() {
   return 0;
 }
 
-int rewriteExercise0111() {
+int rewriteExercise_1_11() {
   cout << "Enter two numbers:" << endl;
   int v1 = 0, v2 = 0;
   cin >> v1 >> v2;
@@ -86,7 +86,7 @@ int rewriteExercise0111() {
 }
 
 // assume two books have the same ISBN
-int rewriteExercise0121() {
+int rewriteExercise_1_21() {
   Sales_data data1, data2;
   double price = 0;
   cin >> data1.bookNo >> data1.units_sold >> price;
@@ -110,7 +110,7 @@ int rewriteExercise0121() {
 }
 
 // assume multiple books have the same ISBN
-int rewriteExercise0122() {
+int rewriteExercise_1_22() {
   Sales_data data, sum;
   double price = 0;
   if (cin >> data.bookNo >> data.units_sold >> price) {
@@ -127,7 +127,7 @@ int rewriteExercise0122() {
   return 0;
 }
 
-int rewriteExercise0123() {
+int rewriteExercise_1_23() {
   Sales_data currVal, val;
   double price = 0;
   if (cin >> currVal.bookNo >> currVal.units_sold >> price) {
@@ -148,7 +148,7 @@ int rewriteExercise0123() {
   return 0;
 }
 
-int rewriteExercise0125() {
+int rewriteExercise_1_25() {
   Sales_data total;
   double price = 0;
   if (cin >> total.bookNo >> total.units_sold >> price) {
@@ -175,32 +175,32 @@ int rewriteExercise0125() {
 }
 
 int main() {
-#ifdef RE0109
-  return rewriteExercise0109();
-#elif RE0110
-  return rewriteExercise0110();
-#elif RE0111
-  return rewriteExercise0111();
-#elif RE0120
-  return rewriteExercise0120();
-#elif RE0121
-  return rewriteExercise0121();
-#elif RE0122
-  return rewriteExercise0122();
-#elif RE0123
-  return rewriteExercise0123();
-#elif RE0125
-  return rewriteExercise0125();
+#ifdef RE109
+  return rewriteExercise_1_9();
+#elif RE110
+  return rewriteExercise_1_10();
+#elif RE111
+  return rewriteExercise_1_11();
+#elif RE120
+  return rewriteExercise_1_20();
+#elif RE121
+  return rewriteExercise_1_21();
+#elif RE122
+  return rewriteExercise_1_22();
+#elif RE123
+  return rewriteExercise_1_23();
+#elif RE125
+  return rewriteExercise_1_25();
 #else
   cerr << "Compile options:\n\t"
-          "-DRE0109 for rewrite of Exercise 1.9\n\t"
-          "-DRE0110 for rewrite of Exercise 1.10\n\t"
-          "-DRE0111 for rewrite of Exercise 1.11\n\t"
-          "-DRE0120 for rewrite of Exercise 1.20\n\t"
-          "-DRE0121 for rewrite of Exercise 1.21\n\t"
-          "-DRE0122 for rewrite of Exercise 1.22\n\t"
-          "-DRE0123 for rewrite of Exercise 1.23\n\t"
-          "-DRE0125 for rewrite of Exercise 1.25"
+          "-DRE109 for rewrite of Exercise 1.9\n\t"
+          "-DRE110 for rewrite of Exercise 1.10\n\t"
+          "-DRE111 for rewrite of Exercise 1.11\n\t"
+          "-DRE120 for rewrite of Exercise 1.20\n\t"
+          "-DRE121 for rewrite of Exercise 1.21\n\t"
+          "-DRE122 for rewrite of Exercise 1.22\n\t"
+          "-DRE123 for rewrite of Exercise 1.23\n\t"
+          "-DRE125 for rewrite of Exercise 1.25"
        << endl;
   return 0;
 #endif
