@@ -9,10 +9,10 @@
 
 We use `clang-format` with default options, which is the *LLVM* style. Four most noticeable styles are
 
-1. line width at 80 characters
-2. identation with 2 spaces
-3. do not break before opening curly braces
-4. right alignment of `*` and  `&` for pointer and reference declarations
+1. *line width at 80 characters*
+2. *identation with 2 spaces*
+3. *do not break before opening curly braces*
+4. *right alignment of `*` and  `&` for pointer and reference declarations*
 
 For example,
 
@@ -41,44 +41,38 @@ int main() {           // do not break before opening curly braces
 
 We tend to be explicit. That is,
 
-1. always prefix with namespaces
+1. **always prefix with namespaces.** For example,
 
-  For example,
+```c++
+int main() {
+  std::cout << "Hello, World!" << std::endl;
+  return 0;
+}
+```
 
-  ```c++
-  int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+2. **always use curly braces `if`, `else`, `while` and `for` statements.** For example,
+
+```c++
+void visit(TreeNode *node) {
+  if (!node) {
+    return;
   }
-  ```
+  // ...
+}
+```
 
-2. always use curly braces `if`, `else`, `while` and `for` statements
+3. **never use `auto` when possible.** For example,
 
-  For example,
+```c++
+for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.end();
+  ++it) {
+  // ...
+}
 
-  ```c++
-  void visit(TreeNode *node) {
-    if (!node) {
-      return;
-    }
-    // ...
-  }
-  ```
-
-3. never use `auto` when possible
-
-  For example,
-
-  ```c++
-  for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.end();
-    ++it) {
-    // ...
-  }
-
-  for (int &elem : vec) {
-    ++elem;
-  }
-  ```
+for (int &elem : vec) {
+  ++elem;
+}
+```
 
 ## Naming Convention
 
