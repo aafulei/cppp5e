@@ -26,30 +26,30 @@
 #include <iostream>
 #include <string>
 
-struct SalesData {
+struct Sales_data {
   std::string bookNo;
-  unsigned quantity = 0;
+  unsigned units_sold = 0;
   double revenue = 0.0;
 };
 
 // record example: 978-7-121-20038-0 1 105
-std::istream &read(std::istream &is, SalesData &data) {
+std::istream &read(std::istream &is, Sales_data &data) {
   double price = 0;
-  is >> data.bookNo >> data.quantity >> price;
-  data.revenue = price * data.quantity;
+  is >> data.bookNo >> data.units_sold >> price;
+  data.revenue = price * data.units_sold;
   return is;
 }
 
 // output example: 978-7-121-20038-0 10 1000 100
-std::ostream &print(std::ostream &os, const SalesData &data) {
-  return os << data.bookNo << " " << data.quantity << " " << data.revenue << " "
-            << data.revenue / data.quantity << std::endl;
+std::ostream &print(std::ostream &os, const Sales_data &data) {
+  return os << data.bookNo << " " << data.units_sold << " " << data.revenue
+            << " " << data.revenue / data.units_sold << std::endl;
 }
 
 // add data to total, like operator+=
-SalesData &combine(SalesData &total, const SalesData &trans) {
+Sales_data &combine(Sales_data &total, const Sales_data &trans) {
   if (total.bookNo == trans.bookNo) {
-    total.quantity += trans.quantity;
+    total.units_sold += trans.units_sold;
     total.revenue += trans.revenue;
   } else {
     std::cerr << "Data must refer to the same ISBN" << std::endl;
@@ -69,9 +69,9 @@ int main(int argc, char *argv[]) {
     return 1;
   }
   std::ifstream ifs(argv[1]);
-  SalesData total;
+  Sales_data total;
   if (read(ifs, total)) {
-    SalesData trans;
+    Sales_data trans;
     while (read(ifs, trans)) {
       if (total.bookNo == trans.bookNo) {
         combine(total, trans);
