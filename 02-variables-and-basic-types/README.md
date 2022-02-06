@@ -925,6 +925,8 @@ decltype(*p) b = *p; // b is an int & referring to i
 ### Exercise 2.42
 
 > Write your own version of the `Sales_data.h` header and use it to rewrite the exercise from Section 2.6.2 (p. 76).
+>
+> *^ i.e. exercise [`2.41`](#exercise-241)*
 
 **Answer:**
 
