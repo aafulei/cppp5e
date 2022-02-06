@@ -287,7 +287,7 @@ If the input values are all equal, upon end of file, the program will print that
 
 ### Exercise 1.22
 
-> Write a program that reads several transactions for the same Write the sum of all the transactions that were read.
+> Write a program that reads several transactions for the same. Write the sum of all the transactions that were read.
 
 **Answer:**
 
