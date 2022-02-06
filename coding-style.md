@@ -61,9 +61,11 @@ void visit(TreeNode *node) {
 }
 ```
 
-3. *never use `auto` when possible.* For example,
+3. *never use `auto` when possible.* For example, we prefer
 
 ```c++
+int a = 0;
+
 for (int &elem : vec) {
   // ...
 }
@@ -74,9 +76,23 @@ for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.cend();
 }
 ```
 
+to
+
+```c++
+auto a = 0;
+
+for (auto &elem : vec) {
+  // ...
+}
+
+for (auto it = vec.cbegin(); it != vec.cend(); ++it) {
+  // ...
+}
+```
+
 ## Naming Convention
 
-When we modify the existing code in the book, we inherit its names, no matter how strange-looking it is. One such example is
+When we modify the existing code in the book, we inherit its names, no matter how strange-looking they are. One such example is
 
 ```c++
 struct Sales_data {
