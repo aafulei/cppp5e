@@ -1,7 +1,7 @@
 // 21/12/21 = Tue
 
 // Exercise 2.35: Determine the types deduced in each of the following
-// definitions. Once you’ve figured out the types, write a program to see
+// definitions. Once you've figured out the types, write a program to see
 // whether you were correct.
 
 // const int i = 42;
@@ -9,15 +9,6 @@
 // const auto &k = i;
 // auto *p = &i;
 // const auto j2 = i, &k2 = i;
-
-/* === Compile ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-35-auto.cpp
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 02-35-auto.cpp
-
-By successful compilation, all the static assertions are accepted. */
 
 // Answer:
 //

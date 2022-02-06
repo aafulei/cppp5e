@@ -760,6 +760,8 @@ int null = 0, *p = 0;
 | `j2`     | `const int`   |
 | `k2`     | `const int &` |
 
+- [`02-35.cpp`](02-35.cpp)
+
 ### Exercise 2.36
 
 > In the following code, determine the type of each variable and the value each variable has when the code finishes:
