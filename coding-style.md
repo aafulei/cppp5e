@@ -17,11 +17,11 @@ We use `clang-format` with default options, which is the *LLVM* style. Four most
 For example,
 
 ```c++
-#include <iostram> // line width at 80 characters
+#include <iostream> // line width at 80 characters
 
 namespace ns { // do not break before opening curly braces
-class C {      // do not break before opening curly braces
-  int d;       // identation with 2 spaces
+struct S {     // do not break before opening curly braces
+  int a = 0;   // identation with 2 spaces
 };
 } // namespace ns
 
@@ -50,7 +50,7 @@ int main() {
 }
 ```
 
-2. *always use curly braces `if`, `else`, `while` and `for` statements.* For example,
+2. *always use curly braces for `if`, `else`, `while` and `for` statements.* For example,
 
 ```c++
 void visit(TreeNode *node) {
@@ -64,13 +64,13 @@ void visit(TreeNode *node) {
 3. *never use `auto` when possible.* For example,
 
 ```c++
-for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.end();
-  ++it) {
-  // ...
-}
-
 for (int &elem : vec) {
   ++elem;
+}
+
+for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.cend();
+     ++it) {
+  // ...
 }
 ```
 
