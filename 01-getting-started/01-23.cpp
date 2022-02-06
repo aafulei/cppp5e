@@ -13,20 +13,20 @@
 #include <iostream>
 
 int main() {
-  Sales_item curr_book, book;
-  if (std::cin >> curr_book) {
+  Sales_item currVal, val;
+  if (std::cin >> currVal) {
     int cnt = 1;
-    while (std::cin >> book) {
-      if (book.isbn() == curr_book.isbn()) {
+    while (std::cin >> val) {
+      if (val.isbn() == currVal.isbn()) {
         ++cnt;
       } else {
-        std::cout << curr_book.isbn() << " occurs " << cnt << " times"
+        std::cout << currVal.isbn() << " occurs " << cnt << " times"
                   << std::endl;
-        curr_book = book;
+        currVal = val;
         cnt = 1;
       }
     }
-    std::cout << curr_book.isbn() << " occurs " << cnt << " times" << std::endl;
+    std::cout << currVal.isbn() << " occurs " << cnt << " times" << std::endl;
   }
   return 0;
 }
