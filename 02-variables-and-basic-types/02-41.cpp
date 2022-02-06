@@ -149,12 +149,13 @@ int main() {
 #elif RE125
   return rewriteExercise_1_25();
 #else
-  std::cerr << "Compile options:\n"
-               "\t-D RE120 for rewrite of Exercise 1.20\n"
-               "\t-D RE121 for rewrite of Exercise 1.21\n"
-               "\t-D RE122 for rewrite of Exercise 1.22\n"
-               "\t-D RE123 for rewrite of Exercise 1.23\n"
-               "\t-D RE125 for rewrite of Exercise 1.25\n";
+  std::cerr << "Compile options:\n\t"
+               "-D RE120 for rewrite of Exercise 1.20\n\t"
+               "-D RE121 for rewrite of Exercise 1.21\n\t"
+               "-D RE122 for rewrite of Exercise 1.22\n\t"
+               "-D RE123 for rewrite of Exercise 1.23\n\t"
+               "-D RE125 for rewrite of Exercise 1.25"
+            << std::endl;
 #endif
   return 0;
 }
