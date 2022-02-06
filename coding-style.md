@@ -41,7 +41,7 @@ int main() {           // do not break before opening curly braces
 
 We tend to be explicit. That is,
 
-1. **always prefix with namespaces.** For example,
+1. *always prefix with namespaces.* For example,
 
 ```c++
 int main() {
@@ -50,7 +50,7 @@ int main() {
 }
 ```
 
-2. **always use curly braces `if`, `else`, `while` and `for` statements.** For example,
+2. *always use curly braces `if`, `else`, `while` and `for` statements.* For example,
 
 ```c++
 void visit(TreeNode *node) {
@@ -61,7 +61,7 @@ void visit(TreeNode *node) {
 }
 ```
 
-3. **never use `auto` when possible.** For example,
+3. *never use `auto` when possible.* For example,
 
 ```c++
 for (const std::vector<int>::const_iterator it = vec.cbegin(); it != vec.end();
@@ -88,39 +88,11 @@ struct Sales_data {
 
 Otherwise,
 
-### Class / Struct Names
-
-```c++
-class PascalCase;
-```
-
-### File Names
-
-```
-lowercase-with-hyphens.hpp
-lowercase-with-hyphens.cpp
-```
-
-### Function Names
-
-```c++
-void camelCase();
-```
-
-### Macro Names
-
-```c++
-#define UPPERCASE_WITH_UNDERSCORES
-```
-
-### Namespace Names
-
-```c++
-namespace lowercase_with_underscores;
-```
-
-### Variable Names
-
-```c++
-int lowercase_with_underscores;
-```
+| Name Type      | Example                                                  |
+| -------------- | -------------------------------------------------------- |
+| Class Name     | `class PascalCase; struct PascalCase2;`                  |
+| File Name      | `lowercase-with-hyphens.hpp; lowercase-with-hyphens.cpp` |
+| Function Name  | `void camelCase();`                                      |
+| Macro Name     | `#define UPPERCASE_WITH_UNDERSCORES`                     |
+| Namespace Name | `namespace lowercase_with_underscores {}`                |
+| Variable Name  | `int lowercase_with_underscores;`                        |
