@@ -6,18 +6,18 @@
 #include <iostream>
 #include <string>
 
-struct SalesData {
+struct Sales_data {
   std::string bookNo;
-  unsigned quantity;
+  unsigned units_sold;
   double revenue;
 };
 
 int main() {
-  SalesData data;
-  if (double price; std::cin >> data.bookNo >> data.quantity >> price) {
-    data.revenue = price * data.quantity;
+  Sales_data data;
+  if (double price; std::cin >> data.bookNo >> data.units_sold >> price) {
+    data.revenue = price * data.units_sold;
     std::cout << "Book number = " << data.bookNo << std::endl;
-    std::cout << "Units sold = " << data.quantity << std::endl;
+    std::cout << "Units sold = " << data.units_sold << std::endl;
     std::cout << "Revenue = " << data.revenue << std::endl;
   } else {
     std::cerr << "No data?!" << std::endl;

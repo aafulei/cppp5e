@@ -7,35 +7,35 @@
 #include <iostream>
 #include <string>
 
-struct SalesData {
+struct Sales_data {
   std::string bookNo;
-  unsigned quantity;
+  unsigned units_sold;
   double revenue;
 };
 
 int main() {
-  SalesData d1, d2;
+  Sales_data d1, d2;
   double price;
-  std::cin >> d1.bookNo >> d1.quantity >> price;
+  std::cin >> d1.bookNo >> d1.units_sold >> price;
   if (std::cin) {
-    d1.revenue = d1.quantity * price;
+    d1.revenue = d1.units_sold * price;
   } else {
     std::cerr << "No data?!" << std::endl;
     return 1;
   }
-  std::cin >> d2.bookNo >> d2.quantity >> price;
+  std::cin >> d2.bookNo >> d2.units_sold >> price;
   if (std::cin) {
-    d2.revenue = d2.quantity * price;
+    d2.revenue = d2.units_sold * price;
   } else {
     std::cerr << "No data?!" << std::endl;
     return 1;
   }
   if (d1.bookNo == d2.bookNo) {
-    unsigned total_quant = d1.quantity + d2.quantity;
+    unsigned total_units = d1.units_sold + d2.units_sold;
     double total_revenue = d1.revenue + d2.revenue;
-    std::cout << d1.bookNo << " " << total_quant << " " << total_revenue << " ";
+    std::cout << d1.bookNo << " " << total_units << " " << total_revenue << " ";
     if (total_revenue != 0) {
-      std::cout << (total_revenue / total_quant) << std::endl;
+      std::cout << (total_revenue / total_units) << std::endl;
     } else {
       std::cout << "(no sales)" << std::endl;
     }
