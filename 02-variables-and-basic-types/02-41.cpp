@@ -154,8 +154,7 @@ int main() {
                "\t-D RE121 for rewrite of Exercise 1.21\n"
                "\t-D RE122 for rewrite of Exercise 1.22\n"
                "\t-D RE123 for rewrite of Exercise 1.23\n"
-               "\t-D RE125 for rewrite of Exercise 1.25"
-            << std::endl;
+               "\t-D RE125 for rewrite of Exercise 1.25\n";
 #endif
   return 0;
 }
