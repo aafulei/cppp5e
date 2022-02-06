@@ -6,27 +6,6 @@
 
 // Note: This program assumes valid input: several books with the same ISBN.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-22-sum-several-books.cpp && \
-./a.out <../data/several-books.txt
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 01-22-sum-several-books.cpp && ^
-a <..\data\several-books.txt
-
-=== Input ===
-(several-books.txt)
-0-201-88954-4 2 15.00
-0-201-88954-4 5 12.00
-0-201-88954-4 7 12.00
-0-201-88954-4 2 12.00
-
-=== Output ===
-(several-books.txt)
-0-201-88954-4 16 198 12.375
-*/
-
 #include "Sales_item.h"
 #include <iostream>
 
