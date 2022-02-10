@@ -143,7 +143,7 @@ The program tries to print out the first element in an empty string, which is in
 
 ### Exercise 3.11
 
-> Is the following range for legal? If so, what is the type of `c`?
+> Is the following range `for` legal? If so, what is the type of `c`?
 >
 > ```c++
 > const string s = "Keep out!";
@@ -152,6 +152,8 @@ The program tries to print out the first element in an empty string, which is in
 > ```
 
 **Answer:**
+
+Yes, the range `for` is legal. The type of `c` is `const char &`, or a reference to `const char`.
 
 ## Section 3.3 Library vector Type
 
