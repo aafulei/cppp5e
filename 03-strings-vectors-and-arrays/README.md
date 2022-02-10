@@ -376,6 +376,14 @@ Because operator `+` is not defined between iterators.
 
 **Answer:**
 
+(a) illegal - the dimension of an array must be a constant expression in declaration
+
+(b) legal
+
+(c) illegal, unless `txt_size()` is a `constexpr` function, otherwise the return value of `txt_size()` is not known at compile time
+
+(d) illegal - `char` array `st` does not have enough room to hold string `"fundamental"`. The C-style string ends with a null character `'\0'`, and has a size of 12.
+
 ### Exercise 3.28
 
 > What are the values in the following arrays?
@@ -391,11 +399,20 @@ Because operator `+` is not defined between iterators.
 
 **Answer:**
 
+- `sa` has 10 empty strings
+- `ia` has 10 `int` elements, each with value `0`
+- `sa2` has 10 empty strings
+- `ia2` has 10 `int` elements, the value of which is indeterministic
+
 ### Exercise 3.29
 
 > List some of the drawbacks of using an array instead of a vector.
 
 **Answer:**
+
+1. an array has a fixed size, which has to be known at compile time
+2. an array can't be directly passed to and returned from functions
+3. an array can't be assigned with operator `=`
 
 ### Exercise 3.30
 
