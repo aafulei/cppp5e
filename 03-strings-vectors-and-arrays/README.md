@@ -169,6 +169,12 @@ Yes, the range `for` is legal. The type of `c` is `const char &`. That is, a ref
 
 **Answer:**
 
+(a) legal - an empty vector of vectors. Each element of the vector is a vector of `int`.
+
+(b) illegal - given that `ivec` is a `vector<int>`, it can't be assigned to a `vector<string>`
+
+(c) legal - `svec` is a vector of 10 strings, each of which has value `"null"`
+
 ### Exercise 3.13
 
 > How many elements are there in each of the following vectors? What are the values of the elements?
@@ -189,6 +195,20 @@ Yes, the range `for` is legal. The type of `c` is `const char &`. That is, a ref
 
 **Answer:**
 
+(a) 0 elements
+
+(b) 10 elements, each has value 0
+
+(c) 10 elements, each has value 42
+
+(d) 1 element, with value 10
+
+(e) 2 elements, with values 10 and 42
+
+(f) 10 elements, each is an empty string
+
+(g) 10 elements, each has value `"hi"`
+
 ### Exercise 3.14
 
 > Write a program to read a sequence of ints from `cin` and store those values in a vector.
@@ -203,9 +223,11 @@ Yes, the range `for` is legal. The type of `c` is `const char &`. That is, a ref
 
 **Answer:**
 
+- [`03-15.cpp`](03-15.cpp)
+
 ### Exercise 3.16
 
-> Write a program to print the size and contents of the vectors from exercise 3.13. Check whether your answers to that exercise were correct. If not, restudy Section 3.3.1 (p. 97) until you understand why you were wrong.
+> Write a program to print the size and contents of the vectors from exercise [`3.13`](#exercise-313). Check whether your answers to that exercise were correct. If not, restudy Section 3.3.1 (p. 97) until you understand why you were wrong.
 
 **Answer:**
 
@@ -216,6 +238,8 @@ Yes, the range `for` is legal. The type of `c` is `const char &`. That is, a ref
 > Read a sequence of words from `cin` and store the values a vector. After you've read all the words, process the vector and change each word to uppercase. Print the transformed elements, eight words to a line.
 
 **Answer:**
+
+- [`03-17.cpp`](03-17.cpp)
 
 ### Exercise 3.18
 
@@ -228,17 +252,43 @@ Yes, the range `for` is legal. The type of `c` is `const char &`. That is, a ref
 
 **Answer:**
 
+No, the program is illegal, because `ivec` is an empty vector, and it is illegal to try to access its "first" element. Fix -
+
+```c++
+vector<int> ivec;
+ivec.push_back(42);
+```
+
 ### Exercise 3.19
 
 > List three ways to define a vector and give it ten elements, each with the value 42. Indicate whether there is a preferred way to do so and why.
 
 **Answer:**
 
+```c++
+// approach 1: start with an empty vector and push 10 elements to its back
+std::vector<int> vec1;
+int num = 10;
+while (num-- > 0) {
+  vec1.push_back(42);
+}
+
+// approach 2: value initialize a vector with 10 elements of value 42
+std::vector<int> vec2(10, 42);
+
+// approach 3: list initialze a vector with 10 elements
+std::vector<int> vec3{42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
+```
+
+The second approach is preferred in this case, because it fits the purpose here: a pre-determined number of elements, each with the same value.
+
 ### Exercise 3.20
 
 > Read a set of integers into a vector. Print the sum of each pair of adjacent elements. Change your program so that it prints the sum of the first and last elements, followed by the sum of the second and second-to-last, and so on.
 
 **Answer:**
+
+- [`03-20.cpp`](03-20.cpp)
 
 ## Section 3.4 Introducing Iterators
 

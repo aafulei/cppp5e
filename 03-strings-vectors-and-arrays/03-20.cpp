@@ -7,76 +7,36 @@
 // the first and last elements, followed by the sum of the second and
 // second-to-last, and so on.
 
-// Note: Given {1, 2, 3, 4, 5}, should return {6, 6, 3}, not {6, 6, 6}
-
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-20-sum-adjacent-pairs.cpp && \
-./a.out <../data/empty.txt && \
-./a.out <../data/one.txt && \
-./a.out <../data/one-two.txt && \
-./a.out <../data/one-two-three.txt && \
-./a.out <../data/one-to-five.txt && \
-./a.out <../data/several-numbers.txt
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-20-sum-adjacent-pairs.cpp && ^
-a <..\data\empty.txt && ^
-a <..\data\one.txt && ^
-a <..\data\one-two.txt && ^
-a <..\data\one-two-three.txt && ^
-a <..\data\one-to-five.txt && ^
-a <..\data\several-numbers.txt
-
-=== Input ===
-(empty.txt)
-
-(one.txt)
-1
-
-(one-two.txt)
-1 2
-
-(one-two-three.txt)
-1 2 3
-
-(one-to-five.txt)
-1 2 3 4 5
-
-(several-numbers.txt)
-12 34 56 78
-
-=== Output ===
-(empty.txt)
-
-(one.txt)
-
-
-(one-two.txt)
-3
-
-(one-two-three.txt)
-3 5
-
-(one-to-five.txt)
-3 5 7 9
-
-(several-numbers.txt)
-46 90 134
-*/
-
 #include <iostream>
 #include <vector>
+
+// Note: Given {1, 2, 3, 4, 5}, should return {3, 5, 7, 9}, not {3, 7, 5}
+void sum_adjacent_elements(const std::vector<int> &vec) {
+  for (std::vector<int>::size_type i = 1; i < vec.size(); ++i) {
+    std::cout << vec[i - 1] + vec[i] << " ";
+  }
+  std::cout << std::endl;
+}
+
+// Note: Given {1, 2, 3, 4, 5}, should return {6, 6, 3}, not {6, 6, 6}
+void sum_symmetric_elements(const std::vector<int> &vec) {
+  const auto N = vec.size();
+  // decltype(N) is const size_t, while decltype(N + 0) is size_t
+  for (decltype(N + 0) i = 0; i != N / 2; ++i) {
+    std::cout << vec[i] + vec[N - 1 - i] << " ";
+  }
+  if (N % 2 == 1) {
+    std::cout << vec[N / 2];
+  }
+  std::cout << std::endl;
+}
 
 int main() {
   std::vector<int> vec;
   for (int a = 0; std::cin >> a; /* empty */) {
     vec.push_back(a);
   }
-  const auto N = vec.size();
-  for (decltype(N + 0) i = 1; i < N; ++i) {
-    std::cout << vec[i - 1] + vec[i] << " ";
-  }
-  std::cout << std::endl;
+  sum_adjacent_elements(vec);
+  sum_symmetric_elements(vec);
   return 0;
 }

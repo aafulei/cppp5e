@@ -16,23 +16,6 @@
 // (f) vector<string> v6{10};
 // (g) vector<string> v7{10, "hi"};
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-16-vector-print.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-16-vector-print.cpp && a
-
-=== Output ===
-v1: 0   []
-v2: 10  [0,0,0,0,0,0,0,0,0,0]
-v3: 10  [42,42,42,42,42,42,42,42,42,42]
-v4: 1   [10]
-v5: 2   [10,42]
-v6: 10  [,,,,,,,,,]
-v7: 10  [hi,hi,hi,hi,hi,hi,hi,hi,hi,hi]
-*/
-
 #include <iostream>
 #include <sstream>
 #include <string>
