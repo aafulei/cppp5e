@@ -382,7 +382,7 @@ Because operator `+` is not defined between iterators.
 
 (c) illegal, unless `txt_size()` is a `constexpr` function, otherwise the return value of `txt_size()` is not known at compile time
 
-(d) illegal - `char` array `st` does not have enough room to hold `"fundamental"`, which ends with a null character `'\0'`, and has a size of 12.
+(d) illegal - `char` array `st` does not have enough room to hold `"fundamental"`, which ends with a null character `'\0'`, and has a size of 12
 
 ### Exercise 3.28
 
