@@ -10,32 +10,6 @@
 //   cout << *it << endl;
 // }
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-22-uppercase.cpp && \
-./a.out <../data/summer-paragraphs.txt
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-22-uppercase.cpp && ^
-a <..\data\summer-paragraphs.txt
-
-=== Input ===
-(summer-paragraphs.txt)
-Shall I compare thee to a summer's day?
-Thou art more lovely and more temperate.
-
-Rough winds do shake the darling buds of May,
-And summer's lease hath all too short a date.
-
-=== Output ===
-(summer-paragraphs.txt)
-SHALL I COMPARE THEE TO A SUMMER'S DAY?
-THOU ART MORE LOVELY AND MORE TEMPERATE.
-
-Rough winds do shake the darling buds of May,
-And summer's lease hath all too short a date.
-*/
-
 #include <cctype>
 #include <iostream>
 #include <string>
@@ -51,8 +25,8 @@ int main() {
       c = std::toupper(static_cast<unsigned char>(c));
     }
   }
-  for (const auto &para : text) {
-    std::cout << para << std::endl;
+  for (const std::string &line : text) {
+    std::cout << line << std::endl;
   }
   return 0;
 }
