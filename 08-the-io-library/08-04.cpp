@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> readFile(const std::string &filename) {
+std::vector<std::string> read(const std::string &filename) {
   std::vector<std::string> res;
   std::ifstream ifs(filename);
   for (std::string line; std::getline(ifs, line); /* empty */) {
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     std::cerr << "Usage: " << argv[0] << " file" << std::endl;
     return 1;
   }
-  std::vector<std::string> res = readFile(argv[1]);
+  std::vector<std::string> res = read(argv[1]);
   for (const std::string &elem : res) {
     std::cout << elem << '\n';
   }
