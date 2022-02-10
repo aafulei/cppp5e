@@ -23,14 +23,14 @@ clang++ -std=c++11 -pedantic -Wall -Wextra 03-23-vector-int.cpp && a
 
 int main() {
   std::vector<int> vec{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-  for (const auto &elem : vec) {
+  for (const int &elem : vec) {
     std::cout << elem << " ";
   }
   std::cout << std::endl;
-  for (auto it = vec.begin(); it != vec.end(); ++it) {
+  for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it) {
     *it *= 2;
   }
-  for (const auto &elem : vec) {
+  for (const int &elem : vec) {
     std::cout << elem << " ";
   }
   std::cout << std::endl;

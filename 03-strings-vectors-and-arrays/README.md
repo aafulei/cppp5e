@@ -333,8 +333,12 @@ The second approach is preferred in this case, because it fits the purpose here:
 ### Exercise 3.24
 
 > Redo the last exercise from Section 3.3.3 (p. 105) using iterators.
+>
+> *^ i.e. exercise [`3.20`](#exercise-320)*
 
 **Answer:**
+
+- [`03-24.cpp`](03-24.cpp)
 
 ### Exercise 3.25
 

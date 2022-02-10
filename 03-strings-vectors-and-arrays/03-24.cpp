@@ -1,3 +1,4 @@
+// 22/02/10 = Thu
 // 21/12/23 = Thu
 // 18/01/27 = Sat
 // 17/10/22 = Sun
@@ -9,79 +10,44 @@
 // the first and last elements, followed by the sum of the second and
 // second-to-last, and so on.
 
-// Note: Given {1, 2, 3, 4, 5}, should return {6, 6, 3}, not {6, 6, 6}
-
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-24-sum-adjacent-pairs.cpp && \
-./a.out <../data/empty.txt && \
-./a.out <../data/one.txt && \
-./a.out <../data/one-two.txt && \
-./a.out <../data/one-two-three.txt && \
-./a.out <../data/one-to-five.txt && \
-./a.out <../data/several-numbers.txt
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-24-sum-adjacent-pairs.cpp && ^
-a <..\data\empty.txt && ^
-a <..\data\one.txt && ^
-a <..\data\one-two.txt && ^
-a <..\data\one-two-three.txt && ^
-a <..\data\one-to-five.txt && ^
-a <..\data\several-numbers.txt
-
-=== Input ===
-(empty.txt)
-
-(one.txt)
-1
-
-(one-two.txt)
-1 2
-
-(one-two-three.txt)
-1 2 3
-
-(one-to-five.txt)
-1 2 3 4 5
-
-(several-numbers.txt)
-12 34 56 78
-
-=== Output ===
-(empty.txt)
-
-(one.txt)
-
-
-(one-two.txt)
-3
-
-(one-two-three.txt)
-3 5
-
-(one-to-five.txt)
-3 5 7 9
-
-(several-numbers.txt)
-46 90 134
-*/
-
-// Modified from 03-20-sum-adjacent-pairs.cpp
+// Modified from 03-20.cpp
 
 #include <iostream>
 #include <vector>
+
+// Note: Given {1, 2, 3, 4, 5}, should return {3, 5, 7, 9}, not {3, 7, 5}
+void sum_adjacent_elements(const std::vector<int> &vec) {
+  if (vec.empty()) {
+    return;
+  }
+  for (std::vector<int>::const_iterator it = vec.cbegin() + 1; it != vec.cend();
+       ++it) {
+    std::cout << *(it - 1) + *it << " ";
+  }
+  std::cout << std::endl;
+}
+
+// Note: Given {1, 2, 3, 4, 5}, should return {6, 6, 3}, not {6, 6, 6}
+void sum_symmetric_elements(const std::vector<int> &vec) {
+  if (vec.empty()) {
+    return;
+  }
+  std::vector<int>::const_iterator b = vec.cbegin(), e = vec.cend() - 1;
+  for (/* empty */; b < e; ++b, --e) {
+    std::cout << *b + *e << " ";
+  }
+  if (b == e) {
+    std::cout << *b;
+  }
+  std::cout << std::endl;
+}
 
 int main() {
   std::vector<int> vec;
   for (int a = 0; std::cin >> a; /* empty */) {
     vec.push_back(a);
   }
-  if (!vec.empty()) {
-    for (auto it = vec.cbegin() + 1; it != vec.cend(); ++it) {
-      std::cout << *(it - 1) + *it << " ";
-    }
-  }
-  std::cout << std::endl;
+  sum_adjacent_elements(vec);
+  sum_symmetric_elements(vec);
   return 0;
 }
