@@ -17,23 +17,20 @@ int main() {
   // 1. range for
   for (const int(&row)[4] : ia) {
     for (int i = 0; int elem : row) { // C++20
-      std::cout << (i++ == 0 ? "" : " ") << elem;
+      std::cout << elem << (i++ == 3 ? "\n" : " ");
     }
-    std::cout << std::endl;
   }
   // 2. traditional for loop and subscripts
   for (std::size_t i = 0; i != 3; ++i) {
     for (std::size_t j = 0; j != 4; ++j) {
-      std::cout << (j == 0 ? "" : " ") << ia[i][j];
+      std::cout << ia[i][j] << (j == 3 ? "\n" : " ");
     }
-    std::cout << std::endl;
   }
   // 3. traditional for loop and pointers
   for (const int(*p)[4] = ia; p != ia + 3; ++p) {
     for (const int *q = *p; q != *p + 4; ++q) {
-      std::cout << (q == *p ? "" : " ") << *q;
+      std::cout << *q << (q == *p + 3 ? "\n" : " ");
     }
-    std::cout << std::endl;
   }
   return 0;
 }

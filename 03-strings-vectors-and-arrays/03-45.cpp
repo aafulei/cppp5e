@@ -1,3 +1,4 @@
+// 22/02/10 = Thu
 // 21/12/23 = Thu
 // 18/01/28 = Sun
 
@@ -23,24 +24,21 @@ int main() {
   int ia[3][4]{{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}};
   // 1. range for
   for (const auto &row : ia) {
-    for (auto elem : row) {
-      std::cout << elem << " ";
+    for (int i = 0; auto elem : row) { // C++20
+      std::cout << elem << (i++ == sizeof row / sizeof row[0] - 1 ? "\n" : " ");
     }
-    std::cout << std::endl;
   }
   // 2. traditional for loop and subscripts
   for (auto i = 0; i != 3; ++i) {
     for (auto j = 0; j != 4; ++j) {
-      std::cout << ia[i][j] << " ";
+      std::cout << ia[i][j] << (j == 3 ? "\n" : " ");
     }
-    std::cout << std::endl;
   }
   // 3. traditional for loop and pointers
-  for (auto p = std::cbegin(ia); p != std::cend(ia); ++p) {   // C++14
-    for (auto q = std::cbegin(*p); q != std::cend(*p); ++q) { // C++14
-      std::cout << *q << " ";
+  for (auto p = std::cbegin(ia); p != std::cend(ia); ++p) {            // C++14
+    for (auto q = std::cbegin(*p); q != std::cend(*p); ++q) {          // C++14
+      std::cout << *q << (q == std::prev(std::cend(*p)) ? "\n" : " "); // C++14
     }
-    std::cout << std::endl;
   }
   return 0;
 }
