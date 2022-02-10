@@ -287,7 +287,7 @@ ivec.push_back(42);
   std::vector<int> vec3{42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
   ```
 
-The second approach is preferred in this case, because it fits the purpose here: a pre-determined number of elements, each with the same value.
+The second approach is preferred in this case, because it fits the purpose here - a given number of elements, each with the same value.
 
 ### Exercise 3.20
 
