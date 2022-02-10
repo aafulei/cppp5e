@@ -49,7 +49,7 @@ In particular, the `while` loop would terminate when `cin` evaluates to `false`,
 
 ### Exercise 8.4
 
-> Write a function to open a file for input and read its contents into a `vector` of `string`s, storing each line as a separate element in the `vector`.
+> Write a function to open a file for input and read its contents into a `vector` of strings, storing each line as a separate element in the `vector`.
 
 **Answer:**
 

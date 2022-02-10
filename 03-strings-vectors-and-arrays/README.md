@@ -50,11 +50,11 @@
 
 ### Exercise 3.3
 
-> Explain how whitespace characters are handled in the `string` input operator and in the `getline` function.
+> Explain how whitespace characters are handled in the string input operator and in the `getline` function.
 
 **Answer:**
 
-- `string` input operator `is >> str`
+- string input operator `is >> str`
 
   - Leading whitespaces are ignored.
   - Read and store all the characters until a whitespace character or the EOF is reached.
@@ -68,7 +68,7 @@
 
 ### Exercise 3.4
 
-> Write a program to read two `string`s and report whether the `string`s are equal. If not, report which of the two is larger. Now, change the program to report whether the `string`s have the same length, and if not, report which is longer.
+> Write a program to read two strings and report whether the strings are equal. If not, report which of the two is larger. Now, change the program to report whether the strings have the same length, and if not, report which is longer.
 
 **Answer:**
 

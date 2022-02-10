@@ -393,11 +393,11 @@ The loop would print out the elements that are 1 element next to what should be 
 
 (c) illegal - `empty()` is not defined for `vector<string>::iterator`
 
-(d) legal - test if the `string` element is empty
+(d) legal - test if the string element is empty
 
-(e) illegal - prefix increment operator `++` is not defined for `string`
+(e) illegal - prefix increment operator `++` is not defined for `std::string`
 
-(f) legal - increment the iterator by 1, test if the original unincremented `string` element is empty
+(f) legal - increment the iterator by 1, test if the original unincremented string element is empty
 
 ## Section 4.7 The Conditional Operator
 

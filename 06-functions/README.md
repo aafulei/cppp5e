@@ -242,7 +242,7 @@ std::size_t len(const std::string &s) {
 }
 ```
 
-`s` should be passed by reference as it could be expansive to copy a `string`.
+`s` should be passed by reference as it could be expansive to copy a string.
 
 ```c++
 bool is_good(const std::ostream &os) {
@@ -282,7 +282,7 @@ In dealing with C-style strings, we operate on pointers, and there is no need to
 
 > Why is `s` a reference to `const`?
 
-Because we do not modify the `string` `s` in the function, and, for parameters that we do not modify, it is recommended to declare them the reference as `const`.
+Because we do not modify the string `s` in the function, and, for parameters that we do not modify, it is recommended to declare them the reference as `const`.
 
 > Why is `occurs` a plain reference?
 
@@ -329,7 +329,7 @@ bool is_empty(const string &s) {
 
 ### Exercise 6.17
 
-> Write a function to determine whether a `string` contains any capital letters. Write a function to change a `string` to all lowercase. Do the parameters you used in these functions have the same type? If so, why? If not, why not?
+> Write a function to determine whether a string contains any capital letters. Write a function to change a string to all lowercase. Do the parameters you used in these functions have the same type? If so, why? If not, why not?
 
 **Answer:**
 
@@ -458,7 +458,7 @@ void print(const int (&ia)[10]) {
 
 ### Exercise 6.25
 
-> Write a `main` function that takes two arguments. Concatenate the supplied arguments and print the resulting `string`.
+> Write a `main` function that takes two arguments. Concatenate the supplied arguments and print the resulting string.
 
 **Answer:**
 
