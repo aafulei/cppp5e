@@ -539,7 +539,7 @@ This program tries to print out all the characters in `char` array `ca`, each in
 
 ### Exercise 3.42
 
-> Write a program to copy a vector of ints into an array of ints.
+> Write a program to copy a vector of `int`s into an array of `int`s.
 
 **Answer:**
 
@@ -549,7 +549,7 @@ This program tries to print out all the characters in `char` array `ca`, each in
 
 ### Exercise 3.43
 
-> Write three different versions of a program to print the elements of ia. One version should use a range for to manage the iteration, the other two should use an ordinary for loop in one case using subscripts and in the other using pointers. In all three programs write all the types directly. That is, do not use a type alias, `auto`, or `decltype` to simplify the code.
+> Write three different versions of a program to print the elements of `ia`. One version should use a range for to manage the iteration, the other two should use an ordinary for loop in one case using subscripts and in the other using pointers. In all three programs write all the types directly. That is, do not use a type alias, `auto`, or `decltype` to simplify the code.
 
 **Answer:**
 
@@ -558,6 +558,8 @@ This program tries to print out all the characters in `char` array `ca`, each in
 ### Exercise 3.44
 
 > Rewrite the programs from the previous exercises using a type alias for the type of the loop control variables.
+>
+> *^ i.e. exercise [`3.43`](#exercise-343)*
 
 **Answer:**
 
@@ -566,8 +568,9 @@ This program tries to print out all the characters in `char` array `ca`, each in
 ### Exercise 3.45
 
 > Rewrite the programs again, this time using `auto`.
+>
+> *^ i.e. exercise [`3.43`](#exercise-343)*
 
 **Answer:**
 
 - [`03-45.cpp`](03-45.cpp)
-

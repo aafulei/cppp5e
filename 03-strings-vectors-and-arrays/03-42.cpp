@@ -10,6 +10,7 @@
 #include <vector>
 
 template <typename Seq> void print(Seq const &seq) {
+  // C++20
   for (int i = 0; auto elem : seq) {
     std::cout << (i++ == 0 ? "" : " ") << elem;
   }
