@@ -20,14 +20,14 @@
 #include <iostream>
 #include <string>
 
-std::string getGrade1(int grade) {
+std::string get_grade_cond_op(int grade) {
   return (grade > 90)   ? "high pass"
          : (grade > 75) ? "pass"
          : (grade < 60) ? "fail"
                         : "low pass";
 }
 
-std::string getGrade2(int grade) {
+std::string get_grade_if_else(int grade) {
   if (grade > 90) {
     return "high pass";
   } else if (grade > 75) {
@@ -40,18 +40,18 @@ std::string getGrade2(int grade) {
 }
 
 void test() {
-  std::cout << 100 << '\t' << getGrade1(100) << std::endl;
-  std::cout << 100 << '\t' << getGrade2(100) << std::endl;
-  std::cout << 90 << '\t' << getGrade1(90) << std::endl;
-  std::cout << 90 << '\t' << getGrade2(90) << std::endl;
-  std::cout << 80 << '\t' << getGrade1(80) << std::endl;
-  std::cout << 80 << '\t' << getGrade2(80) << std::endl;
-  std::cout << 70 << '\t' << getGrade1(70) << std::endl;
-  std::cout << 70 << '\t' << getGrade2(70) << std::endl;
-  std::cout << 60 << '\t' << getGrade1(60) << std::endl;
-  std::cout << 60 << '\t' << getGrade2(60) << std::endl;
-  std::cout << 50 << '\t' << getGrade1(50) << std::endl;
-  std::cout << 50 << '\t' << getGrade2(50) << std::endl;
+  std::cout << 100 << '\t' << get_grade_cond_op(100) << std::endl;
+  std::cout << 100 << '\t' << get_grade_if_else(100) << std::endl;
+  std::cout << 90 << '\t' << get_grade_cond_op(90) << std::endl;
+  std::cout << 90 << '\t' << get_grade_if_else(90) << std::endl;
+  std::cout << 80 << '\t' << get_grade_cond_op(80) << std::endl;
+  std::cout << 80 << '\t' << get_grade_if_else(80) << std::endl;
+  std::cout << 70 << '\t' << get_grade_cond_op(70) << std::endl;
+  std::cout << 70 << '\t' << get_grade_if_else(70) << std::endl;
+  std::cout << 60 << '\t' << get_grade_cond_op(60) << std::endl;
+  std::cout << 60 << '\t' << get_grade_if_else(60) << std::endl;
+  std::cout << 50 << '\t' << get_grade_cond_op(50) << std::endl;
+  std::cout << 50 << '\t' << get_grade_if_else(50) << std::endl;
 }
 
 int main() {

@@ -22,7 +22,7 @@
 
 #include <string>
 
-std::string scoreToGrade(int score) {
+std::string score_to_grade(int score) {
   if (score < 60) {
     return "F";
   }
@@ -60,7 +60,7 @@ std::string scoreToGrade(int score) {
 
 void test() {
   for (int score = 100; score >= 0; --score) {
-    std::cout << std::setw(3) << score << " " << scoreToGrade(score);
+    std::cout << std::setw(3) << score << " " << score_to_grade(score);
     if (score % 10 == 0) {
       std::cout << '\n';
     } else {

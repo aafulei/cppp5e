@@ -15,8 +15,9 @@ void print(const std::vector<int> &vec) {
   }
 }
 
-void doubleOdd(std::vector<int> &vec) {
+void double_odd(std::vector<int> &vec) {
   for (int &elem : vec) {
+    // required to use a conditional operator
     elem = elem % 2 != 0 ? elem * 2 : elem;
   }
 }
@@ -24,7 +25,7 @@ void doubleOdd(std::vector<int> &vec) {
 void test() {
   std::vector<int> vec{8, 0, 9, 2, 4, 1, 3, 5};
   print(vec);
-  doubleOdd(vec);
+  double_odd(vec);
   print(vec);
 }
 

@@ -37,7 +37,7 @@ struct Sales_data {
 };
 
 // read multiple book transactions and print them out
-int rewriteExercise_1_20() {
+int rewrite_exercise_1_20() {
   Sales_data data;
   double price = 0;
   while (std::cin >> data.bookNo >> data.units_sold >> price) {
@@ -49,7 +49,7 @@ int rewriteExercise_1_20() {
 }
 
 // sum two book transactions: assume two books have the same ISBN
-int rewriteExercise_1_21() {
+int rewrite_exercise_1_21() {
   Sales_data data1, data2;
   double price = 0;
   std::cin >> data1.bookNo >> data1.units_sold >> price;
@@ -73,7 +73,7 @@ int rewriteExercise_1_21() {
 }
 
 // sum multiple book transactions: assume multiple books have the same ISBN
-int rewriteExercise_1_22() {
+int rewrite_exercise_1_22() {
   Sales_data data, sum;
   double price = 0;
   if (std::cin >> data.bookNo >> data.units_sold >> price) {
@@ -91,7 +91,7 @@ int rewriteExercise_1_22() {
 }
 
 // count book transactions
-int rewriteExercise_1_23() {
+int rewrite_exercise_1_23() {
   Sales_data currVal, val;
   double price = 0;
   if (std::cin >> currVal.bookNo >> currVal.units_sold >> price) {
@@ -114,7 +114,7 @@ int rewriteExercise_1_23() {
 }
 
 // bookstore program
-int rewriteExercise_1_25() {
+int rewrite_exercise_1_25() {
   Sales_data total;
   double price = 0;
   if (std::cin >> total.bookNo >> total.units_sold >> price) {
@@ -143,15 +143,15 @@ int rewriteExercise_1_25() {
 
 int main() {
 #ifdef RE120
-  return rewriteExercise_1_20();
+  return rewrite_exercise_1_20();
 #elif RE121
-  return rewriteExercise_1_21();
+  return rewrite_exercise_1_21();
 #elif RE122
-  return rewriteExercise_1_22();
+  return rewrite_exercise_1_22();
 #elif RE123
-  return rewriteExercise_1_23();
+  return rewrite_exercise_1_23();
 #elif RE125
-  return rewriteExercise_1_25();
+  return rewrite_exercise_1_25();
 #else
   std::cerr << "Compile options:\n\t"
                "-DRE120 for rewrite of Exercise 1.20\n\t"
