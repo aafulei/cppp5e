@@ -1,3 +1,4 @@
+// 22/02/10 = Thu
 // 21/12/22 = Wed
 // 18/01/26 = Fri
 // 17/10/20 = Fri
@@ -7,38 +8,37 @@
 // string. Next, change the program to separate adjacent input strings by a
 // space.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-05-concat-str-with-spaces.cpp && \
-./a.out <../data/several-strings.txt
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-05-concat-str-with-spaces.cpp && ^
-a <..\data\several-strings.txt
-
-=== Input ===
-(several-strings.txt)
-clock watch
-timepiece timekeeper
-chronograph chronometer
-stopwatch sandglass
-
-=== Output ===
-(several-strings.txt)
-clock watch timepiece timekeeper chronograph chronometer stopwatch sandglass
-*/
+// Compile with macro ADDSPACE defined to separate input strings by a space.
 
 #include <iostream>
 #include <string>
 
-int main() {
-  std::string s, sum;
-  while (std::cin >> s) {
-    if (!sum.empty()) {
-      sum += " ";
-    }
-    sum += s;
+std::string concat() {
+  std::string res, str;
+  while (std::cin >> str) {
+    res += str;
   }
-  std::cout << sum << std::endl;
+  return res;
+}
+
+std::string concatWithSpaces() {
+  std::string res, str;
+  while (std::cin >> str) {
+    if (!res.empty()) {
+      res += " ";
+    }
+    res += str;
+  }
+  return res;
+}
+
+int main() {
+  std::string res;
+#ifndef ADDSPACE
+  res = concat();
+#else
+  res = concatWithSpaces();
+#endif
+  std::cout << res << std::endl;
   return 0;
 }
