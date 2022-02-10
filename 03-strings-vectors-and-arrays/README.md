@@ -354,6 +354,8 @@ The second approach is preferred in this case, because it fits the purpose here:
 
 **Answer:**
 
+Because operator `+` is not defined between iterators.
+
 ## Section 3.5 Arrays
 
 ### Exercise 3.27
