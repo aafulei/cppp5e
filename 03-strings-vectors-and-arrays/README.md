@@ -511,7 +511,7 @@ This program tries to print out all the characters in `char` array `ca`, each in
 
 > In this section, we noted that it was not only illegal but meaningless to try to add two pointers. Why would adding two pointers be meaningless?
 
-**Answer:** Pointers are addresses in the physical memory. Consider addresses on a street. Say Alice lives at No. 3 New Street, while Bob lives at No. 23 New Street. Subtracting No. 3 from No. 23 gives you the distance of the addresses: Alice need to go past 20 buildings to visit Bob. But what is the point of adding No. 3 to No. 23?
+**Answer:** Pointers are addresses in the physical memory. The difference between two addresses describes the distance between them. The sum of two addresses are just meaningless.
 
 ### Exercise 3.39
 
