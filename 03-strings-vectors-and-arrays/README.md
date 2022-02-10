@@ -419,7 +419,7 @@ Because operator `+` is not defined between iterators.
 
 2. an array can't be directly passed to and returned from functions
 
-3. an array can't be assigned using operator `=`
+3. an array can't be directly compared using operator `==` and can't be assigned using operator `=`
 
 ### Exercise 3.30
 
@@ -456,13 +456,15 @@ Accessing `ia[array_size]` has undefined behavior.
 
 ### Exercise 3.33
 
-> What would happen if we did not initialize the scores array in the program on *page 116*?
+> What would happen if we did not initialize the `scores` array in the program on *page 116*?
 
 **Answer:**
 
+The `scores` array would have 11 `unsigned` elements of indeterministic values.
+
 ### Exercise 3.34
 
-> Given that p1 and p2 point to elements in the same array, what does the following code do? Are there values of p1 or p2 that make this code illegal?
+> Given that `p1` and `p2` point to elements in the same array, what does the following code do? Are there values of `p1` or `p2` that make this code illegal?
 >
 > ```c++
 > p1 += p2 - p1;
@@ -470,11 +472,15 @@ Accessing `ia[array_size]` has undefined behavior.
 
 **Answer:**
 
+Moving `p1` so that it points to the same element as does `p2`. No.
+
 ### Exercise 3.35
 
 > Using pointers, write a program to set the elements in an array to zero.
 
 **Answer:**
+
+- [`03-35.cpp`](03-35.cpp)
 
 ### Exercise 3.36
 
@@ -499,11 +505,13 @@ Accessing `ia[array_size]` has undefined behavior.
 
 **Answer:**
 
+This program tries to print out all the characters in `char` array `ca`, each in one line. However, it has a bug. The one element past the end of `ca` has an indeterministic value, not necessarily `0`. Therefore, the `while` loop might not terminate as `cp` loops over `ca`.
+
 ### Exercise 3.38
 
 > In this section, we noted that it was not only illegal but meaningless to try to add two pointers. Why would adding two pointers be meaningless?
 
-**Answer:**
+**Answer:** Pointers are addresses in the physical memory. Consider addresses on a street. Say Alice lives at No. 3 New Street, while Bob lives at No. 23 New Street. Subtracting No. 3 from No. 23 gives you the distance of the addresses: Alice need to go past 20 buildings to visit Bob. But what is the point of adding No. 3 to No. 23?
 
 ### Exercise 3.39
 

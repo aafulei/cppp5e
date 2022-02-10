@@ -4,27 +4,26 @@
 // Exercise 3.35: Using pointers, write a program to set the elements in an
 // array to zero.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-35-zero-array.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-35-zero-array.cpp && a
-
-=== Output ===
-0 0 0 0 0 0 0 0 0 0
-*/
-
 #include <cstddef>
 #include <iostream>
 
-int main() {
-  int arr[10];
-  for (int *p = arr; p != arr + 10; ++p) {
+template <std::size_t N> void print_array(int (&a)[N]) {
+  // C++20
+  for (int i = 0; int elem : a) {
+    std::cout << elem << (i++ == N - 1 ? "\n" : " ");
+  }
+}
+
+void zero_array(int a[], std::size_t sz) {
+  for (int *p = a; p != a + sz; ++p) {
     *p = 0;
   }
-  for (auto elem : arr)
-    std::cout << elem << " ";
-  std::cout << std::endl;
+}
+
+int main() {
+  int a[10];
+  print_array(a);
+  zero_array(a, 10);
+  print_array(a);
   return 0;
 }

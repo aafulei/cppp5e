@@ -13,6 +13,7 @@
 #include <vector>
 
 template <std::size_t N> void print_array(int (&a)[N]) {
+  // C++20
   for (int i = 0; int elem : a) {
     std::cout << elem << (i++ == N - 1 ? "\n" : " ");
   }
@@ -25,6 +26,7 @@ void copy_array(int *src, int *dest, std::size_t sz) {
 }
 
 void print_vector(const std::vector<int> &vec) {
+  // C++20
   for (std::vector<int>::size_type i = 0; int elem : vec) {
     std::cout << elem << (i++ == vec.size() - 1 ? "\n" : " ");
   }
