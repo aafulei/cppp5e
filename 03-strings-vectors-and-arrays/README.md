@@ -131,6 +131,8 @@ std::cout << endl;
 
 **Answer:**
 
+The program tries to print out the first element in an empty string, which is invalid, because the subscripting goes out of range.
+
 ### Exercise 3.10
 
 > Write a program that reads a string of characters including punctuation and writes what was read but with the punctuation removed.
