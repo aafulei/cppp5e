@@ -50,9 +50,21 @@
 
 ### Exercise 3.3
 
-> Explain how whitespace characters are handled in the string input operator and in the `getline` function.
+> Explain how whitespace characters are handled in the `string` input operator and in the `getline` function.
 
 **Answer:**
+
+- `string` input operator: `is >> str`
+
+  - Leading whitespaces are ignored.
+  - Read and store all the characters until a whitespace character or the EOF is reached.
+  - The ending whitespace character, if there is one, is not stored.
+
+- `getline` function: `getline(is, str)`
+
+  - Do not ignore leading whitespaces, e.g. spaces or tabs.
+  - Read and store all the characters until a newline or the EOF is reached.
+  - The ending newline, if there is one, is not stored.
 
 ### Exercise 3.4
 
