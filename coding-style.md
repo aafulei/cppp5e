@@ -108,7 +108,7 @@ Otherwise,
 | -------------- | --------------------------------------------------------- |
 | Class Name     | `class PascalCase;` `struct PascalCase;`                  |
 | File Name      | `lowercase-with-hyphens.hpp` `lowercase-with-hyphens.cpp` |
-| Function Name  | `void lowercase_with_underscores();`                      |
+| Function Name  | `int lowercase_with_underscores();`                       |
 | Macro Name     | `#define UPPERCASE_WITH_UNDERSCORES`                      |
 | Namespace Name | `namespace lowercase_with_underscores {}`                 |
 | Variable Name  | `int lowercase_with_underscores;`                         |
