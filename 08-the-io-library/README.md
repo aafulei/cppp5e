@@ -49,7 +49,7 @@ In particular, the `while` loop would terminate when `cin` evaluates to `false`,
 
 ### Exercise 8.4
 
-> Write a function to open a file for input and read its contents into a `vector` of strings, storing each line as a separate element in the `vector`.
+> Write a function to open a file for input and read its contents into a vector of strings, storing each line as a separate element in the vector.
 
 **Answer:**
 
@@ -101,7 +101,7 @@ In particular, the `while` loop would terminate when `cin` evaluates to `false`,
 
 ### Exercise 8.10
 
-> Write a program to store each line from a file in a `vector<string>`. Now use an `istringstream` to read each element from the `vector` a word at a time.
+> Write a program to store each line from a file in a `vector<string>`. Now use an `istringstream` to read each element from the vector a word at a time.
 
 **Answer:**
 

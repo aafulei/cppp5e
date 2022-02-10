@@ -345,7 +345,7 @@ if (i == 1024)
 
 **Answer:**
 
-The loop would print out the elements that are 1 element next to what should be printed out. In particular, the loop might try to deference one past the end of the `vector`, which has undefined behavior.
+The loop would print out the elements that are 1 element next to what should be printed out. In particular, the loop might try to deference one past the end of the vector, which has undefined behavior.
 
 ### Exercise 4.19
 
