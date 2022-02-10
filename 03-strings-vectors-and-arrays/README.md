@@ -523,7 +523,7 @@ This program tries to print out all the characters in `char` array `ca`, each in
 
 ### Exercise 3.40
 
-> Write a program to define two character arrays initialized from string literals. Now define a third character array to hold the concatenation of the two arrays. Use strcpy and strcat to copy the two arrays into the third.
+> Write a program to define two character arrays initialized from string literals. Now define a third character array to hold the concatenation of the two arrays. Use `strcpy` and `strcat` to copy the two arrays into the third.
 
 **Answer:**
 
@@ -531,7 +531,7 @@ This program tries to print out all the characters in `char` array `ca`, each in
 
 ### Exercise 3.41
 
-> Write a program to initialize a vector from an array of ints.
+> Write a program to initialize a vector from an array of `int`s.
 
 **Answer:**
 

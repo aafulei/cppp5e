@@ -6,18 +6,6 @@
 // concatenation of the two arrays. Use strcpy and strcat to copy the two arrays
 // into the third.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-40-concat-char-arrays.cpp && \
-./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-40-concat-char-arrays.cpp && a
-
-=== Output ===
-Hello, World!
-*/
-
 #include <cstring>
 #include <iostream>
 
