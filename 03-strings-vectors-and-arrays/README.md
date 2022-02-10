@@ -400,8 +400,11 @@ Because operator `+` is not defined between iterators.
 **Answer:**
 
 - `sa` has 10 empty strings
+
 - `ia` has 10 `int` elements, each with value `0`
+
 - `sa2` has 10 empty strings
+
 - `ia2` has 10 `int` elements, whose values are indeterministic
 
 ### Exercise 3.29
@@ -411,7 +414,9 @@ Because operator `+` is not defined between iterators.
 **Answer:**
 
 1. an array has a fixed size, which has to be known at compile time
+
 2. an array can't be directly passed to and returned from functions
+
 3. an array can't be assigned with operator `=`
 
 ### Exercise 3.30
@@ -431,7 +436,7 @@ Accessing `ia[array_size]` has undefined behavior.
 
 ### Exercise 3.31
 
-> Write a program to define an array of ten ints. Give each element the same value as its position in the array.
+> Write a program to define an array of ten `int`s. Give each element the same value as its position in the array.
 
 **Answer:**
 
