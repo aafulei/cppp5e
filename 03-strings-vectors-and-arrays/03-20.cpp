@@ -21,7 +21,7 @@ void sum_adjacent_elements(const std::vector<int> &vec) {
 // Note: Given {1, 2, 3, 4, 5}, should return {6, 6, 3}, not {6, 6, 6}
 void sum_symmetric_elements(const std::vector<int> &vec) {
   const auto N = vec.size();
-  // decltype(N) is const size_t, while decltype(N + 0) is size_t
+  // decltype(N) --> const size_t, decltype(N + 0) --> size_t
   for (decltype(N + 0) i = 0; i != N / 2; ++i) {
     std::cout << vec[i] + vec[N - 1 - i] << " ";
   }
