@@ -18,7 +18,7 @@
 
 #include <iostream>
 
-void forLoopEx01_09() {
+void for_loop_exer_01_09() {
   int sum = 0;
   for (int val = 50; val <= 100; ++val) {
     sum += val;
@@ -26,13 +26,13 @@ void forLoopEx01_09() {
   std::cout << sum << std::endl;
 }
 
-void forLoopEx01_10() {
+void for_loop_exer_01_10() {
   for (int n = 10; n >= 0; --n) {
     std::cout << n << std::endl;
   }
 }
 
-void forLoopEx01_11() {
+void for_loop_exer_01_11() {
   std::cout << "Enter two numbers:" << std::endl;
   int v1 = 0, v2 = 0;
   std::cin >> v1 >> v2;
@@ -43,10 +43,10 @@ void forLoopEx01_11() {
 
 int main() {
   std::cout << "=== Exercise 1.9 ===" << std::endl;
-  forLoopEx01_09();
+  for_loop_exer_01_09();
   std::cout << "=== Exercise 1.10 ===" << std::endl;
-  forLoopEx01_10();
+  for_loop_exer_01_10();
   std::cout << "=== Exercise 1.11 ===" << std::endl;
-  forLoopEx01_11();
+  for_loop_exer_01_11();
   return 0;
 }
