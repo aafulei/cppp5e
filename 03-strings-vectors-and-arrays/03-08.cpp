@@ -7,44 +7,42 @@
 
 // Exercise 3.6: Use a range for to change all the characters in a string to X.
 
-// Answer: I prefer the range-for approach because it avoids out-of-range
-// subscripting.
+// Answer: In this particular example, I prefer the range for approach because
+// it is simple and avoids out-of-range subscripting. However, in my opinion,
+// range for loop only becomes useful after init-statement was introduced in
+// C++20, because it is all too often that we need to know the element position
+// in a for loop.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-08-range-for-str.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-08-range-for-str.cpp && a
-
-=== Output ===
-Hello, World!
-XXXXXXXXXXXXX
-Hello, World!
-XXXXXXXXXXXXX
-*/
+// C++20: print a space between each char in string
+// for (int i = 0; char c : str) {
+//   std::cout << (i++ == 0 ? "" : " ") << c;
+// }
+// std::cout << endl;
 
 #include <iostream>
 #include <string>
 
-using std::cout;
-using std::endl;
-using std::string;
+void change_with_while_loop(std::string &str) {
+  decltype(str.size()) i = 0;
+  while (i != str.size()) {
+    str[i] = 'X';
+    i += 1;
+  }
+}
+
+void change_with_traditional_for_loop(std::string &str) {
+  for (decltype(str.size()) i = 0; i != str.size(); ++i) {
+    str[i] = 'X';
+  }
+}
 
 int main() {
   std::string str = "Hello, World!";
   std::cout << str << std::endl;
-  decltype(str.size()) index = 0;
-  while (index != str.size()) {
-    str[index] = 'X';
-    index += 1;
-  }
+  change_with_while_loop(str);
   std::cout << str << std::endl;
   str = "Hello, World!";
-  std::cout << str << std::endl;
-  for (decltype(str.size()) i = 0; i != str.size(); ++i) {
-    str[i] = 'X';
-  }
+  change_with_traditional_for_loop(str);
   std::cout << str << std::endl;
   return 0;
 }

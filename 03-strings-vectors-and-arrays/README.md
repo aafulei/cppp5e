@@ -103,8 +103,20 @@
 ### Exercise 3.8
 
 > Rewrite the program in the first exercise, first using a `while` and again using a traditional `for` loop. Which of the three approaches do you prefer and why?
+>
+> *^ i.e. exercise [`3.6`](#exercise-36)*
 
 **Answer:**
+
+In this particular example, I prefer the range `for` approach because it is simple and avoids out-of-range subscripting. However, in my opinion, range `for` loop only becomes useful after `init-statement` was introduced in C++20, because it is all too often that we need to know the element position in a `for` loop.
+
+```c++
+// C++20: print a space between each char in string
+for (int i = 0; char c : str) {
+  std::cout << (i++ == 0 ? "" : " ") << c;
+}
+std::cout << endl;
+```
 
 - [`03-08.cpp`](03-08.cpp)
 
