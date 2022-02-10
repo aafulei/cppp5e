@@ -3,11 +3,11 @@
 - [Section 3.1 Namespace using Declarations](#section-31-namespace-using-declarations)
   - *Exercises* [`3.1`](#exercise-31)
 
-- [Section 3.2 Library string Type](#section-32-library-string-type)
+- [Section 3.2 Library `string` Type](#section-32-library-string-type)
   - *Exercises* [`3.2`](#exercise-32) [`3.3`](#exercise-33) [`3.4`](#exercise-34) [`3.5`](#exercise-35)
   - *Exercises* [`3.6`](#exercise-36) [`3.7`](#exercise-37) [`3.8`](#exercise-38) [`3.9`](#exercise-39) [`3.10`](#exercise-310) [`3.11`](#exercise-311)
 
-- [Section 3.3 Library vector Type](#section-33-library-vector-type)
+- [Section 3.3 Library `vector` Type](#section-33-library-vector-type)
   - *Exercises* [`3.12`](#exercise-312) [`3.13`](#exercise-313)
   - *Exercises* [`3.14`](#exercise-314) [`3.15`](#exercise-315)
   - *Exercises* [`3.16`](#exercise-316) [`3.17`](#exercise-317) [`3.18`](#exercise-318) [`3.19`](#exercise-319) [`3.20`](#exercise-320)
@@ -38,7 +38,7 @@
 
 - [`03-01.cpp`](03-01.cpp)
 
-## Section 3.2 Library string Type
+## Section 3.2 Library `string` Type
 
 ### Exercise 3.2
 
@@ -155,7 +155,7 @@ The program tries to print out the first element in an empty string, which is in
 
 Yes, the range `for` is legal. The type of `c` is `const char &`, or a reference to `const char`.
 
-## Section 3.3 Library vector Type
+## Section 3.3 Library `vector` Type
 
 ### Exercise 3.12
 
