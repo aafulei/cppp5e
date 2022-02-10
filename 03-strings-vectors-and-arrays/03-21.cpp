@@ -27,7 +27,7 @@
 
 template <typename V> std::string str(const V &vec) {
   std::ostringstream oss;
-  for (auto it = vec.begin(); it != vec.end(); ++it) {
+  for (typename V::const_iterator it = vec.begin(); it != vec.end(); ++it) {
     if (it != vec.begin()) {
       oss << ",";
     }

@@ -1,3 +1,4 @@
+// 22/02/10 = Thu
 // 21/12/23 = Thu
 // 18/01/28 = Sun
 
@@ -7,37 +8,48 @@
 // Exercise 3.31: Write a program to define an array of ten ints. Give each
 // element the same value as its position in the array.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-32-copy-array.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-32-copy-array.cpp && a
-
-=== Output ===
-0 1 2 3 4 5 6 7 8 9
-0 1 2 3 4 5 6 7 8 9
-*/
-
 #include <cstddef>
 #include <iostream>
+#include <vector>
+
+template <std::size_t N> void print_array(int (&a)[N]) {
+  for (int i = 0; int elem : a) {
+    std::cout << elem << (i++ == N - 1 ? "\n" : " ");
+  }
+}
+
+void copy_array(int *src, int *dest, std::size_t sz) {
+  for (std::size_t i = 0; i != sz; ++i) {
+    dest[i] = src[i];
+  }
+}
+
+void print_vector(const std::vector<int> &vec) {
+  for (std::vector<int>::size_type i = 0; int elem : vec) {
+    std::cout << elem << (i++ == vec.size() - 1 ? "\n" : " ");
+  }
+}
+
+void copy_vector(const std::vector<int> &src, std::vector<int> &dest) {
+  dest = src;
+}
 
 int main() {
-  int a[10];
+  // array
+  int a[10], b[10];
   for (std::size_t i = 0; i != 10; ++i) {
     a[i] = i;
   }
-  for (auto i : a) {
-    std::cout << i << " ";
+  print_array(a);
+  copy_array(a, b, 10);
+  print_array(b);
+  // vector
+  std::vector<int> u(10), v(10);
+  for (int i = 0; i != 10; ++i) {
+    u[i] = i;
   }
-  std::cout << std::endl;
-  int b[10];
-  for (std::size_t i = 0; i != 10; ++i) {
-    b[i] = a[i];
-  }
-  for (auto i : b) {
-    std::cout << i << " ";
-  }
-  std::cout << std::endl;
+  print_vector(u);
+  copy_vector(u, v);
+  print_vector(v);
   return 0;
 }

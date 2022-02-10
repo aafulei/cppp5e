@@ -9,17 +9,6 @@
 
 // Answer: Yes, the range for is legal. The type of c is const char &.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-11-range-for-str.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-11-range-for-str.cpp && a
-
-=== Output ===
-Keep out!
-*/
-
 #include <iostream>
 #include <string>
 
