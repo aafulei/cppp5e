@@ -153,7 +153,7 @@ The program tries to print out the first element in an empty string, which is in
 
 **Answer:**
 
-Yes, the range `for` is legal. The type of `c` is `const char &`, or a reference to `const char`.
+Yes, the range `for` is legal. The type of `c` is `const char &`. That is, a reference to `const char`.
 
 ## Section 3.3 Library `vector` Type
 
