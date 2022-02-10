@@ -265,20 +265,27 @@ ivec.push_back(42);
 
 **Answer:**
 
-```c++
-// approach 1: start with an empty vector and push 10 elements to its back
-std::vector<int> vec1;
-int num = 10;
-while (num-- > 0) {
-  vec1.push_back(42);
-}
+1. start with an empty vector and push 10 elements to its back
 
-// approach 2: value initialize a vector with 10 elements of value 42
-std::vector<int> vec2(10, 42);
+  ```c++
+  std::vector<int> vec1;
+  int num = 10;
+  while (num-- > 0) {
+    vec1.push_back(42);
+  }
+  ```
 
-// approach 3: list initialze a vector with 10 elements
-std::vector<int> vec3{42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
-```
+2. value initialize a vector with 10 elements of value 42
+
+  ```c++
+  std::vector<int> vec2(10, 42);
+  ```
+
+3. list initialze a vector with 10 elements
+
+  ```c++
+  std::vector<int> vec3{42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
+  ```
 
 The second approach is preferred in this case, because it fits the purpose here: a pre-determined number of elements, each with the same value.
 
