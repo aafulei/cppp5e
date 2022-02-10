@@ -402,7 +402,7 @@ Because operator `+` is not defined between iterators.
 - `sa` has 10 empty strings
 - `ia` has 10 `int` elements, each with value `0`
 - `sa2` has 10 empty strings
-- `ia2` has 10 `int` elements, the value of which is indeterministic
+- `ia2` has 10 `int` elements, whose values are indeterministic
 
 ### Exercise 3.29
 
