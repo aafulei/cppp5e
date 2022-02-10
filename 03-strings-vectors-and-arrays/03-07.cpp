@@ -9,22 +9,7 @@
 
 // Answer: The string would not be changed.
 
-/* === Compile and Run ===
-(Linux/macOS)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-07-range-for-str.cpp && ./a.out
-
-(Windows)
-clang++ -std=c++11 -pedantic -Wall -Wextra 03-07-range-for-str.cpp && a
-
-== Compiler Warning ===
-warning: variable 'c' set but not used
-
-=== Output ===
-Hello, World!
-Hello, World!
-*/
-
-// Modified from 03-06-range-for-str.cpp
+// Modified from 03-06.cpp
 
 #include <iostream>
 #include <string>
@@ -32,7 +17,8 @@ Hello, World!
 int main() {
   std::string str = "Hello, World!";
   std::cout << str << std::endl;
-  for (char c : str) { // Use char instead of char &
+  // use char instead of char &
+  for (char c : str) {
     c = 'X';
   }
   std::cout << str << std::endl;

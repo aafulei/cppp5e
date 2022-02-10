@@ -88,15 +88,21 @@
 
 **Answer:**
 
+- [`03-06.cpp`](03-06.cpp)
+
 ### Exercise 3.7
 
-> What would happen if you define the loop control variable in the previous exercise as type char? Predict the results and then change your program to use a char to see if you were right.
+> What would happen if you define the loop control variable in the previous exercise as type `char`? Predict the results and then change your program to use a char to see if you were right.
 
 **Answer:**
 
+ The string would not be changed.
+
+- [`03-07.cpp`](03-07.cpp)
+
 ### Exercise 3.8
 
-> Rewrite the program in the first exercise, first using a `while` and again using a traditional for loop. Which of the three approaches do you prefer and why?
+> Rewrite the program in the first exercise, first using a `while` and again using a traditional `for` loop. Which of the three approaches do you prefer and why?
 
 **Answer:**
 

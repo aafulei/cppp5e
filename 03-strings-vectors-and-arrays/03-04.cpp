@@ -12,7 +12,7 @@
 #include <iostream>
 #include <string>
 
-void compareStr(const std::string &s1, const std::string &s2) {
+void compare_str(const std::string &s1, const std::string &s2) {
   if (s1 == s2) {
     std::cout << "Two strings are equal." << std::endl;
   } else {
@@ -24,7 +24,7 @@ void compareStr(const std::string &s1, const std::string &s2) {
   }
 }
 
-void compareStrLen(const std::string &s1, const std::string &s2) {
+void compare_strlen(const std::string &s1, const std::string &s2) {
   if (s1.size() == s2.size()) {
     std::cout << "Two strings have the same length." << std::endl;
   } else {
@@ -40,9 +40,9 @@ int main() {
   std::string s1, s2;
   std::cin >> s1 >> s2;
 #ifndef STRLEN
-  compareStr(s1, s2);
+  compare_str(s1, s2);
 #else
-  compareStrLen(s1, s2);
+  compare_strlen(s1, s2);
 #endif
   return 0;
 }

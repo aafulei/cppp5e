@@ -8,7 +8,7 @@
 // string. Next, change the program to separate adjacent input strings by a
 // space.
 
-// Compile with macro SPACE defined to separate input strings by a space.
+// Compile with macro ADDSPACE defined to separate input strings by a space.
 
 #include <iostream>
 #include <string>
@@ -34,7 +34,7 @@ std::string read_and_concat_with_spaces() {
 
 int main() {
   std::string res;
-#ifndef SPACE
+#ifndef ADDSPACE
   res = read_and_concat();
 #else
   res = read_and_concat_with_spaces();
