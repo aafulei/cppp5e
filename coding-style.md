@@ -126,6 +126,8 @@ Within each section,
 3. constructors
 4. destructor
 5. methods
+
   (1) read methods
   (2) write methods
+
 6. data members
