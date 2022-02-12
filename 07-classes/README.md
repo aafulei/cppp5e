@@ -635,7 +635,7 @@ we interpret each line as a book and use `|` as the delimiter between fields.
 
 **Answer:**
 
- No, because when `vec` is being value initialized, its elements are default initialized. However, there is no default constructor in class `NoDefault`.
+ No. Because when `vec` is being value initialized, its elements are default initialized. However, there is no default constructor in class `NoDefault`.
 
 ### Exercise 7.45
 
