@@ -128,6 +128,7 @@ Within each section,
 5. methods
 
     (1) read methods
+
     (2) write methods
 
 6. data members
