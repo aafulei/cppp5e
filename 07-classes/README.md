@@ -422,7 +422,7 @@ The compiler would issue errors about *all* the occurrences of `pos` in the clas
 
 ### Exercise 7.35
 
-> Explain the following code, indicating which definition of Type or initVal is used for each use of those names. Say how you would fix any errors.
+> Explain the following code, indicating which definition of `Type` or `initVal` is used for each use of those names. Say how you would fix any errors.
 >
 > ```c++
 > typedef string Type;
@@ -443,6 +443,20 @@ The compiler would issue errors about *all* the occurrences of `pos` in the clas
 > ```
 
 **Answer:**
+
+In class `Exercise` all the occurrences of `Type` stand for an alias of `double`.
+
+In `Type Exercise::setVal(Type parm)`, the return type `Type` stands for `string`, while the parameter type `Type` as in `Type parm` stands for `double`.
+
+The `initVal()` in the function `Exercise::setVal` is the version declared in `Exercise`, which returns `double`.
+
+Therefore, there is a type mismatch between the value returned and the type specified in `Type Exercise::setVal(Type parm)`. To fix it, change `Type Exercise::setVal(Type parm)` to
+
+```c++
+Exercise::Type Exercise::setVal(Type parm) {
+  // ...
+}
+```
 
 ## Section 7.5 Constructors Revisited
 
