@@ -83,7 +83,7 @@ Yes, because they do not alter a `Person` object.
 
 ### Exercise 7.6
 
-> Define your own versions of the add, read, and print functions.
+> Define your own versions of the `add`, `read`, and `print` functions.
 
 **Answer:**
 
@@ -92,10 +92,12 @@ Yes, because they do not alter a `Person` object.
 ### Exercise 7.7
 
 > Rewrite the transaction-processing program you wrote for the exercises in Section 7.1.2 (p. 260) to use these new functions.
+>
+> *^ i.e. exercise [`7.3`](#exercise-73)*
 
 **Answer:**
 
-- [`07-07.cpp`](07-07.cpp)
+- See [`07-06.cpp`](07-06.cpp)
 
 ### Exercise 7.8
 
