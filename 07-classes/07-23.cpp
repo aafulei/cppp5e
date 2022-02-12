@@ -3,23 +3,44 @@
 
 // Exercise 7.23: Write your own version of the Screen class.
 
-// clang++ -std=c++11 -pedantic -Wall -Wextra 07-23-test.cpp -o 07-23-test
-
-#include "07-23-screen.hpp"
+#include <cstddef>
 #include <iostream>
+#include <string>
 
-using namespace std;
+class Screen {
+public:
+  using pos = std::string::size_type;
+  Screen() = default;
+  Screen(pos h, pos w, char x) : height(h), width(w), content(h * w, x) {}
+  char get() const { return content[cursor]; }
+  char get(pos r, pos c) const { return content[r * width + c]; }
+  pos get_size() const { return height * width; }
+  pos get_cursor() const { return cursor; }
+  Screen &move(pos r, pos c) {
+    cursor = r * width + c;
+    return *this;
+  }
+  std::size_t access_count() const { return ++access_ctr; }
+
+private:
+  pos height = 0, width = 0;
+  pos cursor = 0;
+  std::string content;
+  mutable std::size_t access_ctr = 0;
+};
+
+void test() {
+  Screen scr(24, 80, '*');
+  std::cout << scr.get() << std::endl;              // *
+  std::cout << scr.get_size() << std::endl;         // 1920 (= 24 * 80)
+  std::cout << scr.move(10, 10).get() << std::endl; // *
+  std::cout << scr.get_cursor() << std::endl;       // 810 (= 10 * 80 + 10)
+  const Screen scr2(100, 100, '.');                 // note that scr2 is const
+  std::cout << scr2.access_count() << std::endl;    // 1 (called once)
+  std::cout << scr2.access_count() << std::endl;    // 2 (called twice)
+}
 
 int main() {
-  Screen scr(24, 80, '*');
-  cout << scr.get() << endl;              // *
-  cout << scr.get_size() << endl;         // 1920 (= 24 * 80)
-  cout << scr.move(10, 10).get() << endl; // *
-  cout << scr.get_cursor() << endl;       // 810 (= 10 * 80 + 10)
-
-  const Screen scr2(100, 100, '.');    // note that scr2 is const
-  cout << scr2.access_count() << endl; // 1 (called once)
-  cout << scr2.access_count() << endl; // 2 (called twice)
-
+  test();
   return 0;
 }

@@ -264,7 +264,7 @@ Constructors and getter functions are declared as `public` because they are the 
 
 ### Exercise 7.22
 
-> Update your Person class to hide its implementation.
+> Update your `Person` class to hide its implementation.
 
 **Answer:**
 
@@ -274,7 +274,7 @@ Constructors and getter functions are declared as `public` because they are the 
 
 ### Exercise 7.23
 
-> Write your own version of the Screen class.
+> Write your own version of the `Screen` class.
 
 **Answer:**
 
@@ -282,9 +282,11 @@ Constructors and getter functions are declared as `public` because they are the 
 
 ### Exercise 7.24
 
-> Give your Screen class three constructors: a default constructor; a constructor that takes values for height and width and initializes the contents to hold the given number of blanks; and a constructor that takes values for height, width, and a character to use as the contents of the screen.
+> Give your `Screen` class three constructors: a default constructor; a constructor that takes values for height and width and initializes the contents to hold the given number of blanks; and a constructor that takes values for height, width, and a character to use as the contents of the screen.
 
 **Answer:**
+
+- [`07-24.cpp`](07-24.cpp)
 
 ### Exercise 7.25
 
