@@ -736,25 +736,24 @@ Whether the `Sales_data` constructors are `explicit` or not has no impact on thi
 
 **Answer:**
 
-Assuming *no* `explicit` for `Sales_data(const std::string &)`.
+(a) Assuming *no* `explicit` for `Sales_data(const std::string &)`, a temporary `Sales_data` object initialized from `s` would be combined with `i`. However, if the `Sales_data` constructor from `const std::string &` is `explicit`, then `i.combine(s)` wouldn't compile, because the implicit conversion from a `std::string` to `Sales_data` is forbidden.
 
-(a) A temporary `Sales_data` object initialized from `s` is combined with `i`.
-
-(b) Illegal - we cannot bind a *plain* reference to a temporary object. It could be legal if the declaration were `Sales_data &combine(const Sales_data &)`.
+(b) Illegal - we cannot bind a *plain* reference to a temporary object. It could be legal if the declaration were `Sales_data &combine(const Sales_data &)`. Again, if the `Sales_data` constructor from `const std::string &` is `explicit`, then `i.combine(s)` wouldn't compile, because the implicit conversion from a `std::string` to `Sales_data` is forbidden.
 
 (c) Illegal - declaring a member function `const` prevents any further changes to the object. Thus we cannot combine anything to `i`.
 
 ### Exercise 7.50
 
-> Determine whether any of your Person class constructors should be explicit.
+> Determine whether any of your `Person` class constructors should be explicit.
 
 **Answer:**
 
 ### Exercise 7.51
 
-> Why do you think vector defines its single-argument constructor as explicit, but string does not?
+> Why do you think `vector` defines its single-argument constructor as `explicit`, but `string` does not?
 
 **Answer:**
+
 
 ### Exercise 7.52
 
