@@ -27,7 +27,7 @@ std::string Person::get_addr() const { return addr; }
 int main() {
   Person p;
   p.name = "Alice";
-  p.addr = "Wonderland";
-  std::cout << p.name << " @ " << p.addr << std::endl; // Peter @ England
+  p.addr = "Street";
+  std::cout << p.name << " @ " << p.addr << std::endl; // Alice @ Street
   return 0;
 }
