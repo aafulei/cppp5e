@@ -30,25 +30,27 @@ Person::Person(const std::string &name, const std::string &addr)
 std::string Person::get_name() const { return name; }
 std::string Person::get_addr() const { return addr; }
 
-// --- test --------------------------------------------------------------------
+std::istream &read(std::istream &is, Person &p) {
+  return is >> p.name >> p.addr;
+}
 
-void print(const Person &p) {
+std::ostream &print(std::ostream &os, const Person &p) {
   if (p.name.empty()) {
-    std::cout << "(empty)" << std::endl;
-  } else if (p.addr.empty()) {
-    std::cout << p.name << std::endl;
-  } else {
-    std::cout << p.name << " @ " << p.addr << std::endl;
+    return os << "(empty)" << std::endl;
   }
+  if (p.addr.empty()) {
+    return os << p.name << std::endl;
+  }
+  return os << p.name << " @ " << p.addr << std::endl;
 }
 
 void test() {
   Person p0;
   Person p1("Name");
   Person p2("Name", "Address");
-  print(p0);
-  print(p1);
-  print(p2);
+  print(std::cout, p0);
+  print(std::cout, p1);
+  print(std::cout, p2);
 }
 
 int main() {

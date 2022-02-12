@@ -28,6 +28,6 @@ int main() {
   Person p;
   p.name = "Name";
   p.addr = "Address";
-  std::cout << p.name << " @ " << p.addr << std::endl; // Alice @ Street
+  std::cout << p.name << " @ " << p.addr << std::endl; // Name @ Address
   return 0;
 }
