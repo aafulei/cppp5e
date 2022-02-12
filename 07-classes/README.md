@@ -635,7 +635,7 @@ we interpret each line as a book and use `|` as the delimiter between fields.
 
 **Answer:**
 
- No. Because when `vec` is being value initialized, its elements are default initialized. However, there is no default constructor in class `NoDefault`.
+No, the declaration is legal. Because when `vec` is being value initialized, its elements are default initialized. However, there is no default constructor in class `NoDefault`.
 
 ### Exercise 7.45
 
@@ -661,19 +661,41 @@ That is fine. Because `C` has a default constructor.
 
 All are untrue.
 
-(a) If a class does not provide any constructor, the compiler will synthesize one for it.
+(a) If a class does not provide any constructors, the compiler will synthesize one for it.
 
 (b) A default constructor is a constructor that is called if no initializer is supplied. In addition, a constructor that supplies default arguments for all of its parameters also defines the default constructor.
 
-(c) Without a default constructor, a class may cause trouble to other classes which have a member of its type.
+(c) Without a default constructor, a class might cause trouble to other classes which have a member of its type.
 
-(d) The compiler only synthesizes a default constructor when a class does not have any constructor at all.
+(d) The compiler only synthesizes a default constructor when a class does not have any constructors at all.
 
 ### Exercise 7.47
 
 > Explain whether the `Sales_data` constructor that takes a string should be explicit. What are the benefits of making the constructor explicit? What are the drawbacks?
 
 **Answer:**
+
+If the constructor is declared `explicit`, then we forbid the implicit conversion from a `std::string` to a `Sales_data`. This is acceptable, because a temporary object with only an ISBN, but no quantity, is unlikely to be useful.
+
+Consider Case 1 where `data` is a `Sales_data` and `isbn` is a `std::string`.
+
+```c++
+data.combine(isbn);
+```
+
+The operation is meaningless.
+
+Consider Case 2
+
+```c++
+data = isbn;
+```
+
+This may confuse a reader of the code since we are assigning a `std::string` to a `Sales_data`.
+
+By declaring `explicit`, we avoid the above two cases, which is perfectly fine, and even desirable.
+
+The benefits versus drawbacks are a trade-off between control and convenience.
 
 ### Exercise 7.48
 
