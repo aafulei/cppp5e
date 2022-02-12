@@ -619,7 +619,7 @@ we interpret each line as a book and use `|` as the delimiter between fields.
 
 ### Exercise 7.43
 
-> Assume we have a class named NoDefault that has a constructor that takes an `int`, but has no default constructor. Define a class C that has a member of type NoDefault. Define the default constructor for C.
+> Assume we have a class named `NoDefault` that has a constructor that takes an `int`, but has no default constructor. Define a class `C` that has a member of type `NoDefault`. Define the default constructor for `C`.
 
 **Answer:**
 
@@ -634,6 +634,8 @@ we interpret each line as a book and use `|` as the delimiter between fields.
 > ```
 
 **Answer:**
+
+ No, because when `vec` is being value initialized, its elements are default initialized. However, there is no default constructor in class `NoDefault`.
 
 ### Exercise 7.45
 
