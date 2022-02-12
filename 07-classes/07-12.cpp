@@ -30,7 +30,7 @@ struct Sales_data {
 
 // --- impl --------------------------------------------------------------------
 
-Sales_data::Sales_data() {}
+Sales_data::Sales_data() = default;
 
 Sales_data::Sales_data(const std::string &bookNo) : bookNo(bookNo) {}
 

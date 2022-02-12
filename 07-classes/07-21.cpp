@@ -37,7 +37,7 @@ Sales_data add(const Sales_data &data1, const Sales_data &data2);
 
 // --- impl --------------------------------------------------------------------
 
-Sales_data::Sales_data() {}
+Sales_data::Sales_data() = default;
 
 Sales_data::Sales_data(const std::string &bookNo) : bookNo(bookNo) {}
 

@@ -28,7 +28,7 @@ std::istream &read(std::istream &is, Sales_data &data);
 
 // --- impl --------------------------------------------------------------------
 
-Sales_data::Sales_data() {}
+Sales_data::Sales_data() = default;
 
 Sales_data::Sales_data(const std::string &bookNo) : bookNo(bookNo) {}
 

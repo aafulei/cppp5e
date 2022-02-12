@@ -20,8 +20,8 @@ public:
   Sales_data(std::istream &is);
 
   std::string isbn() const;
-  Sales_data &combine(const Sales_data &data);
   double avg_price() const; // Add
+  Sales_data &combine(const Sales_data &data);
 
 private:
   std::string bookNo;
@@ -35,7 +35,7 @@ Sales_data add(const Sales_data &data1, const Sales_data &data2);
 
 // --- impl --------------------------------------------------------------------
 
-Sales_data::Sales_data() {}
+Sales_data::Sales_data() = default;
 
 Sales_data::Sales_data(const std::string &bookNo) : bookNo(bookNo) {}
 
