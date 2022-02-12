@@ -195,17 +195,17 @@ The `if` statement verifies that `cin` does not fail after reading `data1` and `
 
 **Answer:**
 
-*What, if any, are the constraints on where and how often an access specifier may appear inside a class definition?*
+- *What, if any, are the constraints on where and how often an access specifier may appear inside a class definition?*
 
-No constraints.
+  No constraints.
 
-*What kinds of members should be defined after a public specifier?*
+- *What kinds of members should be defined after a public specifier?*
 
-Interface.
+  Interface.
 
-*What kinds should be private?*
+- *What kinds should be private?*
 
-Implementation.
+  Implementation.
 
 ### Exercise 7.17
 
