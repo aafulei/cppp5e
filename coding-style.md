@@ -3,7 +3,7 @@
 - [Format](#format)
 - [Style](#style)
 - [Naming Convention](#naming-convention)
-
+- [Declaration Order of Class Members](#declaration-order-of-class-members)
 
 ## Format
 
