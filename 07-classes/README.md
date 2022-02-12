@@ -736,30 +736,36 @@ Whether the `Sales_data` constructors are `explicit` or not has no impact on thi
 
 **Answer:**
 
-Assume
+Assume *no* `explicit` for `Sales_data(string)`.
 
-```c++
-class Sales_data {
-public:
-  Sales_data();
-  Sales_data(const std::string & bookNo, unsigned units_sold, double price);
-  explicit Sales_data(const std::string &bookNo);
-  explicit Sales_data(std::istream &is);
-  // remaining members as before
-};
-```
+(a) a temporary `Sales_data` object initialized from `s` is combined with `i`.
 
-(a) Illegal -  the implicit conversion from a `std::string` to `Sales_data` is forbidden. If there were *no* `explicit` for `Sales_data` constructor from a `const std::string &`, a temporary `Sales_data` object initialized from `s` would be combined with `i`.
+(b) illegal - we cannot bind a *plain* reference to a temporary object. It could be legal if the declaration were `Sales_data & combine(const Sales_data &)`.
 
-(b) Illegal - we cannot bind a *plain* reference to a temporary object in the first place. If there were *no* `explicit` for `Sales_data` constructor from a `const std::string &`, it could be legal if the declaration were `Sales_data &combine(const Sales_data &)`.
-
-(c) Illegal - declaring a member function `const` prevents any further changes to the object. Thus we cannot combine anything to `i`.
+(c) illegal - declaring a member function `const` forbids any further change to the object. Thus we cannot combine anything to `i`.
 
 ### Exercise 7.50
 
 > Determine whether any of your `Person` class constructors should be explicit.
+>
+> *^ i.e. exercise [`7.22`](#exercise-722)*
 
 **Answer:**
+
+```c++
+class Person {
+// ...
+
+public:
+  Person();
+  Person(const std::string &name);
+  Person(const std::string &name, const std::string &addr);
+
+// ...
+};
+```
+
+The `Person` constructor from a `const std::string &` takes only one single argument but should not be declared `explicit`. It is natrual that when we speak of a person's name, we are referring to that person. However, if we had a constructor like `Person(std::istream &)`, then we should declare it as `explicit`, because it would be confusing for a function that takes a `Person` as parameter to take a `std::istream &` such as `std::cin`.
 
 ### Exercise 7.51
 
@@ -767,6 +773,23 @@ public:
 
 **Answer:**
 
+Semantically, a number (`size_type`) is far away from a `vector`, but a C-style `char` array is closely related to a `string`. Therefore, whenever a `std::string` is needed as an argument, we may pass a `const char *` to initialize it, but when a `vector` is needed, we cannot just pass a `size_type`.
+
+Consider
+
+```c++
+std::vector::size_type len(std::vector<int> vec) { return vec.size(); }
+```
+
+If without `explicit`, implicit conversion would be allowed, and it would be very confusing to allow a call like `len(42)`.
+
+On the other hand, consider
+
+```c++
+std::string::size_type len(std::string str) { return str.size(); }
+```
+
+It wouldn't be surprising to see a call like `len("Hello, World!")`. For this convenience we allow the implicit conversion and do not declare `explicit` for the `string` constructor.
 
 ### Exercise 7.52
 
