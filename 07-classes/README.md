@@ -749,9 +749,9 @@ public:
 };
 ```
 
-(a) Illegal -  the implicit conversion from a `std::string` to `Sales_data` is forbidden. If there were *no* `explicit` for `Sales_data(const std::string &)`, a temporary `Sales_data` object initialized from `s` would be combined with `i`.
+(a) Illegal -  the implicit conversion from a `std::string` to `Sales_data` is forbidden. If there were *no* `explicit` for `Sales_data` constructor from a `const std::string &`, a temporary `Sales_data` object initialized from `s` would be combined with `i`.
 
-(b) Illegal - we cannot bind a *plain* reference to a temporary object in the first place. If there were *no* `explicit` for `Sales_data(const std::string &)`, it could be legal if the declaration were `Sales_data &combine(const Sales_data &)`.
+(b) Illegal - we cannot bind a *plain* reference to a temporary object in the first place. If there were *no* `explicit` for `Sales_data` constructor from a `const std::string &`, it could be legal if the declaration were `Sales_data &combine(const Sales_data &)`.
 
 (c) Illegal - declaring a member function `const` prevents any further changes to the object. Thus we cannot combine anything to `i`.
 
