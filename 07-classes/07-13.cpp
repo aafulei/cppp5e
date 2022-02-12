@@ -80,8 +80,9 @@ int main() {
   if (std::cin) {
     while (true) {
       Sales_data trans(std::cin);
-      if (!std::cin)
+      if (!std::cin) {
         break;
+      }
       if (total.isbn() == trans.isbn()) {
         total.combine(trans);
       } else {
