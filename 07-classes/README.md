@@ -384,13 +384,19 @@ A copy of the `Screen` is returned. As a result, the `move` and `set` operation 
 
 ### Exercise 7.33
 
-> What would happen if we gave Screen a size member defined as follows? Fix any problems you identify.
+> What would happen if we gave `Screen` a size member defined as follows? Fix any problems you identify.
 >
 > ```c++
 > pos Screen::size() const { return height * width; }
 > ```
 
 **Answer:**
+
+`pos` is not in scope when the compiler sees it. Fix -
+
+```c++
+Screen::pos Screen::size() const { return height * width; }
+```
 
 ### Exercise 7.34
 
