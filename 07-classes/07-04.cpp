@@ -8,8 +8,26 @@
 // Exercise 7.5: Provide operations in your Person class to return the name and
 // address. Should these functions be const? Explain your choice.
 
-#include "07-04-person.hpp"
+// Answer: Yes, because they do not alter a Person object.
+
+#include <iostream>
 #include <string>
+
+struct Person {
+  std::string name;
+  std::string addr;
+
+  std::string get_name() const;
+  std::string get_addr() const;
+};
 
 std::string Person::get_name() const { return name; }
 std::string Person::get_addr() const { return addr; }
+
+int main() {
+  Person p;
+  p.name = "Alice";
+  p.addr = "Wonderland";
+  std::cout << p.name << " @ " << p.addr << std::endl; // Peter @ England
+  return 0;
+}
