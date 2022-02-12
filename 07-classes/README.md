@@ -738,7 +738,7 @@ Whether the `Sales_data` constructors are `explicit` or not has no impact on thi
 
 Assume *no* `explicit` for `Sales_data(string)`.
 
-(a) a temporary `Sales_data` object initialized from `s` is combined with `i`.
+(a) legal under the above assumption - a temporary `Sales_data` object initialized from `s` is combined with `i`.
 
 (b) illegal - we cannot bind a *plain* reference to a temporary object. It could be legal if the declaration were `Sales_data & combine(const Sales_data &)`.
 
@@ -773,17 +773,13 @@ The `Person` constructor from a `const std::string &` takes only one single argu
 
 **Answer:**
 
-Semantically, a number (`size_type`) is far away from a `vector`, but a C-style `char` array is closely related to a `string`. Therefore, whenever a `std::string` is needed as an argument, we may pass a `const char *` to initialize it, but when a `vector` is needed, we cannot just pass a `size_type`.
-
-Consider
+Semantically, a number (`size_type`) is far away from a `vector`, but a C-style `char` array is closely related to a `string`. Therefore, whenever a `std::string` is needed as an argument, we may pass a `const char *` to initialize it, but when a `vector` is needed, we cannot just pass a `size_type`. Consider
 
 ```c++
 std::vector::size_type len(std::vector<int> vec) { return vec.size(); }
 ```
 
-If without `explicit`, implicit conversion would be allowed, and it would be very confusing to allow a call like `len(42)`.
-
-On the other hand, consider
+If without `explicit`, implicit conversion would be allowed, and it would be very confusing to allow a call like `len(42)`. On the other hand, consider
 
 ```c++
 std::string::size_type len(std::string str) { return str.size(); }
