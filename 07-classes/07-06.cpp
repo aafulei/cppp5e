@@ -15,7 +15,7 @@
 
 // --- impl --------------------------------------------------------------------
 
-std::string Sales_data::isbn() const { return book_number; }
+std::string Sales_data::isbn() const { return bookNo; }
 
 Sales_data &Sales_data::combine(const Sales_data &data) {
   if (isbn() == data.isbn()) {
@@ -30,14 +30,14 @@ Sales_data &Sales_data::combine(const Sales_data &data) {
 // record example: 978-7-121-20038-0 1 105
 std::istream &read(std::istream &is, Sales_data &data) {
   double price = 0;
-  is >> data.book_number >> data.units_sold >> price;
+  is >> data.bookNo >> data.units_sold >> price;
   data.revenue = price * data.units_sold;
   return is;
 }
 
 // output example: 978-7-121-20038-0 10 1000 100
 std::ostream &print(std::ostream &os, const Sales_data &data) {
-  return os << data.book_number << " " << data.units_sold << " " << data.revenue
+  return os << data.bookNo << " " << data.units_sold << " " << data.revenue
             << " " << data.revenue / data.units_sold << std::endl;
 }
 

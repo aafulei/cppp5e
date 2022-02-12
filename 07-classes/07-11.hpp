@@ -20,7 +20,7 @@
 #include <string>
 
 struct Sales_data {
-  std::string book_number;
+  std::string bookNo;
   unsigned units_sold = 0; // Add in-class initializer
   double revenue = 0.0;    // Add in-class initializer
 
@@ -29,7 +29,7 @@ struct Sales_data {
   Sales_data(const std::string &, unsigned, double); // Add to 07-06.hpp
   Sales_data(std::istream &is) {                     // Add to 07-06.hpp
     double price = 0;                         // I prefer to put definition in
-    is >> book_number >> units_sold >> price; // cpp file, but Ex 7.12 requires
+    is >> bookNo >> units_sold >> price; // cpp file, but Ex 7.12 requires
     revenue = price * units_sold;             // it be put here. If fwd-declare
   }                                           // is allowed, read() can be used.
   std::string isbn() const;

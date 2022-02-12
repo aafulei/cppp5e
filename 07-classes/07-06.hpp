@@ -10,7 +10,7 @@
 #include <string>
 
 struct Sales_data {
-  std::string book_number;
+  std::string bookNo;
   unsigned units_sold;
   double revenue;
 

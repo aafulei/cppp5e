@@ -28,12 +28,12 @@
 // Sales_data::Sales_data() = default;
 Sales_data::Sales_data() : units_sold(0), revenue(0.0){}; // requried by Ex 7.14
 
-Sales_data::Sales_data(const std::string &s) : book_number(s) {}
+Sales_data::Sales_data(const std::string &s) : bookNo(s) {}
 
 Sales_data::Sales_data(const std::string &s, unsigned n, double p)
-    : book_number(s), units_sold(n), revenue(p * n) {}
+    : bookNo(s), units_sold(n), revenue(p * n) {}
 
-std::string Sales_data::isbn() const { return book_number; }
+std::string Sales_data::isbn() const { return bookNo; }
 
 Sales_data &Sales_data::combine(const Sales_data &data) {
   if (isbn() == data.isbn()) {
@@ -47,13 +47,13 @@ Sales_data &Sales_data::combine(const Sales_data &data) {
 
 std::istream &read(std::istream &is, Sales_data &data) {
   double price = 0;
-  is >> data.book_number >> data.units_sold >> price;
+  is >> data.bookNo >> data.units_sold >> price;
   data.revenue = price * data.units_sold;
   return is;
 }
 
 std::ostream &print(std::ostream &os, const Sales_data &data) {
-  return os << data.book_number << " " << data.units_sold << " " << data.revenue
+  return os << data.bookNo << " " << data.units_sold << " " << data.revenue
             << " " << data.revenue / data.units_sold << std::endl;
 }
 
