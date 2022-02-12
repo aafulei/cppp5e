@@ -346,14 +346,14 @@ A copy of the `Screen` is returned. As a result, the `move` and `set` operation 
 
 - Pros
 
-  1\. being explicit
+  1\. explicit
 
   2\. mebmber function may have a parameter which has the same name as the data member, for example
 
   ```c++
-  class C
-  {
+  class C {
       char c;
+
   public:
       void get() const { return c; }
       void set(char c) { this->c = c; }
