@@ -736,9 +736,7 @@ Whether the `Sales_data` constructors are `explicit` or not has no impact on thi
 
 **Answer:**
 
-Assume *no* `explicit` for `Sales_data(string)`.
-
-(a) legal under the above assumption - a temporary `Sales_data` object initialized from `s` is combined with `i`.
+(a) legal, assuming *no* `explicit` for the `Sales_data(const std::string &);` - a temporary `Sales_data` object initialized from `s` is combined with `i`.
 
 (b) illegal - we cannot bind a *plain* reference to a temporary object. It could be legal if the declaration were `Sales_data & combine(const Sales_data &)`.
 
