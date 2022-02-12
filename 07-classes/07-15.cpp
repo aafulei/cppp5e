@@ -3,20 +3,29 @@
 
 // Exercise 7.15: Add appropriate constructors to your Person class.
 
-// (Linux/macOS) clang++ -std=c++11 07-15.cpp && ./a.out
-// (Windows) clang++ -std=c++11 07-15.cpp && a
+// Modified from 07-04.cpp
 
-// Modified based on 07-04.cpp
-
-#include "07-15.hpp"
 #include <iostream>
 #include <string>
+
+struct Person {
+  std::string name;
+  std::string addr;
+
+  Person();
+  Person(const std::string &name);
+  Person(const std::string &name, const std::string &addr);
+
+  std::string get_name() const;
+  std::string get_addr() const;
+};
 
 // --- impl --------------------------------------------------------------------
 
 Person::Person() = default;
-Person::Person(const std::string &n) : name(n) {}
-Person::Person(const std::string &n, const std::string &a) : name(n), addr(a) {}
+Person::Person(const std::string &name) : name(name) {}
+Person::Person(const std::string &name, const std::string &addr)
+    : name(name), addr(addr) {}
 
 std::string Person::get_name() const { return name; }
 std::string Person::get_addr() const { return addr; }
@@ -33,12 +42,16 @@ void print(const Person &p) {
   }
 }
 
-int main() {
+void test() {
   Person p0;
-  Person p1("Joe");
-  Person p2("Peter", "England");
-  print(p0); // (empty)
-  print(p1); // Joe
-  print(p2); // Peter @ England
+  Person p1("Name");
+  Person p2("Name", "Address");
+  print(p0);
+  print(p1);
+  print(p2);
+}
+
+int main() {
+  test();
   return 0;
 }

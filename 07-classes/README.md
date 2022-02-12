@@ -135,15 +135,37 @@ The `if` statement verifies that `cin` does not fail after reading `data1` and `
 
 **Answer:**
 
+- [`07-11.cpp`](07-11.cpp)
+
 ### Exercise 7.12
 
 > Move the definition of the `Sales_data` constructor that takes an istream into the body of the `Sales_data` class.
 
 **Answer:**
 
+- [`07-12.cpp`](07-12.cpp)
+
 ### Exercise 7.13
 
-> Rewrite the program from *page 255* to use the istream constructor.
+> Rewrite the program from *page 255* to use the `istream` constructor.
+>
+> ```c++
+>   Sales_data total;
+>   if (read(cin, total)) {
+>     Sales_data trans;
+>     while (read(cin, trans)) {
+>       if (total.isbn() == trans.isbn()) {
+>         total.combine(trans);
+>       } else {
+>         print(cout, total);
+>         total = trans;
+>       }
+>     }
+>     print(cout, total);
+>   } else {
+>     cerr << "No data?!" << endl;
+>   }
+> ```
 
 **Answer:**
 
@@ -159,9 +181,11 @@ The `if` statement verifies that `cin` does not fail after reading `data1` and `
 
 ### Exercise 7.15
 
-> Add appropriate constructors to your Person class.
+> Add appropriate constructors to your `Person` class.
 
 **Answer:**
+
+- [`07-15.cpp`](07-15.cpp)
 
 ## Section 7.2 Access Control and Encapsulation
 

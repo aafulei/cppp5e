@@ -2,10 +2,10 @@
 // 21/12/17 = Fri
 // 18/02/09 = Fri
 
-// Exercise 7.6: Define your own versions of the add, read, and print functions.
+// Exercise 7.12: Move the definition of the Sales_data constructor that takes
+// an istream into the body of the Sales_data class.
 
-// Exercise 7.7: Rewrite the transaction-processing program you wrote for the
-// exercises in § 7.1.2 (p. 260) to use these new functions.
+// Modified from 07-11.cpp
 
 #include <iostream>
 #include <string>
@@ -15,11 +15,27 @@ struct Sales_data {
   unsigned units_sold = 0;
   double revenue = 0.0;
 
+  Sales_data();
+  Sales_data(const std::string &bookNo);
+  Sales_data(const std::string &bookNo, unsigned units_sold, double price);
+  Sales_data(std::istream &is) {         // I prefer to put definition in impl,
+    double price = 0;                    // but Exercise 7.12 requires to
+    is >> bookNo >> units_sold >> price; // put it here. If forward-declaration
+    revenue = price * units_sold;        // were allowed, read() can be used.
+  }
   std::string isbn() const;
   Sales_data &combine(const Sales_data &data);
 };
 
 // --- impl --------------------------------------------------------------------
+
+Sales_data::Sales_data() {}
+
+Sales_data::Sales_data(const std::string &bookNo) : bookNo(bookNo) {}
+
+Sales_data::Sales_data(const std::string &bookNo, unsigned units_sold,
+                       double price)
+    : bookNo(bookNo), units_sold(units_sold), revenue(price * units_sold) {}
 
 std::string Sales_data::isbn() const { return bookNo; }
 
@@ -58,24 +74,15 @@ Sales_data add(const Sales_data &data1, const Sales_data &data2) {
   return sum.combine(data2);
 }
 
-// --- main --------------------------------------------------------------------
-
 int main() {
-  Sales_data total;
-  if (read(std::cin, total)) {
-    Sales_data trans;
-    while (read(std::cin, trans)) {
-      if (total.isbn() == trans.isbn()) {
-        total = add(total, trans); // Change to 07-02.cpp
-      } else {
-        print(std::cout, total);
-        total = trans;
-      }
-    }
-    print(std::cout, total);
-  } else {
-    std::cerr << "No data?!" << std::endl;
-    return -1;
-  }
+  std::string bookNo = "978-7-121-20038-0";
+  Sales_data sd0;
+  Sales_data sd1(bookNo);
+  Sales_data sd2(bookNo, 1, 105);
+  Sales_data sd3(std::cin);
+  print(std::cout, sd0);
+  print(std::cout, sd1);
+  print(std::cout, sd2);
+  print(std::cout, sd3);
   return 0;
 }

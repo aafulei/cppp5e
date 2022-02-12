@@ -15,8 +15,8 @@ struct Sales_data {
   unsigned units_sold = 0;
   double revenue = 0.0;
 
-  std::string isbn() const;                // Add
-  Sales_data &combine(const Sales_data &); // Add
+  std::string isbn() const;                    // Add
+  Sales_data &combine(const Sales_data &data); // Add
 };
 
 std::string Sales_data::isbn() const { return bookNo; }
