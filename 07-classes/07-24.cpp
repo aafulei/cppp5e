@@ -7,62 +7,39 @@
 // constructor that takes values for height, width, and a character to use as
 // the contents of the screen.
 
+// Modified from 07-23.cpp
+
 #include <cstddef>
 #include <iostream>
 #include <string>
 
-// similar to 07-23.cpp but with member functions defined outside class
 class Screen {
 public:
   using pos = std::string::size_type;
-  Screen();
-  Screen(pos h, pos w); // ADD
-  Screen(pos h, pos w, char x);
-  char get() const;
-  char get(pos r, pos c) const;
-  pos get_size() const;
-  pos get_cursor() const;
-  Screen &move(pos r, pos c);
-  std::size_t access_count() const;
 
 private:
-  pos height = 0, width = 0;
+  pos height = 0;
+  pos width = 0;
   pos cursor = 0;
-  std::string content;
+  std::string contents;
   mutable std::size_t access_ctr = 0;
+
+public:
+  Screen() = default;
+  Screen(pos h, pos w) : height(h), width(w), contents(h * w, ' ') {} // Add
+  Screen(pos h, pos w, char x) : height(h), width(w), contents(h * w, x) {}
+  char get() const { return contents[cursor]; }
+  char get(pos r, pos c) const { return contents[r * width + c]; }
+  pos get_size() const { return height * width; }
+  pos get_cursor() const { return cursor; }
+  Screen &move(pos r, pos c) {
+    cursor = r * width + c;
+    return *this;
+  }
+  std::size_t get_access_count() const { return ++access_ctr; }
 };
 
-// inline functions should be defined in the same translation unit
-inline Screen::Screen() = default;
-
-inline Screen::Screen(pos h, pos w)
-    : height(h), width(w), content(h * w, ' ') {}
-
-inline Screen::Screen(pos h, pos w, char x)
-    : height(h), width(w), content(h * w, x) {}
-
-inline char Screen::get() const {
-  ++access_ctr;
-  return content[cursor];
-}
-
-inline char Screen::get(pos r, pos c) const {
-  ++access_ctr;
-  return content[r * width + c];
-}
-
-inline Screen::pos Screen::get_cursor() const { return cursor; }
-
-inline Screen::pos Screen::get_size() const { return height * width; }
-
-inline Screen &Screen::move(pos r, pos c) {
-  cursor = r * width + c;
-  return *this;
-}
-
-inline std::size_t Screen::access_count() const { return ++access_ctr; }
-
-int main() {
+void test() {
   Screen scr1;
   std::cout << "scr1 size = " << scr1.get_size() << std::endl; // 0
   // note that can't call scr1.get() as it is an empty screen
@@ -72,5 +49,9 @@ int main() {
   Screen scr3(3840, 2160, '*');
   std::cout << "scr2 size = " << scr3.get_size() << std::endl;        // 8294400
   std::cout << "scr3 cursor at '" << scr3.get() << '\'' << std::endl; // '*'
+}
+
+int main() {
+  test();
   return 0;
 }

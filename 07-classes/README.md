@@ -306,7 +306,7 @@ Constructors and getter functions are declared as `public` because they are the 
 
 ### Exercise 7.27
 
-> Add the move, set, and display operations to your version of Screen. Test your class by executing the following code:
+> Add the `move`, `set`, and `display` operations to your version of `Screen`. Test your class by executing the following code:
 >
 > ```c++
 > Screen myScreen(5, 5, 'X');
@@ -317,6 +317,8 @@ Constructors and getter functions are declared as `public` because they are the 
 > ```
 
 **Answer:**
+
+- [`07-27.cpp`](07-27.cpp)
 
 ### Exercise 7.28
 
