@@ -195,15 +195,15 @@ The `if` statement verifies that `cin` does not fail after reading `data1` and `
 
 **Answer:**
 
-> What, if any, are the constraints on where and how often an access specifier may appear inside a class definition?
+*What, if any, are the constraints on where and how often an access specifier may appear inside a class definition?*
 
 No constraints.
 
-> What kinds of members should be defined after a public specifier?
+*What kinds of members should be defined after a public specifier?*
 
 Interface.
 
-> What kinds should be private?
+*What kinds should be private?*
 
 Implementation.
 
@@ -589,7 +589,7 @@ private:
 
 An ISBN is the unique identifier for a book. If anything is provided for a book, we would first like to know its ISBN.
 
-A book usually has a title and an author. We allow a book to be constructed without those data members. But if an author is provided, we require the book's title be known as well. This determines the order of the parameters in the first constructor.
+A book usually has a title and an author. We allow a book to be constructed without those data members. But if an author is provided, we require the book's title be known as well. This determines the order of parameters in the first constructor.
 
 In addition, we might read this information from an `istream &` such as `std::cin`. For example, given data
 
