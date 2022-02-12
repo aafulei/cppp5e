@@ -322,7 +322,7 @@ Constructors and getter functions are declared as `public` because they are the 
 
 ### Exercise 7.28
 
-> What would happen in the previous exercise if the return type of `move`, `set`, and `display` was `Screen` rather than `Screen&`?
+> What would happen in the previous exercise if the return type of `move`, `set`, and `display` was `Screen` rather than `Screen &`?
 >
 > *^ i.e. exercise [`7.27`](#exercise-727)*
 
@@ -374,7 +374,7 @@ A copy of the `Screen` is returned. As a result, the `move` and `set` operation 
 
 ### Exercise 7.32
 
-> Define your own versions of Screen and Window_mgr in which clear is a member of Window_mgr and a friend of Screen.
+> Define your own versions of `Screen` and `Window_mgr` in which `clear` is a member of `Window_mgr` and a friend of `Screen`.
 
 **Answer:**
 
