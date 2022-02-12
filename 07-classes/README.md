@@ -736,9 +736,22 @@ Whether the `Sales_data` constructors are `explicit` or not has no impact on thi
 
 **Answer:**
 
-(a) Assuming *no* `explicit` for `Sales_data(const std::string &)`, a temporary `Sales_data` object initialized from `s` would be combined with `i`. However, if the `Sales_data` constructor from `const std::string &` is `explicit`, then `i.combine(s)` wouldn't compile, because the implicit conversion from a `std::string` to `Sales_data` is forbidden.
+Assume
 
-(b) Illegal - we cannot bind a *plain* reference to a temporary object. It could be legal if the declaration were `Sales_data &combine(const Sales_data &)`. Again, if the `Sales_data` constructor from `const std::string &` is `explicit`, then `i.combine(s)` wouldn't compile, because the implicit conversion from a `std::string` to `Sales_data` is forbidden.
+```c++
+class Sales_data {
+public:
+  Sales_data();
+  Sales_data(const std::string & bookNo, unsigned units_sold, double price);
+  explicit Sales_data(const std::string &bookNo);
+  explicit Sales_data(std::istream &is);
+  // remaining members as before
+};
+```
+
+(a) Illegal -  the implicit conversion from a `std::string` to `Sales_data` is forbidden. If there were *no* `explicit` for `Sales_data(const std::string &)`, a temporary `Sales_data` object initialized from `s` would be combined with `i`.
+
+(b) Illegal - we cannot bind a *plain* reference to a temporary object in the first place. If there were *no* `explicit` for `Sales_data(const std::string &)`, it could be legal if the declaration were `Sales_data &combine(const Sales_data &)`.
 
 (c) Illegal - declaring a member function `const` prevents any further changes to the object. Thus we cannot combine anything to `i`.
 
