@@ -643,16 +643,31 @@ we interpret each line as a book and use `|` as the delimiter between fields.
 
 **Answer:**
 
+That is fine. Because `C` has a default constructor.
+
 ### Exercise 7.46
 
 > Which, if any, of the following statements are untrue? Why?
 >
 > (a) A class must provide at least one constructor.
+>
 > (b) A default constructor is a constructor with an empty parameter list.
+>
 > (c) If there are no meaningful default values for a class, the class should not provide a default constructor.
+>
 > (d) If a class does not define a default constructor, the compiler generates one that initializes each data member to the default value of its associated type.
 
 **Answer:**
+
+All are untrue.
+
+(a) If a class does not provide any constructor, the compiler will synthesize one for it.
+
+(b) A default constructor is a constructor that is called if no initializer is supplied. In addition, a constructor that supplies default arguments for all of its parameters also defines the default constructor.
+
+(c) Without a default constructor, a class may cause trouble to other classes which have a member of its type.
+
+(d) The compiler only synthesizes a default constructor when a class does not have any constructor at all.
 
 ### Exercise 7.47
 
