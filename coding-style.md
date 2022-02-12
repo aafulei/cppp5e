@@ -127,7 +127,7 @@ Within each section,
 4. destructor
 5. methods
 
-  (1) read methods
-  (2) write methods
+    (1) read methods
+    (2) write methods
 
 6. data members
