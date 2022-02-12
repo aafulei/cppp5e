@@ -823,9 +823,16 @@ struct Sales_data {
 
 ### Exercise 7.54
 
-> Should the members of Debug that begin with set_ be declared as constexpr? If not, why not?
+> Should the members of `Debug` that begin with `set_` be declared as `constexpr`? If not, why not?
 
 **Answer:**
+
+No. Ultimately, a `constexpr` function is a function which we may use in a constant expression. As `set_` functions return no value, it seems pointless to declare it as `constexpr`. Apart from that, the C++11 restriction on a `constexpr` is quite strict:
+
+1. a `constexpr` function must have *exactly one* `return`, which the `set_` functions do not satisfy;
+2. a `constexpr` function is implicitly `const` in C++11, which the `set_` functions do not satisfy.
+
+*^ C++11 stated that all non-static member functions that are declared `constexpr` are also implicitly declared `const`, with respect to `this`. That has since been removed; non-static member functions can be non-`const` in C++14.*
 
 ### Exercise 7.55
 
