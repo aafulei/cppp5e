@@ -774,16 +774,16 @@ The `Person` constructor from a `const std::string &` takes only one single argu
 Semantically, a number (`size_type`) is far away from a `vector`, but a C-style `char` array is closely related to a `string`. Therefore, whenever a `std::string` is needed as an argument, we may pass a `const char *` to initialize it, but when a `vector` is needed, we cannot just pass a `size_type`. Consider
 
 ```c++
-std::vector::size_type len(std::vector<int> vec) { return vec.size(); }
+std::vector::size_type len(const std::vector<int> &vec) { return vec.size(); }
 ```
 
-If without `explicit`, implicit conversion would be allowed, and it would be very confusing to allow a call like `len(42)`. On the other hand, consider
+Without `explicit`, the implicit conversion would be allowed, and it would be very confusing to allow a call like `len(42)`. On the other hand, consider
 
 ```c++
-std::string::size_type len(std::string str) { return str.size(); }
+std::string::size_type len(const std::string &str) { return str.size(); }
 ```
 
-It wouldn't be surprising to see a call like `len("Hello, World!")`. For this convenience we allow the implicit conversion and do not declare `explicit` for the `string` constructor.
+It wouldn't be surprising to see a call like `len("Hello, World!")`. For this convenience we allow the implicit conversion and do not declare `explicit` for the `std::string` constructor.
 
 ### Exercise 7.52
 
@@ -792,8 +792,26 @@ It wouldn't be surprising to see a call like `len("Hello, World!")`. For this co
 > ```c++
 > Sales_data item = {"978-0590353403", 25, 15.99};
 > ```
+>
+> ```c++
+> struct Sales_data {
+>   std::string bookNo;
+>   unsigned units_sold = 0;
+>   double revenue = 0.0;
+> };
+> ```
 
 **Answer:**
+
+An aggregate class cannot have in-class initializers. Thus, in order to initialize `item` with a curly braced list, we have to rewrite the class definition as
+
+```c++
+struct Sales_data {
+  std::string bookNo;
+  unsigned units_sold;
+  double revenue;
+};
+```
 
 ### Exercise 7.53
 
