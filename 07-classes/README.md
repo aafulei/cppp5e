@@ -446,9 +446,7 @@ The compiler would issue errors about *all* the occurrences of `pos` in the clas
 
 **Answer:**
 
-In class `Exercise` all the occurrences of `Type` stand for an alias of `double`.
-
-In
+In class `Exercise` all the occurrences of `Type` stand for an alias of `double`. In
 
 ```c++
 Type Exercise::setVal(Type parm) {
@@ -489,6 +487,16 @@ Exercise::Type Exercise::setVal(Type parm) {
 > ```
 
 **Answer:**
+
+Members are initialized in the order in which they appear in the class definition. Thus `rem` is initialized before `base`. But the constructor initializer list initializes `rem` using value of `base`. Fix -
+
+```c++
+struct X {
+  X(int i, int j) : base(i), rem(i % j) {}
+
+  int rem, base;
+};
+```
 
 ### Exercise 7.37
 
