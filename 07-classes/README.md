@@ -150,21 +150,21 @@ The `if` statement verifies that `cin` does not fail after reading `data1` and `
 > Rewrite the program from *page 255* to use the `istream` constructor.
 >
 > ```c++
->   Sales_data total;
->   if (read(cin, total)) {
->     Sales_data trans;
->     while (read(cin, trans)) {
->       if (total.isbn() == trans.isbn()) {
->         total.combine(trans);
->       } else {
->         print(cout, total);
->         total = trans;
->       }
+> Sales_data total;
+> if (read(cin, total)) {
+>   Sales_data trans;
+>   while (read(cin, trans)) {
+>     if (total.isbn() == trans.isbn()) {
+>       total.combine(trans);
+>     } else {
+>       print(cout, total);
+>       total = trans;
 >     }
->     print(cout, total);
->   } else {
->     cerr << "No data?!" << endl;
 >   }
+>   print(cout, total);
+> } else {
+>   cerr << "No data?!" << endl;
+> }
 > ```
 
 **Answer:**
