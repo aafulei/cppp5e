@@ -599,7 +599,7 @@ In addition, we might read this information from an `istream &` such as `std::ci
 978-7-121-20038-0 C++_Primer Lippman
 ```
 
-we interpret each line as a book - the first string is its ISBN, the second title, the third author, the rest we don't care.
+we interpret each line as a book - the first string is its ISBN, the second its title, the third its author, the rest we don't care.
 
 ### Exercise 7.41
 
