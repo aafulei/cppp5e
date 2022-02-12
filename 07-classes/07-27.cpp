@@ -10,6 +10,8 @@
 // myScreen.display(cout);
 // cout << "\n";
 
+// Modified from 07-24.cpp
+
 #include <iostream>
 #include <string>
 
@@ -27,7 +29,6 @@ public:
   Screen();
   Screen(pos h, pos w);
   Screen(pos h, pos w, char x);
-
   char get() const;
   char get(pos r, pos c) const;
   const Screen &display(std::ostream &os) const;
@@ -44,7 +45,8 @@ Screen::Screen() = default;
 
 Screen::Screen(pos h, pos w) : height(h), width(w), contents(h * w, ' ') {}
 
-Screen::Screen(pos h, pos w, char x) : height(h), width(w), contents(h * w, x) {}
+Screen::Screen(pos h, pos w, char x)
+    : height(h), width(w), contents(h * w, x) {}
 
 char Screen::get() const { return contents[cursor]; }
 

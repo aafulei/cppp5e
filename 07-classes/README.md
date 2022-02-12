@@ -322,13 +322,17 @@ Constructors and getter functions are declared as `public` because they are the 
 
 ### Exercise 7.28
 
-> What would happen in the previous exercise if the return type of move, set, and display was Screen rather than Screen&?
+> What would happen in the previous exercise if the return type of `move`, `set`, and `display` was `Screen` rather than `Screen&`?
+>
+> *^ i.e. exercise [`7.27`](#exercise-727)*
 
 **Answer:**
 
+A copy of the `Screen` is returned. As a result, the `move` and `set` operation would not affect the `myScreen`.
+
 ### Exercise 7.29
 
-> Revise your Screen class so that move, set, and display functions return Screen and check your prediction from the previous exercise.
+> Revise your `Screen` class so that `move`, `set`, and `display` functions return Screen and check your prediction from the previous exercise.
 
 **Answer:**
 
@@ -336,9 +340,29 @@ Constructors and getter functions are declared as `public` because they are the 
 
 ### Exercise 7.30
 
-> It is legal but redundant to refer to members through the this pointer. Discuss the pros and cons of explicitly using the this pointer to access members.
+> It is legal but redundant to refer to members through the this pointer. Discuss the pros and cons of explicitly using the `this` pointer to access members.
 
 **Answer:**
+
+- Pros
+
+  1\. being explicit
+
+  2\. mebmber function may have a parameter which has the same name as the data member, for example
+
+  ```c++
+  class C
+  {
+      char c;
+  public:
+      void get() const { return c; }
+      void set(char c) { this->c = c; }
+  };
+  ```
+
+- Cons
+
+  1\. redundant
 
 ### Exercise 7.31
 
