@@ -444,9 +444,17 @@ The compiler would issue errors about *all* the occurrences of `pos` in the clas
 
 **Answer:**
 
-In class `Exercise` all the occurrences of `Type` stand for an alias of `double`. In `Type Exercise::setVal(Type parm)`, the return type `Type` stands for `string`, while the parameter type `Type` as in `Type parm` stands for `double`. The `initVal()` in the function `Exercise::setVal` is the version declared in `Exercise`, which returns `double`.
+In class `Exercise` all the occurrences of `Type` stand for an alias of `double`. In `Type Exercise::setVal(Type parm)`, the return type `Type` stands for `string`, while the parameter type `Type` as in `Type parm` stands for `double`. The `initVal()` in the function `Exercise::setVal` is the version declared in `Exercise`, which returns a `double`.
 
-Therefore, there is a type mismatch between the value returned and the type specified in `Type Exercise::setVal(Type parm)`. To fix it, change `Type Exercise::setVal(Type parm)` to
+Therefore, there is a type mismatch between the value returned and the type specified in `Type Exercise::setVal(Type parm)`. To fix it, change from
+
+```c++
+Type Exercise::setVal(Type parm) {  // type mismatch
+  // ...
+}
+```
+
+to
 
 ```c++
 Exercise::Type Exercise::setVal(Type parm) {
