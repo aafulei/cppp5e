@@ -209,9 +209,16 @@ Implementation.
 
 ### Exercise 7.17
 
-> What, if any, are the differences between using class or struct?
+> What, if any, are the differences between using `class` or `struct`?
 
 **Answer:**
+
+| Default Access Specifier for  | `class`   | `struct` |
+| ----------------------------- | --------- | -------- |
+| members                       | `private` | `public` |
+| derivation list               | `private` | `public` |
+
+*^ see Chapter 15 Object-Oriented Programming for the derivation list*
 
 ### Exercise 7.18
 
@@ -219,17 +226,33 @@ Implementation.
 
 **Answer:**
 
+Encapsulation hides implementation by specifying access control, so that while users have the access to the interface, they do not need to worry about the implemention.
+
 ### Exercise 7.19
 
-> Indicate which members of your Person class you would declare as public and which you would declare as private. Explain your choice.
+> Indicate which members of your `Person` class you would declare as `public` and which you would declare as `private`. Explain your choice.
 
 **Answer:**
+
+Constructors and getter functions are declared as `public` because they are the interface. Data members are declared as `private` as they are implementation.
 
 ### Exercise 7.20
 
 > When are friends useful? Discuss the pros and cons of using friends.
 
 **Answer:**
+
+- Pros
+
+  1. granting access to special classes/functions so that they can visit the areas that are not open to the general public
+
+  2. useful functions can refer to class members without prefixing them with the class name
+
+- Cons
+
+  1. having to make sure the friends you invite do not mess up your house
+
+  2. reduce encapsulation and thus maintainability
 
 ### Exercise 7.21
 
