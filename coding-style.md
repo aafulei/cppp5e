@@ -41,7 +41,7 @@ int main() {           // do not break before opening curly braces
 
 We tend to be explicit. That is,
 
-1. *always prefix with namespaces.* For example,
+1. *do not omit namespace prefixes unless required.* For example,
 
 ```c++
 int main() {
@@ -50,7 +50,7 @@ int main() {
 }
 ```
 
-2. *always use curly braces for `if`, `else`, `while` and `for` statements.* For example,
+2. *do not omit curly braces for the body of `if`, `else`, `while` and `for` statements.* For example,
 
 ```c++
 void visit(TreeNode *node) {
@@ -61,7 +61,7 @@ void visit(TreeNode *node) {
 }
 ```
 
-3. *never use `auto` when possible.* For example, we prefer
+3. *do not use `auto` unless required.* For example, we prefer
 
 ```c++
 unsigned long long a = 0ULL;
@@ -112,3 +112,9 @@ Otherwise,
 | Macro Name     | `#define UPPERCASE_WITH_UNDERSCORES`                      |
 | Namespace Name | `namespace lowercase_with_underscores {}`                 |
 | Variable Name  | `int lowercase_with_underscores;`                         |
+
+## Declaration Order of Class Members
+
+Public, protected, private.
+
+Typedefs and enums, constants, constructors, destructor, methods, data members.
