@@ -837,9 +837,18 @@ No. Ultimately, a `constexpr` function is a function which we may use in a const
 
 ### Exercise 7.55
 
-> Is the Data class from Section 7.5.5 (p. 298) a literal class? If not, why not? If so, explain why it is literal.
+> Is the `Data` class from Section 7.5.5 (p. 298) a literal class? If not, why not? If so, explain why it is literal.
+>
+> ```c++
+> struct Data {
+>   int ival;
+>   string s;
+> };
+> ```
 
 **Answer:**
+
+No. To be a literal class, an aggregate class must have all of its members have literal types, but `s` is a `std::string`, which is not a literal type.
 
 ## Section 7.6 static Class Members
 
@@ -849,9 +858,25 @@ No. Ultimately, a `constexpr` function is a function which we may use in a const
 
 **Answer:**
 
+- *What is a static class member?*
+
+  A static class member is a class member that is associated with the entire class. It is not associated with any individual objects.
+
+- *What are the advantages of `static` members?*
+
+  - It can used to store values that are common to all objects, for example, the interest rate for all the bank accounts. When the value changes, we do not have to make changes for each object.
+
+  - It can be used in ways that ordinary members cannot. For example, it can have incomplete type. In particular, it may have the same type as that of its class.
+
+- *How do they differ from ordinary members?*
+
+  - a `static` data member does not belong to any object and thus should be defined outside the class
+
+  - a `static` member function does not have the implicit `this` pointer and thus may not specified as `const`
+
 ### Exercise 7.57
 
-> Write your own version of the Account class.
+> Write your own version of the `Account` class.
 
 **Answer:**
 
