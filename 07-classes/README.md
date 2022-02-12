@@ -894,6 +894,7 @@ No. To be a literal class, an aggregate class must have all of its members have 
 >   static const int vecSize = 20;
 >   static vector<double> vec(vecSize);
 > };
+>
 > // example.C
 > #include "example.h"
 > double Example::rate;
@@ -902,3 +903,6 @@ No. To be a literal class, an aggregate class must have all of its members have 
 
 **Answer:**
 
+`static double rate = 6.5;` and `static vector<double> vec(vecSize);` are wrong. Cannot provide in-class initializers to non-`const` data members.
+
+*^ C++17 makes it possible with inline variables. An inline static data member can be defined in the class definition.*
