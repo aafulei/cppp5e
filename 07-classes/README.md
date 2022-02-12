@@ -46,8 +46,12 @@
 ### Exercise 7.2
 
 > Add the `combine` and `isbn` members to the `Sales_data` class you wrote for the exercises in Section 2.6.2 (p. 76).
+>
+> *^ i.e. exercise [`2.41`](../02-variables-and-basic-types/README.md#exercise-241)*
 
 **Answer:**
+
+- [`07-02.cpp`](07-02.cpp)
 
 ### Exercise 7.3
 
