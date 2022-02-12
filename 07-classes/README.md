@@ -742,7 +742,7 @@ Assuming *no* `explicit` for `Sales_data(const std::string &)`.
 
 (b) Illegal - we cannot bind a *plain* reference to a temporary object. It could be legal if the declaration were `Sales_data &combine(const Sales_data &)`.
 
-(c) Illegal - declaring a member function `const` prevents any further change to the object. Thus we cannot combine anything to `i`.
+(c) Illegal - declaring a member function `const` prevents any further changes to the object. Thus we cannot combine anything to `i`.
 
 ### Exercise 7.50
 
