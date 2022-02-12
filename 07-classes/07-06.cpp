@@ -6,9 +6,6 @@
 // Exercise 7.7: Rewrite the transaction-processing program you wrote for the
 // exercises in § 7.1.2 (p. 260) to use these new functions.
 
-// (Linux/macOS) clang++ -std=c++11 07-06.cpp && ./a.out <../data/records
-// (Windows) clang++ -std=c++11 07-06.cpp && a <../data/records
-
 #include <iostream>
 #include <string>
 
