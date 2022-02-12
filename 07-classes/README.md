@@ -101,15 +101,21 @@ Yes, because they do not alter a `Person` object.
 
 ### Exercise 7.8
 
-> Why does read define its `Sales_data` parameter as a plain reference and print define its parameter as a reference to `const`?
+> Why does `read` define its `Sales_data` parameter as a plain reference and `print` define its parameter as a reference to `const`?
 
 **Answer:**
+
+Because `read` changes the `Sales_data` object that the parameter refers to, while `print` does not.
 
 ### Exercise 7.9
 
-> Add operations to read and print Person objects to the code you wrote for the exercises in Section 7.1.2 (p. 260).
+> Add operations to read and print `Person` objects to the code you wrote for the exercises in Section 7.1.2 (p. 260).
+>
+> *^ i.e. exercise [`7.4`](#exercise-74)*
 
 **Answer:**
+
+- [`07-09.cpp`](07-09.cpp)
 
 ### Exercise 7.10
 
@@ -120,6 +126,8 @@ Yes, because they do not alter a `Person` object.
 > ```
 
 **Answer:**
+
+The `if` statement verifies that `cin` does not fail after reading `data1` and `data2`.
 
 ### Exercise 7.11
 
