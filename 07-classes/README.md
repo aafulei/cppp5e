@@ -392,7 +392,7 @@ A copy of the `Screen` is returned. As a result, the `move` and `set` operation 
 
 **Answer:**
 
-`pos` is not in scope when the compiler sees it. Fix -
+Problem - `pos` is not in scope when the compiler sees it. Fix -
 
 ```c++
 Screen::pos Screen::size() const { return height * width; }
