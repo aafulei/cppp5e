@@ -517,19 +517,19 @@ struct X {
 
 - `next`
 
-| Member       | Value |
-| ------------ | ----- |
-| `bookNo`     | `""`  |
-| `units_sold` | 0     |
-| `revenue`    | 0     |
+  | Member       | Value |
+  | ------------ | ----- |
+  | `bookNo`     | `""`  |
+  | `units_sold` | 0     |
+  | `revenue`    | 0     |
 
 - `last`
 
-| Member       | Value             |
-| ------------ | ----------------- |
-| `bookNo`     | `"9-999-99999-9"` |
-| `units_sold` | 0                 |
-| `revenue`    | 0                 |
+  | Member       | Value             |
+  | ------------ | ----------------- |
+  | `bookNo`     | `"9-999-99999-9"` |
+  | `units_sold` | 0                 |
+  | `revenue`    | 0                 |
 
 ### Exercise 7.38
 
