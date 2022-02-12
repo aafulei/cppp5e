@@ -43,10 +43,6 @@ std::ostream &print(std::ostream &os, const Sales_data &data) {
             << " " << data.revenue / data.units_sold << std::endl;
 }
 
-// for Exercise 7.3
-
-#include <iostream>
-
 int main() {
   Sales_data total;
   if (read(std::cin, total)) {
