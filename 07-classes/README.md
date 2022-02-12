@@ -56,10 +56,12 @@
 ### Exercise 7.3
 
 > Revise your transaction-processing program from Section 7.1.1 (p. 256) to use these members.
+>
+> *^ i.e. exercise [`7.1`](#exercise-71)*
 
 **Answer:**
 
-- [`07-03.cpp`](07-03.cpp)
+- See [`07-02.cpp`](07-02.cpp)
 
 ### Exercise 7.4
 
