@@ -427,6 +427,7 @@ The compiler would issue errors about *all* the occurrences of `pos` in the clas
 > ```c++
 > typedef string Type;
 > Type initVal();
+>
 > class Exercise {
 > public:
 >   typedef double Type;
@@ -436,6 +437,7 @@ The compiler would issue errors about *all* the occurrences of `pos` in the clas
 > private:
 >   int val;
 > };
+>
 > Type Exercise::setVal(Type parm) {
 >   val = parm + initVal();
 >   return val;
@@ -444,7 +446,18 @@ The compiler would issue errors about *all* the occurrences of `pos` in the clas
 
 **Answer:**
 
-In class `Exercise` all the occurrences of `Type` stand for an alias of `double`. In `Type Exercise::setVal(Type parm) { /* ... */ }`, the return type `Type` stands for `string`, while the parameter type `Type` as in `Type parm` stands for `double`. The `initVal()` in the function `Exercise::setVal` is the version declared in `Exercise`, which returns a `double`.
+In class `Exercise` all the occurrences of `Type` stand for an alias of `double`.
+
+In
+
+```c++
+Type Exercise::setVal(Type parm) {
+  val = parm + initVal();
+  return val;
+}
+```
+
+the return type `Type` stands for `string`, while the parameter type `Type` as in `Type parm` stands for `double`. The `initVal()` in the function `Exercise::setVal` is the version declared in class `Exercise`, which returns a `double`.
 
 Therefore, there is a type mismatch between the value returned and the type specified in `Type Exercise::setVal(Type parm)`. To fix it, change from
 
