@@ -47,6 +47,14 @@ Sales_data::Sales_data(std::istream &is) { read(is, *this); }
 
 std::string Sales_data::isbn() const { return bookNo; }
 
+// Add
+inline double Sales_data::avg_price() const {
+  if (units_sold == 0) {
+    return 0;
+  }
+  return revenue / units_sold;
+}
+
 Sales_data &Sales_data::combine(const Sales_data &data) {
   if (isbn() == data.isbn()) {
     units_sold += data.units_sold;
@@ -55,15 +63,6 @@ Sales_data &Sales_data::combine(const Sales_data &data) {
     std::cerr << "Data must refer to the same ISBN" << std::endl;
   }
   return *this;
-}
-
-// Add
-inline double Sales_data::avg_price() const {
-  if (units_sold != 0) {
-    return revenue / units_sold;
-  } else {
-    return 0;
-  }
 }
 
 // record example: 978-7-121-20038-0 1 105

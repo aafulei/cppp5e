@@ -8,7 +8,7 @@
 // the output until you are certain you understand the order of execution among
 // delegating constructors.
 
-// Modified from 07-11.cpp and 07-21.cpp
+// Modified from 07-11.cpp, 07-21.cpp, 07-26.cpp
 
 #include <iostream>
 #include <string>
@@ -25,6 +25,7 @@ public:
   Sales_data(std::istream &is);
 
   std::string isbn() const;
+  double avg_price() const;
   Sales_data &combine(const Sales_data &data);
 
 private:
@@ -60,6 +61,13 @@ Sales_data::Sales_data(std::istream &is) : Sales_data() {
 }
 
 std::string Sales_data::isbn() const { return bookNo; }
+
+double Sales_data::avg_price() const {
+  if (units_sold == 0) {
+    return 0;
+  }
+  return revenue / units_sold;
+}
 
 Sales_data &Sales_data::combine(const Sales_data &data) {
   if (isbn() == data.isbn()) {
