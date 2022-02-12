@@ -290,13 +290,15 @@ Constructors and getter functions are declared as `public` because they are the 
 
 ### Exercise 7.25
 
-> Can Screen safely rely on the default versions of copy and assignment? If so, why? If not, why not?
+> Can `Screen` safely rely on the default versions of copy and assignment? If so, why? If not, why not?
 
 **Answer:**
 
+ Yes, because there is no memory allocation outside the class.
+
 ### Exercise 7.26
 
-> Define Sales_data::avg_price as an inline function.
+> Define `Sales_data::avg_price` as an inline function.
 
 **Answer:**
 
