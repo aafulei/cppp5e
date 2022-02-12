@@ -115,6 +115,17 @@ Otherwise,
 
 ## Declaration Order of Class Members
 
-Public, protected, private.
+1. public
+2. protected
+3. private
 
-Typedefs and enums, constants, constructors, destructor, methods, data members.
+Within each section,
+
+1. typedefs and enums
+2. constants
+3. constructors
+4. destructor
+5. methods
+  (1) read methods
+  (2) write methods
+6. data members
