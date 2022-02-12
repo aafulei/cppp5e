@@ -244,15 +244,15 @@ Constructors and getter functions are declared as `public` because they are the 
 
 - Pros
 
-  1. granting access to special classes/functions so that they can visit the areas that are not open to the general public
+  1\. granting access to special classes/functions so that they can visit the areas that are not open to the general public
 
-  2. useful functions can refer to class members without prefixing them with the class name
+  2\. useful functions can refer to class members without prefixing them with the class name
 
 - Cons
 
-  1. having to make sure the friends you invite do not mess up your house
+  1\. having to make sure the friends you invite do not mess up your house
 
-  2. reduce encapsulation and thus maintainability
+  2\. reduce encapsulation and thus maintainability
 
 ### Exercise 7.21
 
