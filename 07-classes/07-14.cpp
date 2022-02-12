@@ -12,10 +12,6 @@
 #include <string>
 
 struct Sales_data {
-  std::string bookNo;
-  unsigned units_sold = 0;
-  double revenue = 0.0;
-
   Sales_data();
   Sales_data(const std::string &bookNo);
   Sales_data(const std::string &bookNo, unsigned units_sold, double price);
@@ -23,6 +19,10 @@ struct Sales_data {
 
   std::string isbn() const;
   Sales_data &combine(const Sales_data &data);
+
+  std::string bookNo;
+  unsigned units_sold = 0;
+  double revenue = 0.0;
 };
 
 std::istream &read(std::istream &is, Sales_data &data);

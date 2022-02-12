@@ -21,6 +21,7 @@ private:
 
 public:
   Window_mgr();
+
   Screen &get(ScreenIndex);
   const Screen &get(ScreenIndex) const;
   void clear(ScreenIndex);
@@ -32,19 +33,14 @@ class Screen {
 public:
   using pos = std::string::size_type;
 
-private:
-  pos height = 0;
-  pos width = 0;
-  pos cursor = 0;
-  std::string contents;
-
-public:
   Screen();
   Screen(pos h, pos w);
   Screen(pos h, pos w, char x);
+
   char get() const;
   char get(pos r, pos c) const;
   const Screen &display(std::ostream &os) const;
+
   Screen &display(std::ostream &os);
   Screen &move(pos r, pos c);
   Screen &set(char c);
@@ -52,6 +48,11 @@ public:
 
 private:
   void do_display(std::ostream &os) const;
+
+  pos height = 0;
+  pos width = 0;
+  pos cursor = 0;
+  std::string contents;
 };
 
 Window_mgr::Window_mgr() { screens = std::vector<Screen>{Screen{5, 5, '.'}}; }

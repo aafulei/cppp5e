@@ -13,10 +13,6 @@ class Sales_data {
   friend std::ostream &print(std::ostream &os, const Sales_data &data);
   friend Sales_data add(const Sales_data &data1, const Sales_data &data2);
 
-  std::string bookNo;
-  unsigned units_sold = 0;
-  double revenue = 0.0;
-
 public:
   Sales_data();
   Sales_data(const std::string &bookNo);
@@ -25,7 +21,12 @@ public:
 
   std::string isbn() const;
   Sales_data &combine(const Sales_data &data);
-  double avg_price() const;
+  double avg_price() const; // Add
+
+private:
+  std::string bookNo;
+  unsigned units_sold = 0;
+  double revenue = 0.0;
 };
 
 std::istream &read(std::istream &is, Sales_data &data);
@@ -56,6 +57,7 @@ Sales_data &Sales_data::combine(const Sales_data &data) {
   return *this;
 }
 
+// Add
 inline double Sales_data::avg_price() const {
   if (units_sold != 0) {
     return revenue / units_sold;

@@ -12,11 +12,11 @@
 #include <string>
 
 struct Person {
-  std::string name;
-  std::string addr;
-
   std::string get_name() const;
   std::string get_addr() const;
+
+  std::string name;
+  std::string addr;
 };
 
 // --- impl --------------------------------------------------------------------

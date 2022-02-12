@@ -11,12 +11,12 @@
 #include <string>
 
 struct Sales_data {
+  std::string isbn() const;                    // Add
+  Sales_data &combine(const Sales_data &data); // Add
+
   std::string bookNo;
   unsigned units_sold = 0;
   double revenue = 0.0;
-
-  std::string isbn() const;                    // Add
-  Sales_data &combine(const Sales_data &data); // Add
 };
 
 std::string Sales_data::isbn() const { return bookNo; }

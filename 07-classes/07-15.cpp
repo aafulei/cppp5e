@@ -9,15 +9,15 @@
 #include <string>
 
 struct Person {
-  std::string name;
-  std::string addr;
-
   Person();
   Person(const std::string &name);
   Person(const std::string &name, const std::string &addr);
 
   std::string get_name() const;
   std::string get_addr() const;
+
+  std::string name;
+  std::string addr;
 };
 
 // --- impl --------------------------------------------------------------------
