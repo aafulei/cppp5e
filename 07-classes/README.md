@@ -677,7 +677,7 @@ All are untrue.
 
 If the constructor is declared `explicit`, we prevent the implicit conversion from a `std::string` to a `Sales_data`. This is acceptable, because a temporary object with only an ISBN, but no quantity, is unlikely to be useful.
 
-Consider Case 1 where `data` is a `Sales_data` and `isbn` is a `std::string`.
+Consider case 1 where `data` is a `Sales_data` and `isbn` is a `std::string`.
 
 ```c++
 data.combine(isbn);
@@ -685,7 +685,7 @@ data.combine(isbn);
 
 The operation is meaningless.
 
-Consider Case 2
+Consider case 2
 
 ```c++
 data = isbn;
@@ -708,22 +708,41 @@ The benefits versus drawbacks are a trade-off between control and convenience.
 > ```
 >
 > What happens if the `Sales_data` constructors are `explicit`?
+>
+> ```c++
+> class Sales_data {
+> public:
+>   Sales_data();
+>   Sales_data(const std::string & bookNo, unsigned units_sold, double price);
+>   explicit Sales_data(const std::string &bookNo);
+>   explicit Sales_data(std::istream &is);
+>   // remaining members as before
+> };
+> ```
 
 **Answer:**
 
-Whether the `Sales_data` constructors are `explicit` or not have no impact on this case. What matters is whether the `std::string` constructor from a `const char *` is `explicit`. It is not. Thus implicit conversion is allowed, and the initializations of `item1` and `item2` should happen as expected.
+Whether the `Sales_data` constructors are `explicit` or not has no impact on this case. What matters is whether the `std::string` constructor from a `const char *` is `explicit`. It is not. Thus implicit conversion is allowed, and the initializations of `item1` and `item2` should happen as expected.
 
 ### Exercise 7.49
 
-> For each of the three following declarations of combine, explain what happens if we call i.combine(s), where i is a `Sales_data` and s is a string:
+> For each of the three following declarations of `combine`, explain what happens if we call `i.combine(s)`, where `i` is a `Sales_data` and `s` is a `string`:
 >
 > (a) `Sales_data &combine(Sales_data);`
 >
-> (b) `Sales_data &combine(Sales_data&);`
+> (b) `Sales_data &combine(Sales_data &);`
 >
-> (c) `Sales_data &combine(const Sales_data&) const;`
+> (c) `Sales_data &combine(const Sales_data &) const;`
 
 **Answer:**
+
+Assuming *no* `explicit` for `Sales_data(const std::string &)`.
+
+(a) A temporary `Sales_data` object initialized from `s` is combined with `i`.
+
+(b) Illegal - we cannot bind a *plain* reference to a temporary object. It could be legal if the declaration were `Sales_data &combine(const Sales_data &)`.
+
+(c) Illegal - declaring a member function `const` prevent any further change to the object. Thus we cannot combine anything to `i`.
 
 ### Exercise 7.50
 
