@@ -493,7 +493,6 @@ Members are initialized in the order in which they appear in the class definitio
 ```c++
 struct X {
   X(int i, int j) : base(i), rem(i % j) {}
-
   int rem, base;
 };
 ```
@@ -511,6 +510,26 @@ struct X {
 > ```
 
 **Answer:**
+
+`Sales_data(std::istream &is)` is used for `first_item`. Values of the data members are according to `cin`.
+
+`Sales_data(std::string s = "")` is used for `next` and `last`.
+
+- `next`
+
+| Member       | Value |
+| ------------ | ----- |
+| `bookNo`     | `""`  |
+| `units_sold` | 0     |
+| `revenue`    | 0     |
+
+- `last`
+
+| Member       | Value             |
+| ------------ | ----------------- |
+| `bookNo`     | `"9-999-99999-9"` |
+| `units_sold` | 0                 |
+| `revenue`    | 0                 |
 
 ### Exercise 7.38
 
