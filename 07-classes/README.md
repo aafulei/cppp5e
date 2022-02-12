@@ -503,6 +503,7 @@ struct X {
 >
 > ```c++
 > Sales_data first_item(cin);
+>
 > int main() {
 >   Sales_data next;
 >   Sales_data last("9-999-99999-9");
@@ -533,17 +534,25 @@ struct X {
 
 ### Exercise 7.38
 
-> We might want to supply `cin` as a default argument to the constructor that takes an istream&. Write the constructor declaration that uses `cin` as a default argument.
+> We might want to supply `cin` as a default argument to the constructor that takes an `istream &`. Write the constructor declaration that uses `cin` as a default argument.
 
 **Answer:**
 
-- [`07-38.cpp`](07-38.cpp)
+```c++
+Sales_data(std::istream &is = std::cin);
+```
 
 ### Exercise 7.39
 
-> Would it be legal for both the constructor that takes a string and the one that takes an istream& to have default arguments? If not, why not?
+> Would it be legal for both the constructor that takes a string and the one that takes an `istream &` to have default arguments? If not, why not?
 
 **Answer:**
+
+No, because that would lead to ambiguous call when we call the default constructor.
+
+```c++
+Sales_data sales_data;
+```
 
 ### Exercise 7.40
 
@@ -557,6 +566,35 @@ struct X {
 > (f) Tree
 
 **Answer:**
+
+(a)
+
+```c++
+class Book {
+public:
+  Book(std::string isbn = "", std::string title = "", std::string author = "");
+  Book(std::istream & is);
+
+private:
+  std::string isbn;
+  std::string title;
+  std::string author;
+};
+```
+
+An ISBN is the unique identifier for a book. If anything is provided for a book, we would first like to know its ISBN.
+
+A book usually has a title and an author. We allow a book to be constructed without those data members. But if an author is provided, we require the book's title be known as well. This determines the order of the parameters in the first constructor.
+
+In addition, we might read this information from an `istream &` such as `std::cin`. For example, given data
+
+```
+978-7-121-20038-0
+978-7-121-20038-0 C++_Primer
+978-7-121-20038-0 C++_Primer Lippman
+```
+
+we interpret each line as a book: the first string is its ISBN, the second title, the third author, the rest we don't care.
 
 ### Exercise 7.41
 
