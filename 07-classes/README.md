@@ -675,7 +675,7 @@ All are untrue.
 
 **Answer:**
 
-If the constructor is declared `explicit`, then we forbid the implicit conversion from a `std::string` to a `Sales_data`. This is acceptable, because a temporary object with only an ISBN, but no quantity, is unlikely to be useful.
+If the constructor is declared `explicit`, we prevent the implicit conversion from a `std::string` to a `Sales_data`. This is acceptable, because a temporary object with only an ISBN, but no quantity, is unlikely to be useful.
 
 Consider Case 1 where `data` is a `Sales_data` and `isbn` is a `std::string`.
 
@@ -691,9 +691,9 @@ Consider Case 2
 data = isbn;
 ```
 
-This may confuse a reader of the code since we are assigning a `std::string` to a `Sales_data`.
+This might confuse a reader of the code since we are assigning a `std::string` to a `Sales_data`.
 
-By declaring `explicit`, we avoid the above two cases, which is perfectly fine, and even desirable.
+By declaring `explicit`, we avoid the above two cases, which is not only acceptable, but also desirable.
 
 The benefits versus drawbacks are a trade-off between control and convenience.
 
