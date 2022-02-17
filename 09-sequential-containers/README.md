@@ -68,7 +68,7 @@
 
 **Answer:**
 
-A pair of iterators `beg` and `end` form an iterator range if
+A pair of iterators `beg` and `end` form an iterator range, or a left-inclusive interval `[beg, end)`, if
 
 1. they refer to the same container
 
