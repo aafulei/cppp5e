@@ -130,9 +130,17 @@ while (iter1 != iter2) /* ... */
 
 ### Exercise 9.9
 
-> What is the difference between the begin and cbegin functions?
+> What is the difference between the `begin` and `cbegin` functions?
 
 **Answer:**
+
+- `begin` is overloaded
+
+  - `c.begin()` returns `iterator` is the container `c` is non-`const`
+
+  - `c.begin()` returns `const_iterator` is the container `c` is `const`
+
+- `c.cbegin()` always returns a `const_iterator` no matter if the container `c` is `const` or not
 
 ### Exercise 9.10
 
