@@ -149,8 +149,19 @@ while (iter1 != iter2) /* ... */
 > ```c++
 > vector<int> v1;
 > const vector<int> v2;
-> auto it1 = v1.begin(), it2 = v2.begin();
+> auto it1 = v1.begin(), it2 = v2.begin();    // WRONG CODE
 > auto it3 = v1.cbegin(), it4 = v2.cbegin();
+> ```
+>
+> *The original code is wrong. Should be*
+>
+> ```c++
+> vector<int> v1;
+> const vector<int> v2;
+> auto it1 = v1.begin();
+> auto it2 = v2.begin();
+> auto it3 = v1.cbegin();
+> auto it4 = v2.cbegin();
 > ```
 
 **Answer:**
