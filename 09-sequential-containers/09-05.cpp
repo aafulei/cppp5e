@@ -1,3 +1,7 @@
+// 22/02/17 = Thu
+// 18/01/16 = Tue
+// 17/10/25 = Wed
+
 // Exercise 9.5: Rewrite the previous program to return an iterator to the
 // requested element. Note that the program must handle the case where the
 // element is not found.
@@ -9,7 +13,6 @@
 // Modified from 09-04.cpp
 
 #include <iostream>
-#include <iterator>
 #include <vector>
 
 std::vector<int>::const_iterator find(std::vector<int>::const_iterator beg,
@@ -28,8 +31,8 @@ void test_one(const std::vector<int> &vec, int val) {
   if (it == vec.end()) {
     std::cout << val << " is not found" << std::endl;
   } else {
-    std::cout << val << " is found at position "
-              << std::distance(vec.begin(), it) << std::endl;
+    std::cout << val << " is found at position " << (it - vec.begin())
+              << std::endl;
   }
 }
 

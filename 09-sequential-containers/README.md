@@ -85,6 +85,8 @@ A pair of iterators `begin` and `end` form an iterator range if
 ### Exercise 9.5
 
 > Rewrite the previous program to return an iterator to the requested element. Note that the program must handle the case where the element is not found.
+>
+> *^ i.e. exercise [`9.4`](#exercise-94)*
 
 **Answer:**
 
@@ -97,23 +99,34 @@ A pair of iterators `begin` and `end` form an iterator range if
 > ```c++
 > list<int> lst1;
 > list<int>::iterator iter1 = lst1.begin(), iter2 = lst1.end();
-> while (iter1 < iter2) /* ...
->                        */
+> while (iter1 < iter2) /* ... */
 > ```
 
 **Answer:**
 
+Problem - operator `<` is not defined for `list<int>::itertor`. Fix -
+
+```c++
+while (iter1 != iter2) /* ... */
+```
+
 ### Exercise 9.7
 
-> What type should be used as the index into a vector of ints?
+> What type should be used as the index into a `vector` of `int`s?
 
 **Answer:**
+
+`std::vector<int>::size_type`
 
 ### Exercise 9.8
 
-> What type should be used to read elements in a list of strings? To write them?
+> What type should be used to read elements in a `list` of `string`s? To write them?
 
 **Answer:**
+
+- to read, use `std::list<std::string>::const_iterator`
+
+- to write, use `std::list<std::string>::iterator`
 
 ### Exercise 9.9
 
