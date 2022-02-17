@@ -136,9 +136,9 @@ while (iter1 != iter2) /* ... */
 
 - `begin` is overloaded
 
-  - `c.begin()` returns `iterator` is the container `c` is non-`const`
+  - `c.begin()` returns `iterator` if the container `c` is non-`const`
 
-  - `c.begin()` returns `const_iterator` is the container `c` is `const`
+  - `c.begin()` returns `const_iterator` if the container `c` is `const`
 
 - `c.cbegin()` always returns a `const_iterator` no matter if the container `c` is `const` or not
 
