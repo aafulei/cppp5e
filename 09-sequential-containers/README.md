@@ -187,17 +187,25 @@ while (iter1 != iter2) /* ... */
 
 **Answer:**
 
+- *initialize with a container* -- both the container types and the element types must be identical;
+
+- *initialize with a pair of iterators* -- the container types need *not* be identical, and the element types can be different, too, so long as conversion is possible.
+
 ### Exercise 9.13
 
-> How would you initialize a vector<double> from a list<int>? From a vector<int>? Write code to check your answers.
+> How would you initialize a `vector<double>` from a `list<int>`? From a vector<int>? Write code to check your answers.
 
 **Answer:**
+
+```c++
+std::vector<double> vec(lst.begin(), lst.end());
+```
 
 - [`09-13.cpp`](09-13.cpp)
 
 ### Exercise 9.14
 
-> Write a program to assign the elements from a list of char* pointers to C-style character strings to a vector of strings.
+> Write a program to assign the elements from a `list` of `char *` pointers to C-style character strings to a vector of strings.
 
 **Answer:**
 
@@ -205,7 +213,7 @@ while (iter1 != iter2) /* ... */
 
 ### Exercise 9.15
 
-> Write a program to determine whether two vector<int>s are equal.
+> Write a program to determine whether two `vector<int>s` are equal.
 
 **Answer:**
 
@@ -214,14 +222,24 @@ while (iter1 != iter2) /* ... */
 ### Exercise 9.16
 
 > Repeat the previous program, but compare elements in a list<int> to a vector<int>.
+>
+> *^ i.e. exercise [`9.15`](#exercise-915)*
 
 **Answer:**
+
+- [`09-16.cpp`](09-16.cpp)
 
 ### Exercise 9.17
 
-> Assuming c1 and c2 are containers, what (if any) constraints does the following usage place on the types of c1 and c2? if (c1 < c2)
+> Assuming `c1` and `c2` are containers, what (if any) constraints does the following usage place on the types of `c1` and `c2`?
+>
+> ```c++
+> if (c1 < c2)
+> ```
 
 **Answer:**
+
+ `c1` and `c2` must have the same container type. The container type cannot be unordered associative. Besides, `<` must be defined for the element type.
 
 ## Section 9.3 Sequential Container Operations
 
