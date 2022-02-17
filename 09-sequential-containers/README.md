@@ -68,6 +68,12 @@
 
 **Answer:**
 
+A pair of iterators `beg` and `end` form an iterator range if
+
+1. they refer to the same container
+
+2. it is possible to reach `end` by repeatedly incrementing `beg`. That is, `beg` must not precede `end`.
+
 ### Exercise 9.4
 
 > Write a function that takes a pair of iterators to a vector<int> and an `int` value. Look for that value in the range and return a bool indicating whether it was found.
