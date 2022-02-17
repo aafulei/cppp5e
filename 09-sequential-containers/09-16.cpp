@@ -1,3 +1,4 @@
+// 22/02/17 = Thu
 // 18/01/17 = Wed
 
 // Exercise 9.16: Repeat the previous program, but compare elements in a
