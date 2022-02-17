@@ -155,6 +155,13 @@ while (iter1 != iter2) /* ... */
 
 **Answer:**
 
+| Object | Type                               |
+| ------ | ---------------------------------- |
+| `it1`  | `std::vector<int>::iterator`       |
+| `it2`  | `std::vector<int>::const_iterator` |
+| `it3`  | `std::vector<int>::const_iterator` |
+| `it4`  | `std::vector<int>::const_iterator` |
+
 ### Exercise 9.11
 
 > Show an example of each of the six ways to create and initialize a vector. Explain what values each vector contains.
