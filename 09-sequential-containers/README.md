@@ -48,7 +48,7 @@
 
 (a) use a `list`, because we need to insert/delete elements in the middle of the container
 
-(b) use a `deque`, because we need to insert/delete elements at the front and the back, but not in the middle, of the container
+(b) use a `deque`, because we only need to insert/delete elements at the front and the back of the container
 
 (c) use a `vector`, because we only need to insert elements at the back of the container
 
