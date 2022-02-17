@@ -104,7 +104,9 @@ A pair of iterators `begin` and `end` form an iterator range if
 
 **Answer:**
 
-Problem - operator `<` is not defined for `list<int>::itertor`. Fix -
+Problem - operator `<` is not defined for `list<int>::itertor`.
+
+Fix -
 
 ```c++
 while (iter1 != iter2) /* ... */
@@ -124,9 +126,9 @@ while (iter1 != iter2) /* ... */
 
 **Answer:**
 
-- to read, use `std::list<std::string>::const_iterator`
+- To read, use `std::list<std::string>::const_iterator`
 
-- to write, use `std::list<std::string>::iterator`
+- To write, use `std::list<std::string>::iterator`
 
 ### Exercise 9.9
 
