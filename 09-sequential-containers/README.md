@@ -68,11 +68,11 @@
 
 **Answer:**
 
-A pair of iterators `beg` and `end` form an iterator range, or a left-inclusive interval `[beg, end)`, if
+A pair of iterators `begin` and `end` form an iterator range if
 
 1. they refer to the same container
 
-2. it is possible to reach `end` by repeatedly incrementing `beg`. That is, `beg` must not precede `end`.
+2. it is possible to reach `end` by repeatedly incrementing `begin`. In other words, `end` must not precede `begin`.
 
 ### Exercise 9.4
 
