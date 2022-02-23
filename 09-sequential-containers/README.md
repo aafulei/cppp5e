@@ -285,7 +285,7 @@ Only need to change `std::deque` to `std::list`.
 
 **Answer:**
 
-Because `insert` returns the iterator that points to the inserted element, and `insert(iter, word)` will insert *before* the iterator `iter`, if we used a `vector`, the elements would be inserted at the front one be one. That is, say, given input `"A" "B" "C" "D" "E"` from the standard input, we will have a `vector` that is `["E", "D", "C", "B", "A"]`.
+It would achieve the same effect, but since insertion at the front of a `vector` could be expensive, it might take more time.
 
 ### Exercise 9.22
 
