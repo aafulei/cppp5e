@@ -213,7 +213,7 @@ std::vector<double> vec(lst.begin(), lst.end());
 
 ### Exercise 9.15
 
-> Write a program to determine whether two `vector<int>s` are equal.
+> Write a program to determine whether two `vector<int>`s are equal.
 
 **Answer:**
 
@@ -245,7 +245,7 @@ std::vector<double> vec(lst.begin(), lst.end());
 
 ### Exercise 9.18
 
-> Write a program to read a sequence of strings from the standard input into a deque. Use iterators to write a loop to print the elements in the deque.
+> Write a program to read a sequence of strings from the standard input into a `deque`. Use iterators to write a loop to print the elements in the `deque`.
 
 **Answer:**
 
@@ -253,15 +253,19 @@ std::vector<double> vec(lst.begin(), lst.end());
 
 ### Exercise 9.19
 
-> Rewrite the program from the previous exercise to use a list. List the changes you needed to make.
+> Rewrite the program from the previous exercise to use a `list`. List the changes you needed to make.
+>
+> *^ i.e. exercise [`9.18`](#exercise-918)*
 
 **Answer:**
+
+Only need to change `std::deque` to `std::list`.
 
 - [`09-19.cpp`](09-19.cpp)
 
 ### Exercise 9.20
 
-> Write a program to copy elements from a list<int> into two deques. The even-valued elements should go into one deque and the odd ones into the other.
+> Write a program to copy elements from a `list<int>` into two `deque`s. The even-valued elements should go into one `deque` and the odd ones into the other.
 
 **Answer:**
 
@@ -269,9 +273,19 @@ std::vector<double> vec(lst.begin(), lst.end());
 
 ### Exercise 9.21
 
-> Explain how the loop from *page 345* that used the return from insert to add elements to a list would work if we inserted into a vector instead.
+> Explain how the loop from *page 345* that used the return from `insert` to add elements to a `list` would work if we inserted into a `vector` instead.
+>
+> ```c++
+> list<string> lst;
+> auto iter = lst.begin();
+> while (cin >> word) {
+>   iter = lst.insert(iter, word);
+> }
+> ```
 
 **Answer:**
+
+Because `insert` returns the iterator that points to the inserted element, and `insert(iter, word)` will insert *before* the iterator `iter`, if we used a `vector`, the elements would be inserted at the front one be one. That is, say, given input `"A" "B" "C" "D" "E"` from the standard input, we will have a `vector` that is `["E", "D", "C", "B", "A"]`.
 
 ### Exercise 9.22
 
