@@ -289,7 +289,7 @@ It would achieve the same effect, but since insertion at the front of a `vector`
 
 ### Exercise 9.22
 
-> Assuming iv is a vector of ints, what is wrong with the following program? How might you correct the problem(s)?
+> Assuming `iv` is a `vector` of `int`s, what is wrong with the following program? How might you correct the problem(s)?
 >
 > ```c++
 > vector<int>::iterator iter = iv.begin(), mid = iv.begin() + iv.size() / 2;
@@ -299,6 +299,28 @@ It would achieve the same effect, but since insertion at the front of a `vector`
 > ```
 
 **Answer:**
+
+Problems -
+
+1. the program should not store the iterator value in `mid`
+2. the program should update `iter` using the return value from `insert()`
+3. the program should update `iter` at the end of each loop
+4. if `mid` means the original middle, the program should count the number of inserted elements and adjust accordingly
+
+Fix -
+
+```c++
+std::vector<int>::iterator iter = iv.begin();
+for (int count = 0; iter != iv.begin() + (iv.size() + count) / 2; // adjust
+     ++iter) {
+  if (*iter == some_val) {
+    iter = iv.insert(iter, 2 * some_val) + 1;
+    ++count;
+  }
+}
+```
+
+- [`09-22.cpp`](09-22.cpp)
 
 ### Exercise 9.23
 
