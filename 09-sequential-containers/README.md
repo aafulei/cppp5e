@@ -351,9 +351,20 @@ All of them would have the value of the only element in the container.
 
 ### Exercise 9.25
 
-> In the program on *page 349* that erased a range of elements, what happens if elem1 and elem2 are equal? What if elem2 or both elem1 and elem2 are the off-the-end iterator?
+> In the program on *page 349* that erased a range of elements, what happens if `elem1` and `elem2` are equal? What if `elem2` or both `elem1` and `elem2` are the off-the-end iterator?
+>
+> ```c++
+> elem1 = slist.erase(elem1, elem2);
+> ```
 
 **Answer:**
+
+- if `elem1` and `elem2` are equal, the range is empty. Nothing would be removed
+
+- if `elem2` is the off-the-end iterator, all the elements from `elem1` to the end would be erased
+
+- if both `elem1` and `elem2` are off-the-end iterator, nothing would be removed
+
 
 ### Exercise 9.26
 
