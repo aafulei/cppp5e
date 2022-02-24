@@ -396,9 +396,13 @@ All of them would have the value of the only element in the container.
 
 ### Exercise 9.29
 
-> Given that vec holds 25 elements, what does vec.resize(100) do? What if we next wrote vec.resize(10)?
+> Given that `vec` holds 25 elements, what does `vec.resize(100)` do? What if we next wrote `vec.resize(10)`?
 
 **Answer:**
+
+- `vec.resize(100)` increases the size of `vec` to 100 with added elements value initialized
+
+- `vec.resize(10)` shrinks the size of `vec` to 10, with elements deleted from the back
 
 ### Exercise 9.30
 
