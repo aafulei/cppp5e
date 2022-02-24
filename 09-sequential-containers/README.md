@@ -414,9 +414,23 @@ If the element has a class type, it must support default initialization, because
 
 ### Exercise 9.31
 
-> The program on *page 354* to remove even-valued elements and duplicate odd ones will not work on a list or forward_list. Why? Revise the program so that it works on these types as well.
+> The program on *page 354* to remove even-valued elements and duplicate odd ones will not work on a `list` or `forward_list`. Why? Revise the program so that it works on these types as well.
+>
+> ```c++
+> vector<int> vi = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+> auto iter = vi.begin();
+> while (iter != vi.end()) {
+>   if (*iter % 2) {
+>     iter = vi.insert(iter, *iter);
+>     iter += 2;
+>   } else
+>   iter = vi.erase(iter);
+> }
+> ```
 
 **Answer:**
+
+Because `operator+=` is not defined for `list` and `forward_list`. We need to use `operator++`. Besides, for `forward_list`, we need to use specialized operations, i.e. `insert_after()` and `erase_after()`.
 
 - [`09-31.cpp`](09-31.cpp)
 
