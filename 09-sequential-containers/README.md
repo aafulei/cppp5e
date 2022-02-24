@@ -359,7 +359,7 @@ All of them would have the value of the only element in the container.
 
 **Answer:**
 
-- if `elem1` and `elem2` are equal, the range is empty. Nothing would be removed
+- if `elem1` and `elem2` are equal, the range is empty, so nothing would be removed
 
 - if `elem2` is the off-the-end iterator, all the elements from `elem1` to the end would be erased
 
