@@ -363,7 +363,7 @@ All of them would have the value of the only element in the container.
 
 - if `elem2` is the off-the-end iterator, all the elements from `elem1` to the end would be erased
 
-- if both `elem1` and `elem2` are off-the-end iterator, nothing would be removed
+- if both `elem1` and `elem2` are the off-the-end iterator, nothing would be removed
 
 
 ### Exercise 9.26
