@@ -442,7 +442,7 @@ The program will not work because `operator+=` is not defined for `list` and `fo
 > iter = vi.insert(iter, *iter++);
 > ```
 >
-> *program*
+> *Program*
 >
 > ```c++
 > vector<int> vi = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -458,9 +458,9 @@ The program will not work because `operator+=` is not defined for `list` and `fo
 
 **Answer:**
 
-It is illegal, prior to C++17. Because the order of evaluation is not guaranteed, we are not sure if the increment will take place before or after the assignment.
+It is illegal, prior to C++17, because the order of evaluation is not guaranteed. We are not sure if the increment will take place before or after the assignment.
 
-However, since C++17 it has been guaranteed that every value computation and side-effect of the right-hand side of the assignment operator is sequenced before the left-hand side. Therefore, it would become legal (but meaningless) in C++17.
+However, since C++17 it has been guaranteed that every value computation and side-effect of the right-hand side of the assignment operator is sequenced before the left-hand side. Therefore, the call would become legal (though meaningless) in C++17.
 
 ### Exercise 9.33
 
