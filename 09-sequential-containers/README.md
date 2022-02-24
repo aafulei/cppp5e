@@ -400,9 +400,9 @@ All of them would have the value of the only element in the container.
 
 **Answer:**
 
-- `vec.resize(100)` increases the size of `vec` to 100 with added elements value initialized
+- `vec.resize(100)` increases the size of `vec` to 100, adding value-initialized elements to the back of the vector
 
-- `vec.resize(10)` shrinks the size of `vec` to 10, with elements deleted from the back
+- `vec.resize(10)` shrinks the size of `vec` to 10, removing elements from the back of the vector
 
 ### Exercise 9.30
 
