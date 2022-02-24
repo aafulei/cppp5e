@@ -436,13 +436,31 @@ The program will not work because `operator+=` is not defined for `list` and `fo
 
 ### Exercise 9.32
 
-> In the program on *page 354* would it be legal to write the call to insert as follows? If not, why not?
+> In the program on *page 354* would it be legal to write the call to `insert` as follows? If not, why not?
 >
 > ```c++
 > iter = vi.insert(iter, *iter++);
 > ```
+>
+> *program*
+>
+> ```c++
+> vector<int> vi = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+> auto iter = vi.begin();
+> while (iter != vi.end()) {
+>   if (*iter % 2) {
+>     iter = vi.insert(iter, *iter);
+>     iter += 2;
+>   } else
+>   iter = vi.erase(iter);
+> }
+> ```
 
 **Answer:**
+
+It is illegal, prior to C++17. Because the order of evaluation is not guaranteed, we are not sure if the increment will take place before or after the assignment.
+
+However, since C++17 it has been guaranteed that every value computation and side-effect of the right-hand side of the assignment operator is sequenced before the left-hand side. Therefore, it would become legal (but meaningless) in C++17.
 
 ### Exercise 9.33
 
