@@ -462,25 +462,47 @@ It is illegal, prior to C++17, because the order of evaluation is not guaranteed
 
 ### Exercise 9.33
 
-> In the final example in this section what would happen if we did not assign the result of insert to begin? Write a program that omits this assignment to see if your expectation was correct.
+> In the final example in this section what would happen if we did not assign the result of `insert` to `begin`? Write a program that omits this assignment to see if your expectation was correct.
+>
+> ```c++
+> auto begin = v.begin();
+> while (begin != v.end()) {
+>   ++begin;
+>   begin = v.insert(begin, 42);
+>   ++begin;
+> }
+> ```
 
 **Answer:**
+
+The iterator would be invalided. My program crashed reporting
+
+```
+free(): invalid pointer
+Aborted
+```
 
 - [`09-33.cpp`](09-33.cpp)
 
 ### Exercise 9.34
 
-> Assuming vi is a container of ints that includes even and odd values, predict the behavior of the following loop. After you've analyzed this loop, write a program to test whether your expectations were correct.
+> Assuming `vi` is a container of `int`s that includes even and odd values, predict the behavior of the following loop. After you've analyzed this loop, write a program to test whether your expectations were correct.
 >
 > ```c++
-> iter = vi.begin();
-> while (iter != vi.end())
+> auto iter = vi.begin();
+> while (iter != vi.end()) {
 >   if (*iter % 2)
 >     iter = vi.insert(iter, *iter);
-> ++iter;
+>   ++iter;
+> }
 > ```
+> *A pair of `{}` is missing from the original code.*
 
 **Answer:**
+
+The computer will run out of memory, because whenever an odd value appears, the program will repeatedly insert that value before it, pushing the size of the vector over its limit.
+
+- [`09-34.cpp`](09-34.cpp)
 
 ## Section 9.4 How a vector Grows
 
