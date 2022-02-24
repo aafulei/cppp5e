@@ -16,9 +16,9 @@
 //     iter = vi.erase(iter);
 // }
 
-// Answer: Because operator+= is not defined for list and forward_list. We need
-// to use operator++. Besides, for forward_list, we need to use specialized
-// operations, i.e. insert_after() and erase_after().
+// Answer: The program will not work because operator+= is not defined for list
+// and forward_list. We need to use operator++. Besides, for forward_list, we
+// need to use specialized operations, i.e. insert_after() and erase_after().
 
 #include <forward_list>
 #include <iostream>

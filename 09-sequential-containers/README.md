@@ -430,7 +430,7 @@ If the element has a class type, it must support default initialization, because
 
 **Answer:**
 
-Because `operator+=` is not defined for `list` and `forward_list`. We need to use `operator++`. Besides, for `forward_list`, we need to use specialized operations, i.e. `insert_after()` and `erase_after()`.
+The program will not work because `operator+=` is not defined for `list` and `forward_list`. We need to use `operator++`. Besides, for `forward_list`, we need to use specialized operations, i.e. `insert_after()` and `erase_after()`.
 
 - [`09-31.cpp`](09-31.cpp)
 
