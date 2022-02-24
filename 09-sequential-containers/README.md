@@ -406,9 +406,11 @@ All of them would have the value of the only element in the container.
 
 ### Exercise 9.30
 
-> What, if any, restrictions does using the version of resize that takes a single argument place on the element type?
+> What, if any, restrictions does using the version of `resize` that takes a single argument place on the element type?
 
 **Answer:**
+
+If the element has a class type, it must support default initialization, because added elements will be value initialized.
 
 ### Exercise 9.31
 
