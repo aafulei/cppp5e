@@ -380,7 +380,7 @@ All of them would have the value of the only element in the container.
 
 ### Exercise 9.27
 
-> Write a program to find and remove the odd-valued elements in a forward_list<int>.
+> Write a program to find and remove the odd-valued elements in a `forward_list<int>`.
 
 **Answer:**
 
